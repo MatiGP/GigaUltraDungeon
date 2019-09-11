@@ -5,16 +5,23 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb2d;
+    private SpriteRenderer spriteRenderer;
+    public int moveSpeed;
+
 
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void LateUpdate()
+    private void Update()
     {
-        Vector3 direction = new Vector2(Input.GetAxis("Vertical"),0);
+        Vector2 direction = new Vector2(Input.GetAxisRaw("Vertical"), 0);
+        spriteRenderer.flipX = direction.x == -1 ? true : false;
 
-        rb2d.MovePosition(rb2d.transform.position + direction);
+        rb2d.MovePosition(rb2d.position + direction * moveSpeed * Time.deltaTime);
     }
+
+    
 }

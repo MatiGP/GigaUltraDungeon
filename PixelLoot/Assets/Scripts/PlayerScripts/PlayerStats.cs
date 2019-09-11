@@ -6,8 +6,8 @@ public class PlayerStats : MonoBehaviour
 {
     public PlayableChar_SO character;
 
-    public int characterHealth;
-    public int characterDamage;
+    int characterHealth;
+    int characterDamage;
     
     void Awake()
     {
