@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7f666f435d8194093735f4448218c4, type: 3}
   m_Name: Knight
   m_EditorClassIdentifier: 
-  characterName: Knigh
+  characterName: Knight
+  characterSprite: {fileID: 4495478712733764576, guid: 0142cbff1d5786b4b9fde6994c0cb687,
+    type: 3}
   characterBaseHealth: 7
   baseStats: 02000000070000000400000006000000
   primaryStat: 1

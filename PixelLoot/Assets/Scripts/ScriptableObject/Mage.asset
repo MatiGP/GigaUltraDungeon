@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Mage
   m_EditorClassIdentifier: 
   characterName: Mage
+  characterSprite: {fileID: 2971653748508199937, guid: 24d95152bb6cbab4d81b8404ad8bb12e,
+    type: 3}
   characterBaseHealth: 4
   baseStats: 08000000030000000300000004000000
+  primaryStat: 0
