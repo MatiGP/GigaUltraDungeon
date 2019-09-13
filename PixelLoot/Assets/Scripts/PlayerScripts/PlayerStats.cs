@@ -9,30 +9,20 @@ public class PlayerStats : MonoBehaviour
 
     public Image healthBar;
     public Image characterImage;
+    [HideInInspector]
+    public int characterCurrentHealth;
 
-    int characterMaxHealth;
-    int characterCurrentHealth;
+    int characterMaxHealth;    
     int characterDamage;
     [HideInInspector]
     public bool TookDamage;
     
     void Awake()
     {
-        characterMaxHealth = character.characterBaseHealth + 2*character.baseStats[3];
+        characterMaxHealth = character.characterBaseHealth + character.baseStats[3];
         characterCurrentHealth = characterMaxHealth;
         characterDamage = 2 * character.baseStats[(int)character.primaryStat];
         characterImage.sprite = character.characterSprite;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            TookDamage = true;
-            TakeDamage();
-            
-        }
     }
 
     void TakeDamage()

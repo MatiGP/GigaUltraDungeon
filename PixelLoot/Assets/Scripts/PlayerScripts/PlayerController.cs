@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public int moveSpeed;
+
     private Rigidbody2D rb2d;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
-    public int moveSpeed;
-    bool isGrounded;
+    private bool isGrounded;
+    
 
     public LayerMask groundLayerMask;
 
@@ -26,15 +28,30 @@ public class PlayerController : MonoBehaviour
         spriteRenderer.flipX = direction.x == -1 ? true : false;
         animator.SetBool("IsRunning", direction.x != 0);
         rb2d.MovePosition(rb2d.position + direction * moveSpeed * Time.deltaTime);
+
         isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.5f, transform.position.y - 0.5f), 
             new Vector2(transform.position.x + 0.5f, transform.position.y - 0.51f), groundLayerMask);
-        Debug.Log(isGrounded);
+
         if (GetComponent<PlayerStats>().TookDamage && isGrounded)
         {
-            rb2d.AddForce(new Vector2(-20, 20), ForceMode2D.Impulse);
-            GetComponent<PlayerStats>().TookDamage = false;
+            KnockbackOnDamage();
+        }
+        
+    }
+
+    void KnockbackOnDamage()
+    {
+        rb2d.AddForce(new Vector2(-20, 20));
+        GetComponent<PlayerStats>().TookDamage = false;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.collider.tag == "Item")
+        {
+            //GetComponent<InventoryScript>().AddItemToInventory();
         }
     }
 
-    
+
 }
