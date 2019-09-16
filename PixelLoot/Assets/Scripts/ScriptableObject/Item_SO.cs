@@ -7,4 +7,9 @@ public class Item_SO : ScriptableObject
     public Sprite itemIcon;
     public string itemName;
 
+    public virtual void Use()
+    {
+
+    }
+
 }

@@ -5,12 +5,15 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public int moveSpeed;
+    public int jumpForce = 100;
 
     private Rigidbody2D rb2d;
-    private SpriteRenderer spriteRenderer;
     private Animator animator;
     private bool isGrounded;
-    
+    private bool facingRight = true;
+    private Vector2 direction;
+
+
 
     public LayerMask groundLayerMask;
 
@@ -18,39 +21,51 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
-        Vector2 direction = new Vector2(Input.GetAxisRaw("Horizontal"), 0);
-        spriteRenderer.flipX = direction.x == -1 ? true : false;
-        animator.SetBool("IsRunning", direction.x != 0);
-        rb2d.MovePosition(rb2d.position + direction * moveSpeed * Time.deltaTime);
+        direction = new Vector2(Input.GetAxisRaw("Horizontal"), 0);
 
-        isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.5f, transform.position.y - 0.5f), 
-            new Vector2(transform.position.x + 0.5f, transform.position.y - 0.51f), groundLayerMask);
+        rb2d.velocity = direction * moveSpeed;
+        animator.SetBool("IsRunning", direction.x != 0);
 
         if (GetComponent<PlayerStats>().TookDamage && isGrounded)
         {
             KnockbackOnDamage();
         }
-        
+    }
+
+    private void LateUpdate()
+    {
+        Vector3 localScale = transform.localScale;
+
+        if(direction.x > 0)
+        {
+            facingRight = true;
+        }else if(direction.x < 0)
+        {
+            facingRight = false;
+        }
+
+        if((facingRight && (localScale.x < 0)) || (!facingRight && (localScale.x > 0)))
+        {
+            localScale.x *= -1;
+        }
+
+        transform.localScale = localScale;
+
+        isGrounded = Physics2D.OverlapArea(
+            new Vector2(transform.position.x - 0.5f, transform.position.y - 0.5f),
+            new Vector2(transform.position.x + 0.5f, transform.position.y - 0.51f), groundLayerMask
+            );
     }
 
     void KnockbackOnDamage()
     {
         rb2d.AddForce(new Vector2(-20, 20));
         GetComponent<PlayerStats>().TookDamage = false;
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.collider.tag == "Item")
-        {
-            //GetComponent<InventoryScript>().AddItemToInventory();
-        }
     }
 
 

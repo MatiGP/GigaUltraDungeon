@@ -73,7 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 4495478712733764576, guid: 0142cbff1d5786b4b9fde6994c0cb687,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -81,7 +82,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &5618577648859758675
@@ -137,6 +138,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 11400000, guid: 4992658047f37534ab51a6c66bd56114, type: 2}
+  healthBar: {fileID: 0}
+  characterImage: {fileID: 0}
+  characterCurrentHealth: 0
+  TookDamage: 0
 --- !u!114 &379538697103992024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,3 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
+  jumpForce: 10
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
