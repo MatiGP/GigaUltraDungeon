@@ -6,21 +6,21 @@ using UnityEngine;
 public class ThrowMeleeWeapon : MonoBehaviour
 {
     public Transform playerPosition;
+    private Vector2 throwStartPos;
     bool returnWeapon;
     bool canThrowWeapon;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    Vector3 scale;
 
     // Update is called once per frame
     void Update()
     {
+        
+
         if (Input.GetKeyDown(KeyCode.R) && !canThrowWeapon)
         {
             canThrowWeapon = true;
+            throwStartPos = new Vector2(playerPosition.position.x, playerPosition.position.y);
+            scale = playerPosition.localScale;
         }
 
         if (canThrowWeapon && !returnWeapon)
@@ -35,28 +35,49 @@ public class ThrowMeleeWeapon : MonoBehaviour
 
     private void ReturnWeapon()
     {
-        if (Vector3.Distance(playerPosition.position, transform.position) > 0.1f)
+        
+        if (Math.Abs(Vector2.Distance(playerPosition.position, transform.position)) > 0.1f)
         {
-            transform.position += new Vector3(-1, 0) * Time.deltaTime * 5;
+            if(scale.x < 0)
+            {
+                transform.position -= (new Vector3(-5, 0) * Time.deltaTime);
+            }
+            else
+
+            {
+                transform.position += (new Vector3(-5, 0) * Time.deltaTime);
+            }      
             transform.Rotate(0, 0, 15);
         }
-        if(Vector3.Distance(playerPosition.position, transform.position) <= 0.1f)
+        if(Math.Abs(Vector2.Distance(playerPosition.position, transform.position)) <= 0.1f)
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);   
+            gameObject.transform.parent = playerPosition.gameObject.transform;
+            transform.localScale = new Vector3(1, 1);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
                 
         }
-        returnWeapon = Vector3.Distance(playerPosition.position, transform.position) > 0.1f ? true : false;
-        canThrowWeapon = Vector3.Distance(playerPosition.position, transform.position) > 0.1f ? true : false;
+        returnWeapon = Math.Abs(Vector2.Distance(playerPosition.localPosition, transform.position)) > 0.1f ? true : false;
+        canThrowWeapon = Math.Abs(Vector2.Distance(playerPosition.localPosition, transform.position)) > 0.1f ? true : false;
     }
 
     private void ThrowWeapon()
     {
-        if(Vector3.Distance(playerPosition.position, transform.position) <= 5f)
+        gameObject.transform.parent = null;
+
+        if (Math.Abs(Vector2.Distance(throwStartPos, transform.position)) <= 5f)
         {
-            transform.position += new Vector3(7, 0) * Time.deltaTime;
+            if(scale.x < 0)
+            {
+                transform.position -= new Vector3(7, 0) * Time.deltaTime;
+            }
+            else
+            {
+                transform.position += new Vector3(7, 0) * Time.deltaTime;
+            }
+            
             transform.Rotate(0, 0, -15);
         }
 
-        returnWeapon = Vector3.Distance(playerPosition.position, transform.position) > 5f ? true : false;
+        returnWeapon = Math.Abs(Vector2.Distance(throwStartPos, transform.position)) > 5f ? true : false;
     }
 }
