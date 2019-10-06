@@ -31,6 +31,11 @@ public class PlayerController : MonoBehaviour
         rb2d.velocity = direction * moveSpeed;
         animator.SetBool("IsRunning", direction.x != 0);
 
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            GetComponent<PlayerStats>().TakeDamage();
+        }
+
         if (GetComponent<PlayerStats>().TookDamage && isGrounded)
         {
             KnockbackOnDamage();

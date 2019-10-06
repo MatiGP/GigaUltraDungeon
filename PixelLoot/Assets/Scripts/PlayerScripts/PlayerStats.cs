@@ -25,7 +25,7 @@ public class PlayerStats : MonoBehaviour
         characterImage.sprite = character.characterSprite;
     }
 
-    void TakeDamage()
+    public void TakeDamage()
     {
         characterCurrentHealth -= 1;
         Debug.Log("Taking damage! Health remaining: " + characterCurrentHealth + " out of " + characterMaxHealth);
@@ -39,5 +39,15 @@ public class PlayerStats : MonoBehaviour
     void UpdateBars()
     {
         healthBar.fillAmount = (float)characterCurrentHealth / characterMaxHealth;
+    }
+
+    public void Heal(int healAmount)
+    {
+        characterCurrentHealth += healAmount;
+        if(characterCurrentHealth > characterMaxHealth)
+        {
+            characterCurrentHealth = characterCurrentHealth - (characterCurrentHealth % characterMaxHealth);
+        }
+        UpdateBars();
     }
 }
