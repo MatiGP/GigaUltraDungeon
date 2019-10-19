@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e08915f7bfffbcf4ebfabfbfd46186c0, type: 3}
-  m_Name: HealingPot
+  m_Script: {fileID: 11500000, guid: e08b15ea00b04f5439e4d184b3ca49fd, type: 3}
+  m_Name: Healing Potion
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 569020e1ff3f363478bcad9d1599b679, type: 3}
-  itemName: Healing Potion
-  consumableType: 0
-  amountToRestore: 5
+  itemName: Lesser Healing Potion
+  restoreAmount: 5
+  whatToRestore: 0

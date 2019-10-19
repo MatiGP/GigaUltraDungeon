@@ -13,8 +13,6 @@ public class PlayerController : MonoBehaviour
     private bool facingRight = true;
     private Vector2 direction;
 
-
-
     public LayerMask groundLayerMask;
 
 
@@ -33,12 +31,17 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.X))
         {
-            GetComponent<PlayerStats>().TakeDamage();
+            GetComponent<PlayerStats>().TakeDamage(4);
         }
 
-        if (GetComponent<PlayerStats>().TookDamage && isGrounded)
+        if (GetComponent<PlayerStats>() && isGrounded)
         {
             KnockbackOnDamage();
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            Inventory.instance.useItem(0);
         }
     }
 

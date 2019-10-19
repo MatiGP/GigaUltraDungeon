@@ -16,5 +16,6 @@ MonoBehaviour:
   characterSprite: {fileID: 4495478712733764576, guid: 0142cbff1d5786b4b9fde6994c0cb687,
     type: 3}
   characterBaseHealth: 7
+  characterBaseMana: 0
   baseStats: 02000000070000000400000006000000
   primaryStat: 1

@@ -4,11 +4,24 @@ using UnityEngine;
 
 public class MeleeWeaponDamage : MonoBehaviour
 {
+    public Weapon_SO weapon;
+
+    private int minDamage;
+    private int maxDamage;
+    private int randomDamage;
+
+    private void Awake()
+    {
+        minDamage = weapon.weaponMinDamage;
+        maxDamage = weapon.weaponMaxDamage;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Enemy")
+        if (collision.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<EnemyScript>().health -= 10;
+            randomDamage = Random.Range(minDamage, maxDamage);
+            collision.gameObject.GetComponent<EnemyScript>().health -= randomDamage;
         }
     }
 }

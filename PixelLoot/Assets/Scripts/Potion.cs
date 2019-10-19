@@ -2,23 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Potion : MonoBehaviour, IUsable
+public class Potion : MonoBehaviour
 {
-    public Consumables_SO consumable;
-    public GameObject player;
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            collision.GetComponent<Inventory>().addItem(gameObject);
+    public Potion_SO potion;
+   
 
-            gameObject.SetActive(false);
-        }
-    }  
-
-    public void Use()
-    {
-        player.GetComponent<PlayerStats>().Heal(consumable.amountToRestore);
-    }
 }

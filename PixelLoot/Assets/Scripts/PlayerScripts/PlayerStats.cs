@@ -6,28 +6,44 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
     public PlayableChar_SO character;
+    public static PlayerStats instance;
 
     public Image healthBar;
     public Image characterImage;
+    public Image manaBar;
     [HideInInspector]
     public int characterCurrentHealth;
+    [HideInInspector]
+    public int characterCurrentMana;
 
-    int characterMaxHealth;    
-    int characterDamage;
+    int characterMaxHealth;
+    int characterMaxMana;
     [HideInInspector]
     public bool TookDamage;
+    [HideInInspector]
+    public bool canCastSpells;
     
     void Awake()
     {
+        if(instance == null)
+        {
+            instance = this;
+        }
+    }
+
+    private void Start()
+    {
         characterMaxHealth = character.characterBaseHealth + character.baseStats[3];
         characterCurrentHealth = characterMaxHealth;
-        characterDamage = 2 * character.baseStats[(int)character.primaryStat];
+        characterMaxMana = character.characterBaseMana + character.baseStats[0];
+        characterCurrentMana = characterMaxMana;
+
         characterImage.sprite = character.characterSprite;
     }
 
-    public void TakeDamage()
+    public void TakeDamage(int damageTaken)
     {
-        characterCurrentHealth -= 1;
+        characterCurrentHealth -= damageTaken;
         Debug.Log("Taking damage! Health remaining: " + characterCurrentHealth + " out of " + characterMaxHealth);
         UpdateBars();
         if(characterCurrentHealth <= 0)
@@ -39,14 +55,25 @@ public class PlayerStats : MonoBehaviour
     void UpdateBars()
     {
         healthBar.fillAmount = (float)characterCurrentHealth / characterMaxHealth;
+        manaBar.fillAmount = (float)characterCurrentMana / characterMaxMana;
     }
 
-    public void Heal(int healAmount)
+    public void RestoreHealth(int healthAmount)
     {
-        characterCurrentHealth += healAmount;
+        characterCurrentHealth += healthAmount;
         if(characterCurrentHealth > characterMaxHealth)
         {
             characterCurrentHealth = characterCurrentHealth - (characterCurrentHealth % characterMaxHealth);
+        }
+        UpdateBars();
+    }
+
+    public void RestoreMana(int manaAmount)
+    {
+        characterCurrentMana += manaAmount;
+        if (characterCurrentMana > characterMaxMana)
+        {
+            characterCurrentMana = characterCurrentMana - (characterCurrentMana % characterMaxMana);
         }
         UpdateBars();
     }
