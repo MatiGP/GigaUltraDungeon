@@ -10,10 +10,13 @@ public class MeleeWeaponDamage : MonoBehaviour
     private int maxDamage;
     private int randomDamage;
 
-    private void Awake()
+    private void LateUpdate()
     {
-        minDamage = weapon.weaponMinDamage;
-        maxDamage = weapon.weaponMaxDamage;
+        if (weapon)
+        {
+            minDamage = weapon.weaponMinDamage;
+            maxDamage = weapon.weaponMaxDamage;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

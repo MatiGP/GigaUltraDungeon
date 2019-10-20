@@ -9,14 +9,15 @@ public class ThrowMeleeWeapon : MonoBehaviour
     private Vector2 throwStartPos;
     bool returnWeapon;
     bool canThrowWeapon;
+    bool hasWeapon;
     Vector3 scale;
 
     // Update is called once per frame
     void Update()
     {
-        
+        hasWeapon = GetComponent<MeleeWeaponDamage>().weapon ? true : false;
 
-        if (Input.GetKeyDown(KeyCode.R) && !canThrowWeapon)
+        if (Input.GetKeyDown(KeyCode.R) && !canThrowWeapon && hasWeapon)
         {
             canThrowWeapon = true;
             throwStartPos = new Vector2(playerPosition.position.x, playerPosition.position.y);

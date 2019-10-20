@@ -5,8 +5,10 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public static Inventory instance;
-    
+
+    public GameObject weaponHolder;
     public List<Item_SO> items = new List<Item_SO>();
+    
 
 
     private void Awake()

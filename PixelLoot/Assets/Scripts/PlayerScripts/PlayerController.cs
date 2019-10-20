@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.L))
         {
-            Inventory.instance.useItem(0);
+            Inventory.instance.useItem(1);
         }
     }
 
