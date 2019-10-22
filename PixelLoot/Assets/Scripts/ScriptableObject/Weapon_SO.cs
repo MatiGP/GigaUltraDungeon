@@ -6,10 +6,28 @@ public class Weapon_SO : Item_SO
 {
     public int weaponMinDamage;
     public int weaponMaxDamage;
+    public weaponType weaponType;
+
+    public GameObject projectileIfPossible;
 
     public override void Use()
     {
         Inventory.instance.weaponHolder.GetComponent<SpriteRenderer>().sprite = itemIcon;
         Inventory.instance.weaponHolder.GetComponent<MeleeWeaponDamage>().weapon = this;
+
+        switch (weaponType)
+        {
+            case weaponType.Melee:
+                Inventory.instance.weaponHolder.AddComponent<ThrowMeleeWeapon>();
+                break;
+            case weaponType.Bow:
+                Inventory.instance.weaponHolder.AddComponent<BowScript>();
+                break;
+            case weaponType.Staff:
+                Inventory.instance.weaponHolder.AddComponent<CastSpellWithStaff>();
+                break;
+        }
     }
 }
+
+public enum weaponType { Melee, Staff, Bow }

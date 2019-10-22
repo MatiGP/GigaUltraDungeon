@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ThrowMeleeWeapon : MonoBehaviour
 {
-    public Transform playerPosition;
+    private Transform playerPosition;
     private Vector2 throwStartPos;
     bool returnWeapon;
     bool canThrowWeapon;
@@ -13,6 +13,10 @@ public class ThrowMeleeWeapon : MonoBehaviour
     Vector3 scale;
 
     // Update is called once per frame
+    private void Start()
+    {
+        playerPosition = transform.parent;
+    }
     void Update()
     {
         hasWeapon = GetComponent<MeleeWeaponDamage>().weapon ? true : false;
@@ -32,6 +36,7 @@ public class ThrowMeleeWeapon : MonoBehaviour
         {
             ReturnWeapon();
         }
+        Debug.Log(playerPosition.position);
     }
 
     private void ReturnWeapon()

@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acd50eadbb06d8a43aec6c4a90f0bebb, type: 3}
-  m_Name: CommonSword
+  m_Name: Common Sword
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 18fcf09a141c3a94fbd33dfa4ec66f09, type: 3}
   itemName: Common Sword
   weaponMinDamage: 2
   weaponMaxDamage: 4
+  weaponType: 0
+  projectileIfPossible: {fileID: 0}

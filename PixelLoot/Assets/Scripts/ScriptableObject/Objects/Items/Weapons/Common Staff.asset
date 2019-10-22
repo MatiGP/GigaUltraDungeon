@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd50eadbb06d8a43aec6c4a90f0bebb, type: 3}
+  m_Name: Common Staff
+  m_EditorClassIdentifier: 
+  itemIcon: {fileID: 21300000, guid: e41c440a856b0f6469a71c5d8f805aa7, type: 3}
+  itemName: Common Staff
+  weaponMinDamage: 1
+  weaponMaxDamage: 4
+  weaponType: 1
+  projectileIfPossible: {fileID: 2304334219198701879, guid: ac95c05a518d8f84894fee6a9268af37,
+    type: 3}

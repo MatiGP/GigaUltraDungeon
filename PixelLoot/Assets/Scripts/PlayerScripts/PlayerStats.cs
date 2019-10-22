@@ -33,6 +33,8 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
+        
+
         characterMaxHealth = character.characterBaseHealth + character.baseStats[3];
         characterCurrentHealth = characterMaxHealth;
         characterMaxMana = character.characterBaseMana + character.baseStats[0];
@@ -76,5 +78,16 @@ public class PlayerStats : MonoBehaviour
             characterCurrentMana = characterCurrentMana - (characterCurrentMana % characterMaxMana);
         }
         UpdateBars();
+        canCastSpells = true;
+    }
+
+    public void SpendMana(int manaAmount)
+    {
+        characterCurrentMana -= manaAmount;
+        UpdateBars();
+        if(characterCurrentMana <= 0)
+        {
+            canCastSpells = false;
+        }
     }
 }
