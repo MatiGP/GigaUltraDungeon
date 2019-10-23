@@ -27,12 +27,7 @@ public class PlayerController : MonoBehaviour
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), 0);
 
         rb2d.velocity = direction * moveSpeed;
-        animator.SetBool("IsRunning", direction.x != 0);
-
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            GetComponent<PlayerStats>().TakeDamage(4);
-        }
+        animator.SetBool("IsRunning", direction.x != 0);     
 
         if (GetComponent<PlayerStats>() && isGrounded)
         {
@@ -41,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.L))
         {
-            Inventory.instance.useItem(0);
+            Inventory.instance.useItem(1);
         }
     }
 

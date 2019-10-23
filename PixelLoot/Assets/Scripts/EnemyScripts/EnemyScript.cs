@@ -1,30 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.AI;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyScript : MonoBehaviour
 {
-    public float tauntRange = 10;
-    Transform target;
-    public int health = 10;
-    // Start is called before the first frame update
-    void Start()
+    public Enemy_SO enemyTemplate;
+    public Image enemyHealthBar;
+
+    private int enemyCurrentHealth;
+    private int enemyMaxHealth;
+
+    private void Start()
     {
-        
+        enemyMaxHealth = enemyTemplate.enemyHealth;
+        enemyCurrentHealth = enemyMaxHealth;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(int damage)
     {
-        if(health <= 0)
+        enemyCurrentHealth -= damage;
+        UpdateUI();
+        if(enemyCurrentHealth <= 0)
         {
             Destroy(gameObject);
         }
-    }
-
-    private void OnDrawGizmosSelected()
-    {
         
     }
+
+    void UpdateUI()
+    {
+        enemyHealthBar.fillAmount = (float)enemyCurrentHealth / enemyMaxHealth;
+    }
+
 }

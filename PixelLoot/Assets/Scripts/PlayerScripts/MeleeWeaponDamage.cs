@@ -24,7 +24,7 @@ public class MeleeWeaponDamage : MonoBehaviour
         if (collision.tag == "Enemy")
         {
             randomDamage = Random.Range(minDamage, maxDamage);
-            collision.gameObject.GetComponent<EnemyScript>().health -= randomDamage;
+            collision.gameObject.GetComponent<EnemyScript>().TakeDamage(randomDamage);
         }
     }
 }

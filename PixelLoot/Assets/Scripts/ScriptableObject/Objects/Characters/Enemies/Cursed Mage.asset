@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273df237d0229214695b7834b6ca742e, type: 3}
+  m_Name: Cursed Mage
+  m_EditorClassIdentifier: 
+  enemyName: Cursed Mage
+  enemyHealth: 5
+  enemySpeed: 5
+  projectile: {fileID: 322650785364341849, guid: 45be16f2611362942907780bb936e3ad,
+    type: 3}

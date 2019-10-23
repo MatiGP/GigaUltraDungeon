@@ -25,7 +25,7 @@ public class ArrowScript : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<EnemyScript>().health -= 3;
+            collision.gameObject.GetComponent<EnemyScript>().TakeDamage(3);
             Destroy(gameObject);
         }
     }

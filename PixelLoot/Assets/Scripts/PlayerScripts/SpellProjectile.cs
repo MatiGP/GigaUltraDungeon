@@ -29,7 +29,7 @@ public class SpellProjectile : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<EnemyScript>().health -= 5;
+            collision.gameObject.GetComponent<EnemyScript>().TakeDamage(2);
             Destroy(gameObject);
         }
     }
