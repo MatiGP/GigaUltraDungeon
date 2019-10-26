@@ -41,7 +41,7 @@ public class Inventory : MonoBehaviour
 
     public void useItem(int itemIndex)
     {
-        items[itemIndex].Use();
+        items[itemIndex]?.Use();
         items[itemIndex] = null;
         ui.UpdateUI();
     }

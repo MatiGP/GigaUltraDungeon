@@ -2,21 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpellProjectile : MonoBehaviour
+public class EnemySpellCast : MonoBehaviour
 {
     public float speed;
     public float lifeTime;
 
-
     private void Start()
     {
         Invoke("DestroyProjectile", lifeTime);
-        
     }
 
     private void Update()
     {
-        transform.Translate(Vector2.up * speed * Time.deltaTime);        
+        transform.Translate(Vector2.up * speed * Time.deltaTime);
     }
 
     void DestroyProjectile()
@@ -26,9 +24,9 @@ public class SpellProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<EnemyScript>().TakeDamage(2);
+            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(2);
             Destroy(gameObject);
         }
     }

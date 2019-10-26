@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 322650785364341829}
   - component: {fileID: 322650785364341828}
-  - component: {fileID: 322650785364341831}
   - component: {fileID: 322650785364341830}
+  - component: {fileID: -3637864608812861249}
   m_Layer: 0
   m_Name: EnemySpellCastProjectile
   m_TagString: Untagged
@@ -83,20 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &322650785364341831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 322650785364341849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da3c3eaa1583bf249a396908ac6a846e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  lifeTime: 1.5
 --- !u!61 &322650785364341830
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -123,6 +109,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.55, y: 0.55}
   m_EdgeRadius: 0
+--- !u!114 &-3637864608812861249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322650785364341849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bfca0709441cdb4d9de38b3de841bcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  lifeTime: 1.5
 --- !u!1001 &7166297161827912553
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -134,41 +134,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Particle System
-      objectReference: {fileID: 0}
-    - target: {fileID: 7026643158201555789, guid: bb29cee17f81dc440a1e2b6fc9727fd0,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.29005337
-      objectReference: {fileID: 0}
-    - target: {fileID: 7026643158201555789, guid: bb29cee17f81dc440a1e2b6fc9727fd0,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.00502038
-      objectReference: {fileID: 0}
-    - target: {fileID: 7026643158201555789, guid: bb29cee17f81dc440a1e2b6fc9727fd0,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7026643158201555789, guid: bb29cee17f81dc440a1e2b6fc9727fd0,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7026643158201555789, guid: bb29cee17f81dc440a1e2b6fc9727fd0,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 7026643158201555789, guid: bb29cee17f81dc440a1e2b6fc9727fd0,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7026643158201555789, guid: bb29cee17f81dc440a1e2b6fc9727fd0,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 7026643158201555789, guid: bb29cee17f81dc440a1e2b6fc9727fd0,
         type: 3}

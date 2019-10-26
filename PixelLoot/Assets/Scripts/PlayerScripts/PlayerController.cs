@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public int moveSpeed;
-    public int jumpForce = 100;
 
     private Rigidbody2D rb2d;
     private Animator animator;
@@ -24,25 +23,21 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        direction = new Vector2(Input.GetAxisRaw("Horizontal"), 0);
+        direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        direction = direction.normalized;
 
         rb2d.velocity = direction * moveSpeed;
-        animator.SetBool("IsRunning", direction.x != 0);     
+        animator.SetBool("IsRunning", direction.x != 0 || direction.y != 0);
 
-        if (GetComponent<PlayerStats>() && isGrounded)
+        if (Input.GetKeyDown(KeyCode.X))
         {
-            KnockbackOnDamage();
+            Inventory.instance.items[0].Use();
         }
-
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            Inventory.instance.useItem(1);
-        }
+      
     }
 
     private void LateUpdate()
-    {
-        Vector3 localScale = transform.localScale;
+    {     
 
         if(direction.x > 0)
         {
@@ -52,23 +47,15 @@ public class PlayerController : MonoBehaviour
             facingRight = false;
         }
 
-        if((facingRight && (localScale.x < 0)) || (!facingRight && (localScale.x > 0)))
+        if ((facingRight && (transform.rotation.y <= 180)))
         {
-            localScale.x *= -1;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
-
-        transform.localScale = localScale;
-
-        isGrounded = Physics2D.OverlapArea(
-            new Vector2(transform.position.x - 0.5f, transform.position.y - 0.5f),
-            new Vector2(transform.position.x + 0.5f, transform.position.y - 0.51f), groundLayerMask
-            );
-    }
-
-    void KnockbackOnDamage()
-    {
-        rb2d.AddForce(new Vector2(-20, 20));
-        GetComponent<PlayerStats>().TookDamage = false;
+        if(!facingRight && (transform.rotation.y >= 0))
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+      
     }
 
 
