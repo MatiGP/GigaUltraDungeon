@@ -8,7 +8,7 @@ public class EnemyScript : MonoBehaviour
     public bool playerSpotted;
     public CasterEnemy_SO enemyTemplate;
     public Image enemyHealthBar;
-    
+    public List<GameObject> drop = new List<GameObject>();
 
     private int enemyCurrentHealth;
     private int enemyMaxHealth;
@@ -24,9 +24,12 @@ public class EnemyScript : MonoBehaviour
     public void TakeDamage(int damage)
     {
         enemyCurrentHealth -= damage;
+        animator.SetTrigger("attack");
+        playerSpotted = true;
         UpdateUI();
         if(enemyCurrentHealth <= 0)
         {
+            Instantiate(drop[Random.Range(0, drop.Count - 1)], transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
         

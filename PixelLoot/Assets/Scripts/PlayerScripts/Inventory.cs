@@ -25,24 +25,26 @@ public class Inventory : MonoBehaviour
         
     }
 
-    public void addItem(Item_SO item)
+    public bool addItem(Item_SO item)
     {
         for(int i = 0; i < 5; i++)
         {
             if(items[i] == null)
             {
                 items[i] = item;
-                break;
+                ui.UpdateUI();
+                return true;
+
             }
             
         }
-        ui.UpdateUI();
+        return false;
     }
 
     public void useItem(int itemIndex)
     {
         items[itemIndex]?.Use();
-        items[itemIndex] = null;
+        items[itemIndex]= null;
         ui.UpdateUI();
     }
 }
