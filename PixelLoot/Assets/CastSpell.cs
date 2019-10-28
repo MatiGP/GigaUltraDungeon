@@ -8,6 +8,8 @@ public class CastSpell : StateMachineBehaviour
     public float startTimeBtwCasts;
     private float timeBtwCasts;
     private Transform playerPos;
+    private Vector3 difference;
+    private float rotz;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -19,11 +21,18 @@ public class CastSpell : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.SetFloat("distanceFromThePlayer", Vector2.Distance(animator.gameObject.transform.position, playerPos.position));
-        Vector3 difference = animator.transform.position - playerPos.position;
-        float rotz = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        if (playerPos != null)
+        {
+            animator.SetFloat("distanceFromThePlayer", Vector2.Distance(animator.gameObject.transform.position, playerPos.position));
+            difference = animator.transform.position - playerPos.position;
+            rotz = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        }
+        else
+        {
+            playerPos = null;
+        }         
 
-        if (timeBtwCasts <= 0)
+        if (timeBtwCasts <= 0 && animator.GetBool("playerSpotted"))
         {
             Instantiate(whatToSpawn, animator.transform.position, Quaternion.Euler(0f,0f, rotz+90));
             timeBtwCasts = startTimeBtwCasts;
@@ -36,7 +45,7 @@ public class CastSpell : StateMachineBehaviour
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
+    {       
         animator.ResetTrigger("attack");
     }
 

@@ -6,20 +6,14 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
     public PlayableChar_SO character;
+    public CharacterStatsUI charactersUI;
     public static PlayerStats instance;
 
-    public Image healthBar;
-    public Image characterImage;
-    public Image manaBar;
-    [HideInInspector]
     public int characterCurrentHealth;
-    [HideInInspector]
     public int characterCurrentMana;
-
-    int characterMaxHealth;
-    int characterMaxMana;
-    [HideInInspector]
-    public bool TookDamage;
+    private int characterMaxHealth;
+    private int characterMaxMana;
+  
     [HideInInspector]
     public bool canCastSpells;
     
@@ -29,65 +23,57 @@ public class PlayerStats : MonoBehaviour
         {
             instance = this;
         }
-    }
-
-    private void Start()
-    {
-        
-
         characterMaxHealth = character.characterBaseHealth + character.baseStats[3];
         characterCurrentHealth = characterMaxHealth;
         characterMaxMana = character.characterBaseMana + character.baseStats[0];
         characterCurrentMana = characterMaxMana;
-
-        characterImage.sprite = character.characterSprite;
-    }
+    }    
 
     public void TakeDamage(int damageTaken)
     {
         characterCurrentHealth -= damageTaken;
         Debug.Log("Taking damage! Health remaining: " + characterCurrentHealth + " out of " + characterMaxHealth);
-        UpdateBars();
-        if(characterCurrentHealth <= 0)
+        charactersUI.UpdateBars();
+        if (characterCurrentHealth <= 0)
         {
             Destroy(gameObject);
         }
     }
 
-    void UpdateBars()
-    {
-        healthBar.fillAmount = (float)characterCurrentHealth / characterMaxHealth;
-        manaBar.fillAmount = (float)characterCurrentMana / characterMaxMana;
-    }
 
     public void RestoreHealth(int healthAmount)
     {
         characterCurrentHealth += healthAmount;
-        if(characterCurrentHealth > characterMaxHealth)
+        charactersUI.UpdateBars();
+        if (characterCurrentHealth > characterMaxHealth)
         {
             characterCurrentHealth = characterCurrentHealth - (characterCurrentHealth % characterMaxHealth);
         }
-        UpdateBars();
     }
 
     public void RestoreMana(int manaAmount)
     {
         characterCurrentMana += manaAmount;
+        charactersUI.UpdateBars();
         if (characterCurrentMana > characterMaxMana)
         {
             characterCurrentMana = characterCurrentMana - (characterCurrentMana % characterMaxMana);
         }
-        UpdateBars();
         canCastSpells = true;
     }
 
     public void SpendMana(int manaAmount)
     {
         characterCurrentMana -= manaAmount;
-        UpdateBars();
-        if(characterCurrentMana <= 0)
-        {
-            canCastSpells = false;
-        }
+        charactersUI.UpdateBars();
+    }
+
+    public float GetHealthPercentage()
+    {
+        return (float)characterCurrentHealth / characterMaxHealth;
+    }
+    public float GetManaPercentage()
+    {
+        return (float)characterCurrentMana / characterMaxMana;
     }
 }

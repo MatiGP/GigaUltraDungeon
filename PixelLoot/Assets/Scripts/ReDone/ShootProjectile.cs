@@ -15,7 +15,7 @@ public class ShootProjectile : MonoBehaviour
     {
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         rotz = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rotz + offset);
+        //transform.rotation = Quaternion.Euler(0f, 0f, rotz + offset);
 
         if (projectile == null && GetComponent<MeleeWeaponDamage>().weapon != null)
         {
@@ -35,13 +35,9 @@ public class ShootProjectile : MonoBehaviour
         }
     }
 
-    public virtual void Shoot()
-    {
-        if (PlayerStats.instance.characterCurrentMana > 0)
-        {
-            PlayerStats.instance.SpendMana(2);
-            Instantiate(projectile, transform.position, Quaternion.Euler(0f, 0f, rotz + offset));
-            timeBtwShots = startTimeBtwShots;
-        }
+    public void Shoot()
+    {   
+        Instantiate(projectile, transform.position, Quaternion.Euler(0f, 0f, rotz + offset));
+        timeBtwShots = startTimeBtwShots;
     }
 }

@@ -17,4 +17,4 @@ public class PlayableChar_SO : ScriptableObject
 
     
 }
-public enum PrimaryStat { Int, Str, Dex };
+public enum PrimaryStat { INT, STR, DEX };

@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     public float speed;
     public float lifeTime;
     public int damage;
+    public GameObject destroyProjectileParicleEffect;
     private void Start()
     {
         Invoke("DestroyProjectile", lifeTime);
@@ -20,6 +21,7 @@ public class Projectile : MonoBehaviour
 
     void DestroyProjectile()
     {
+        Instantiate(destroyProjectileParicleEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
@@ -28,7 +30,7 @@ public class Projectile : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<EnemyScript>().TakeDamage(damage);
-            Destroy(gameObject);
+            DestroyProjectile();
         }
     }
 }

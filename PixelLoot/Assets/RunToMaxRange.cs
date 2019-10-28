@@ -12,7 +12,16 @@ public class RunToMaxRange : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+        try
+        {
+            playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+        catch
+        {
+            Debug.Log("No player in the area");
+        }
+        
+        
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -36,11 +45,12 @@ public class RunToMaxRange : StateMachineBehaviour
             if (Vector2.Distance(playerPos.position, animator.transform.position) > Attackrange)
             {
                 animator.transform.position = Vector2.MoveTowards(animator.transform.position, playerPos.position, 5 * Time.deltaTime);
+                animator.SetBool("reachedThePlayer", false);
 
             }
             else
             {
-                animator.SetTrigger("attack");                
+                animator.SetBool("reachedThePlayer", true);                
             }
         }
     }

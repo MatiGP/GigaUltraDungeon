@@ -7,8 +7,10 @@ public class Weapon_SO : Item_SO
     public int weaponMinDamage;
     public int weaponMaxDamage;
     public weaponType weaponType;
+    public statScaling scaling;
 
     public GameObject projectileIfPossible;
+    public GameObject particleOnHit;
 
     public override void Use()
     {
@@ -31,17 +33,18 @@ public class Weapon_SO : Item_SO
 
         switch (weaponType)
         {
-            case weaponType.Melee:
+            case weaponType.MELEE:
                 Inventory.instance.weaponHolder.AddComponent<ThrowMeleeWeapon>();
                 break;
-            case weaponType.Bow:
+            case weaponType.BOW:
                 Inventory.instance.weaponHolder.AddComponent<BowScript>();
                 break;
-            case weaponType.Staff:
+            case weaponType.STAFF:
                 Inventory.instance.weaponHolder.AddComponent<CastSpellWithStaff>();
                 break;
         }
     }
 }
 
-public enum weaponType { Melee, Staff, Bow }
+public enum weaponType { MELEE, STAFF, BOW }
+public enum statScaling { INT, STR, DEX}

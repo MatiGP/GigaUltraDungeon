@@ -6,6 +6,7 @@ public class SpellProjectile : MonoBehaviour
 {
     public float speed;
     public float lifeTime;
+    public GameObject particle;
 
 
     private void Start()
@@ -21,7 +22,9 @@ public class SpellProjectile : MonoBehaviour
 
     void DestroyProjectile()
     {
+        Instantiate(particle, transform.position, Quaternion.identity);
         Destroy(gameObject);
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -29,6 +32,7 @@ public class SpellProjectile : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<EnemyScript>().TakeDamage(2);
+            Instantiate(particle, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

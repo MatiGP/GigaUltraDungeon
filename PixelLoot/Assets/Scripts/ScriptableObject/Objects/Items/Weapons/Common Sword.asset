@@ -17,4 +17,6 @@ MonoBehaviour:
   weaponMinDamage: 2
   weaponMaxDamage: 4
   weaponType: 0
+  scaling: 1
   projectileIfPossible: {fileID: 0}
+  particleOnHit: {fileID: 0}

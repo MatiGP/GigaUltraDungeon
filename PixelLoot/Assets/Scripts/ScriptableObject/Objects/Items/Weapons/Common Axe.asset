@@ -16,3 +16,7 @@ MonoBehaviour:
   itemName: Common Axe
   weaponMinDamage: 10
   weaponMaxDamage: 20
+  weaponType: 0
+  scaling: 1
+  projectileIfPossible: {fileID: 0}
+  particleOnHit: {fileID: 0}

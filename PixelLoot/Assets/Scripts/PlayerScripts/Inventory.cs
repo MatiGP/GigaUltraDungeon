@@ -42,8 +42,13 @@ public class Inventory : MonoBehaviour
     }
 
     public void useItem(int itemIndex)
-    {
+    {       
         items[itemIndex]?.Use();
+        if (items[itemIndex] is Weapon_SO)
+        {
+            Debug.Log("Equipped a weapon : " + items[itemIndex].itemName);
+            //weaponHolder.GetComponent<WeaponDamage>().UpdateWeaponDamage();
+        }
         items[itemIndex]= null;
         ui.UpdateUI();
     }

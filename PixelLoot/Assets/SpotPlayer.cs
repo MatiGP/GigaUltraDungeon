@@ -15,7 +15,7 @@ public class SpotPlayer : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            es.playerSpotted = true;
+            es.animator.SetBool("playerSpotted", true);
         }
     }
 
@@ -23,7 +23,7 @@ public class SpotPlayer : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            es.playerSpotted = false;
+            //es.playerSpotted = false;
         }
     }
 }

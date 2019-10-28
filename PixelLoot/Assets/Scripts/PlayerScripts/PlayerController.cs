@@ -8,11 +8,8 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb2d;
     private Animator animator;
-    private bool isGrounded;
     private bool facingRight = true;
     private Vector2 direction;
-
-    public LayerMask groundLayerMask;
 
 
     private void Start()

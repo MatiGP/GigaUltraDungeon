@@ -5,14 +5,15 @@ using UnityEngine.UI;
 
 public class EnemyScript : MonoBehaviour
 {
-    public bool playerSpotted;
     public CasterEnemy_SO enemyTemplate;
     public Image enemyHealthBar;
+    [HideInInspector]
+    public Animator animator;
+    public GameObject deathParticle;
     public List<GameObject> drop = new List<GameObject>();
 
     private int enemyCurrentHealth;
     private int enemyMaxHealth;
-    private Animator animator;
 
     private void Start()
     {
@@ -23,15 +24,9 @@ public class EnemyScript : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        enemyCurrentHealth -= damage;
-        animator.SetTrigger("attack");
-        playerSpotted = true;
+        enemyCurrentHealth -= damage;        
         UpdateUI();
-        if(enemyCurrentHealth <= 0)
-        {
-            Instantiate(drop[Random.Range(0, drop.Count - 1)], transform.position, Quaternion.identity);
-            Destroy(gameObject);
-        }
+        animator.SetBool("playerSpotted", true);      
         
     }
 
@@ -47,13 +42,13 @@ public class EnemyScript : MonoBehaviour
 
     private void Update()
     {
-        if (playerSpotted)
+        if (enemyCurrentHealth <= 0)
         {
-            animator.SetBool("playerSpotted", true);
-        }
-        else
-        {
-            animator.SetBool("playerSpotted", false);
+            Instantiate(deathParticle, transform.position, Quaternion.identity);
+            Instantiate(drop[Random.Range(0, drop.Count - 1)], transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
+ 
+
 }
