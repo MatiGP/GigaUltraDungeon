@@ -11,6 +11,7 @@ public class ThrowMeleeWeapon : MonoBehaviour
     bool canThrowWeapon;
     bool hasWeapon;
     Vector3 scale;
+    Vector2 range = new Vector2(7, 7);
 
     // Update is called once per frame
     private void Start()
@@ -21,7 +22,7 @@ public class ThrowMeleeWeapon : MonoBehaviour
     {
         hasWeapon = GetComponent<MeleeWeaponDamage>().weapon ? true : false;
 
-        if (Input.GetKeyDown(KeyCode.R) && !canThrowWeapon && hasWeapon)
+        if (Input.GetMouseButtonDown(0) && !canThrowWeapon && hasWeapon)
         {
             canThrowWeapon = true;
             throwStartPos = new Vector2(playerPosition.position.x, playerPosition.position.y);
@@ -36,25 +37,13 @@ public class ThrowMeleeWeapon : MonoBehaviour
         {
             ReturnWeapon();
         }
-        Debug.Log(playerPosition.position);
     }
 
     private void ReturnWeapon()
     {
         
-        if (Math.Abs(Vector2.Distance(playerPosition.position, transform.position)) > 0.1f)
-        {
-            if(scale.x < 0)
-            {
-                transform.position -= (new Vector3(-5, 0) * Time.deltaTime);
-            }
-            else
+        
 
-            {
-                transform.position += (new Vector3(-5, 0) * Time.deltaTime);
-            }      
-            transform.Rotate(0, 0, 15);
-        }
         if(Math.Abs(Vector2.Distance(playerPosition.position, transform.position)) <= 0.1f)
         {
             gameObject.transform.parent = playerPosition.gameObject.transform;
@@ -70,19 +59,7 @@ public class ThrowMeleeWeapon : MonoBehaviour
     {
         gameObject.transform.parent = null;
 
-        if (Math.Abs(Vector2.Distance(throwStartPos, transform.position)) <= 5f)
-        {
-            if(scale.x < 0)
-            {
-                transform.position -= new Vector3(7, 0) * Time.deltaTime;
-            }
-            else
-            {
-                transform.position += new Vector3(7, 0) * Time.deltaTime;
-            }
-            
-            transform.Rotate(0, 0, -15);
-        }
+        transform.position = Vector2.MoveTowards(throwStartPos, throwStartPos + range, 6 * Time.deltaTime);
 
         returnWeapon = Math.Abs(Vector2.Distance(throwStartPos, transform.position)) > 5f ? true : false;
     }

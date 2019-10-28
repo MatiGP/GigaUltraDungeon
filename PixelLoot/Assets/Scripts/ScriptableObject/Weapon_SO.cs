@@ -9,15 +9,16 @@ public class Weapon_SO : Item_SO
     public weaponType weaponType;
 
     public GameObject projectileIfPossible;
-    public GameObject player;
 
     public override void Use()
     {
         if(Inventory.instance.weaponHolder.GetComponent<MeleeWeaponDamage>().weapon != null)
         {
-            if (Inventory.instance.addItem(this))
+            if (Inventory.instance.addItem(Inventory.instance.weaponHolder.GetComponent<MeleeWeaponDamage>().weapon))
             {
-           
+                Destroy(Inventory.instance.weaponHolder.gameObject.GetComponent<ThrowMeleeWeapon>());
+                Destroy(Inventory.instance.weaponHolder.gameObject.GetComponent<BowScript>());
+                Destroy(Inventory.instance.weaponHolder.gameObject.GetComponent<CastSpellWithStaff>());
             }
             else
             {

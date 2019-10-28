@@ -513,11 +513,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CursedMage
       objectReference: {fileID: 0}
-    - target: {fileID: 8426583245027195437, guid: dd6bbac4202fe6f478903f9f79f94f04,
-        type: 3}
-      propertyPath: m_Radius
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 4442315074135199489, guid: dd6bbac4202fe6f478903f9f79f94f04,
         type: 3}
       propertyPath: m_LocalPosition.x
