@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: Common Sword
   weaponMinDamage: 2
   weaponMaxDamage: 4
+  timeBetweenAttacks: 1
   weaponType: 0
   scaling: 1
-  projectileIfPossible: {fileID: 0}
-  particleOnHit: {fileID: 0}
+  projectile: {fileID: 0}

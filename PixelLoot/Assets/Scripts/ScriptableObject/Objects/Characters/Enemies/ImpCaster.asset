@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 273df237d0229214695b7834b6ca742e, type: 3}
-  m_Name: Cursed Mage
+  m_Name: ImpCaster
   m_EditorClassIdentifier: 
-  enemyName: Cursed Mage
-  enemyHealth: 20
-  enemySpeed: 5
+  enemyName: Imp
+  enemyHealth: 3
+  enemySpeed: 8
   projectile: {fileID: 322650785364341849, guid: 45be16f2611362942907780bb936e3ad,
     type: 3}

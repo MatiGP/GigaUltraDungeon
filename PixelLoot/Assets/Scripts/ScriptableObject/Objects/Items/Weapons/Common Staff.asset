@@ -16,9 +16,8 @@ MonoBehaviour:
   itemName: Common Staff
   weaponMinDamage: 1
   weaponMaxDamage: 4
+  timeBetweenAttacks: 0.7
   weaponType: 1
   scaling: 0
-  projectileIfPossible: {fileID: 2304334219198701879, guid: ac95c05a518d8f84894fee6a9268af37,
-    type: 3}
-  particleOnHit: {fileID: 1701990123341974380, guid: 59c4aa4368cf4ef488db9b613d220763,
+  projectile: {fileID: 2304334219198701879, guid: ac95c05a518d8f84894fee6a9268af37,
     type: 3}
