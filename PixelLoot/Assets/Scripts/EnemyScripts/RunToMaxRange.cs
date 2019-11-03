@@ -5,14 +5,14 @@ using UnityEngine;
 public class RunToMaxRange : StateMachineBehaviour
 {
     public float Attackrange;
-
+    private Rigidbody2D rigidbody2D;
     private bool facingRight;
     private Transform playerPos;
-    Collider2D[] hits;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        rigidbody2D = animator.GetComponent<Rigidbody2D>();
         try
         {
             playerPos = GameObject.FindGameObjectWithTag("Player").transform;
@@ -21,7 +21,6 @@ public class RunToMaxRange : StateMachineBehaviour
         {
             Debug.Log("No player in the area");
         }
-        hits = Physics2D.OverlapCircleAll(animator.transform.position, 3f);
 
     }
 
@@ -44,8 +43,11 @@ public class RunToMaxRange : StateMachineBehaviour
             }
             if (Vector2.Distance(playerPos.position, animator.transform.position) > Attackrange)
             {
-                animator.transform.position = Vector2.MoveTowards(animator.transform.position, playerPos.position, 5 * Time.deltaTime);
+                Vector3 dir = (playerPos.position - animator.transform.position).normalized;
+                dir.z = 0;
+                rigidbody2D.MovePosition(animator.transform.position + dir * 5 * Time.deltaTime);
                 animator.SetBool("reachedThePlayer", false);
+                
             }
             else
             {

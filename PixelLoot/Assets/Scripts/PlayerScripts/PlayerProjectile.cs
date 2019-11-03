@@ -29,6 +29,11 @@ public class PlayerProjectile : MonoBehaviour
             collision.gameObject.GetComponent<EnemyScript>().TakeDamage(damage);
             DestroyProjectile();
         }
+        if (collision.CompareTag("Wall"))
+        {
+            Debug.Log("hit!");
+            DestroyProjectile();
+        }
     }
 
     void DestroyProjectile()

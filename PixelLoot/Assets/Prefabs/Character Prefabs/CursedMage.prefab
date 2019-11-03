@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 383696264c18da34c9fe6fef1eab4b59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyTemplate: {fileID: 11400000, guid: fbdabc983c4f0794290c60431c2b8767, type: 2}
+  character: {fileID: 11400000, guid: fbdabc983c4f0794290c60431c2b8767, type: 2}
   enemyHealthBar: {fileID: 4442315074041279651}
   animator: {fileID: 0}
   deathParticle: {fileID: 3542669892691081416, guid: 30c19e0c585f260409598b23643f435d,

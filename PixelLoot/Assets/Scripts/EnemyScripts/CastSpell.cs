@@ -15,7 +15,15 @@ public class CastSpell : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         whatToSpawn = animator.GetComponent<EnemyScript>().character.projectile;
-        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+        try
+        {
+            playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+        catch
+        {
+            animator.ResetTrigger("attack");
+        }
+       
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

@@ -29,5 +29,9 @@ public class EnemySpellCast : MonoBehaviour
             collision.gameObject.GetComponent<PlayerStats>().TakeDamage(2);
             Destroy(gameObject);
         }
+        if (collision.CompareTag("Wall"))
+        {
+            DestroyProjectile();
+        }
     }
 }
