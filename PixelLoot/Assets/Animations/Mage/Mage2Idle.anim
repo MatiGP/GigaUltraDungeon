@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MageIdle
+  m_Name: Mage2Idle
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,7 +20,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 2971653748508199937, guid: 24d95152bb6cbab4d81b8404ad8bb12e,
+      value: {fileID: -6621362230890156339, guid: 237a1ea17676e3c49a494a7cb2260e74,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -41,7 +41,7 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 2971653748508199937, guid: 24d95152bb6cbab4d81b8404ad8bb12e, type: 3}
+    - {fileID: -6621362230890156339, guid: 237a1ea17676e3c49a494a7cb2260e74, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

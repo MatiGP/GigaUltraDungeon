@@ -23,6 +23,11 @@ public class BoardCreator : MonoBehaviour
     public GameObject[] floorTiles;
     public GameObject[] wallTiles;
     public GameObject[] outerWallTiles;
+    [Space(2)]
+    [Header("Characters, creatures, tresure to spawn")]
+    public GameObject[] playableChars;
+    public GameObject[] startWeapons;
+    public GameObject[] enemies;
 
     private TileType[][] tiles;
     private Room[] rooms;
@@ -66,7 +71,31 @@ public class BoardCreator : MonoBehaviour
 
         rooms[0].SetupRoom(roomWidth, roomHeight, columns, rows);
 
-        
+        corridors[0].SetupCorridor(rooms[0], corridorLength, roomWidth, roomHeight, columns, rows, true);
+
+        Vector3 playerPos = new Vector3(rooms[0].xPos, rooms[0].yPos, 0f);
+        Instantiate(playableChars[PlayerPrefs.GetInt("chosenChar")], playerPos, Quaternion.identity);
+        Instantiate(startWeapons[PlayerPrefs.GetInt("chosenChar")], new Vector3(playerPos.x + 2, playerPos.y + 2), Quaternion.identity);
+
+        for (int i = 1; i < rooms.Length; i++)
+        {
+            rooms[i] = new Room();
+
+            rooms[i].SetupRoom(roomWidth, roomHeight, columns, rows, corridors[i - 1]);
+
+            if(i < corridors.Length)
+            {
+                corridors[i] = new Corridor();
+
+                corridors[i].SetupCorridor(rooms[i], corridorLength, roomWidth, roomHeight, columns, rows, false);
+            }
+            int rand = Random.Range(0, enemies.Length);
+            int randX = Random.Range(rooms[i].xPos, rooms[i].xPos + rooms[i].roomWidth);
+            int randY = Random.Range(rooms[i].yPos, rooms[i].yPos + rooms[i].roomHeight);
+            Vector3 enemyPos = new Vector3(randX, randY);
+            Instantiate(enemies[rand], enemyPos, Quaternion.identity);
+            
+        }
     }
 
     void SetTilesValuesForRooms()
@@ -126,12 +155,14 @@ public class BoardCreator : MonoBehaviour
         for (int i = 0; i < tiles.Length; i++)
         {
             for(int j = 0; j < tiles[i].Length; j++)
-            {
-                InstantiateFromArray(floorTiles, i, j);
-
+            {                
                 if (tiles[i][j] == TileType.Wall)
                 {
                     InstantiateFromArray(wallTiles, i, j);
+                }
+                else
+                {
+                    InstantiateFromArray(floorTiles, i, j);
                 }
             }
         }

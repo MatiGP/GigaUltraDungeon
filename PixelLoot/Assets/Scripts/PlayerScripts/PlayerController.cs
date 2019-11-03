@@ -1,21 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class PlayerController : MonoBehaviour
 {
     public int moveSpeed;
+    public CinemachineVirtualCamera vcam;
 
+    
     private Rigidbody2D rb2d;
     private Animator animator;
     private bool facingRight = true;
     private Vector2 direction;
 
+    private void Awake()
+    {
+        GameObject vCamGameObject = GameObject.FindGameObjectWithTag("VirtualCamera");
+        vcam = vCamGameObject.GetComponent<CinemachineVirtualCamera>();
+    }
 
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        vcam.Follow = transform;
     }
 
     private void Update()
