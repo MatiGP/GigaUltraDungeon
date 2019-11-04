@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Wall
   - VirtualCamera
+  - Selectable
   layers:
   - Default
   - TransparentFX
@@ -37,9 +38,9 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - MageLayer
+  - HunterLayer
+  - KnightLayer
   m_SortingLayers:
   - name: Default
     uniqueID: 0

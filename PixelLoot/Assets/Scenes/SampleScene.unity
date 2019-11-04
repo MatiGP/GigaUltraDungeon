@@ -369,9 +369,14 @@ MonoBehaviour:
   - {fileID: 3672620932217415006, guid: 56f957652921cb94abf40226c3a0af90, type: 3}
   outerWallTiles:
   - {fileID: 592605119600228701, guid: 1392f0b27e763e94caf9dd20e5eb6f16, type: 3}
-  player: {fileID: 4216117577932197737, guid: ed880e27be1dd384c9fb033379412ecd, type: 3}
-  startWeapon: {fileID: 6168068793686480122, guid: 3dcfbb0c208341940aa5ff6f37a1be64,
-    type: 3}
+  playableChars:
+  - {fileID: 4216117577932197737, guid: ed880e27be1dd384c9fb033379412ecd, type: 3}
+  - {fileID: 860858269561771175, guid: d95a026a208513b489482371cccb22cf, type: 3}
+  - {fileID: 4094446872791474800, guid: 2bdc278d1b464ef4395774a6e631407a, type: 3}
+  startWeapons:
+  - {fileID: 6168068793686480122, guid: 3dcfbb0c208341940aa5ff6f37a1be64, type: 3}
+  - {fileID: 7470204361091653450, guid: b2794236edaf1b141812c9b93755f6e3, type: 3}
+  - {fileID: 6220181981297808656, guid: 5d20c2b191271e5408e98721acd7c71d, type: 3}
   enemies:
   - {fileID: 4493775378123625137, guid: b17c9e228cb8e6b4e94057380d570691, type: 3}
   - {fileID: 4442315074135199494, guid: dd6bbac4202fe6f478903f9f79f94f04, type: 3}

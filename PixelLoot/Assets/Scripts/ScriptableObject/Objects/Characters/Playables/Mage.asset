@@ -15,7 +15,7 @@ MonoBehaviour:
   characterName: Mage
   characterSprite: {fileID: -6621362230890156339, guid: 237a1ea17676e3c49a494a7cb2260e74,
     type: 3}
-  characterBaseHealth: 6
+  characterBaseHealth: 5
   characterBaseMana: 10
   baseStats: 08000000030000000300000004000000
   primaryStat: 0
