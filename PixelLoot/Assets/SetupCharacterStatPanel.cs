@@ -21,6 +21,7 @@ public class SetupCharacterStatPanel : MonoBehaviour
     public void setupWindow(int chosen)
     {
         PlayerPrefs.SetInt("selectedChar", chosen);
+        chosen -= 1;
         characterName.text = playableChars[chosen].characterName;
         characterBaseHealth.text = playableChars[chosen].characterBaseHealth.ToString();
         characterBaseMana.text = playableChars[chosen].characterBaseMana.ToString();
@@ -29,5 +30,6 @@ public class SetupCharacterStatPanel : MonoBehaviour
         characterDex.text = playableChars[chosen].baseStats[2].ToString();
         characterVit.text = playableChars[chosen].baseStats[3].ToString();
         characterScaling.text = playableChars[chosen].primaryStat.ToString();
+        
     }
 }

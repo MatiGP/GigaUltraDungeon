@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
-    public Inventory inventory;
+    private Inventory inventory;
     public Image[] itemIcons;
     
 

@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: e41c440a856b0f6469a71c5d8f805aa7, type: 3}
   itemName: Common Staff
-  weaponMinDamage: 1
-  weaponMaxDamage: 4
-  timeBetweenAttacks: 0.7
+  weaponMinDamage: 3
+  weaponMaxDamage: 7
+  timeBetweenAttacks: 0.9
   weaponType: 1
   scaling: 0
   projectile: {fileID: 2304334219198701879, guid: ac95c05a518d8f84894fee6a9268af37,

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 7d4012aab75e5ec44ae1573afc7a2383, type: 3}
   itemName: Common Axe
-  weaponMinDamage: 2
-  weaponMaxDamage: 5
+  weaponMinDamage: 4
+  weaponMaxDamage: 8
   timeBetweenAttacks: 1.2
   weaponType: 0
   scaling: 1

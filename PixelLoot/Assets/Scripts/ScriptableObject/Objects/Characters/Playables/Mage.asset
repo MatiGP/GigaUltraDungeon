@@ -17,5 +17,5 @@ MonoBehaviour:
     type: 3}
   characterBaseHealth: 5
   characterBaseMana: 10
-  baseStats: 08000000030000000300000004000000
+  baseStats: 09000000030000000300000004000000
   primaryStat: 0

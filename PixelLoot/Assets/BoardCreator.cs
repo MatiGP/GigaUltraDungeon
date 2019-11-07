@@ -6,7 +6,7 @@ public class BoardCreator : MonoBehaviour
 {
     public enum TileType
     {
-        Wall, Floor
+        Wall, Floor,
     }
     [Space(2)]
     [Header("Wymiary Planszy")]
@@ -53,7 +53,6 @@ public class BoardCreator : MonoBehaviour
     void SetupTilesArray()
     {
         tiles = new TileType[columns][];
-
         for(int i = 0; i < tiles.Length; i++)
         {
             tiles[i] = new TileType[rows];
@@ -74,8 +73,8 @@ public class BoardCreator : MonoBehaviour
         corridors[0].SetupCorridor(rooms[0], corridorLength, roomWidth, roomHeight, columns, rows, true);
 
         Vector3 playerPos = new Vector3(rooms[0].xPos, rooms[0].yPos, 0f);
-        Instantiate(playableChars[PlayerPrefs.GetInt("chosenChar")], playerPos, Quaternion.identity);
-        Instantiate(startWeapons[PlayerPrefs.GetInt("chosenChar")], new Vector3(playerPos.x + 2, playerPos.y + 2), Quaternion.identity);
+        Instantiate(playableChars[PlayerPrefs.GetInt("selectedChar")-1], playerPos, Quaternion.identity);
+        Instantiate(startWeapons[PlayerPrefs.GetInt("selectedChar")-1], new Vector3(playerPos.x + 2, playerPos.y + 2), Quaternion.identity);
 
         for (int i = 1; i < rooms.Length; i++)
         {

@@ -16,7 +16,7 @@ public class ShootProjectile : MonoBehaviour
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         rotz = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
 
-        if (projectile == null && GetComponent<WeaponDamage>().weapon != null)
+        if (GetComponent<WeaponDamage>().weapon != null)
         {
             projectile = GetComponent<WeaponDamage>().weapon.projectile;
         }

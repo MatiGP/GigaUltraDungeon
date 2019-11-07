@@ -19,4 +19,5 @@ MonoBehaviour:
   timeBetweenAttacks: 0.6
   weaponType: 2
   scaling: 2
-  projectile: {fileID: 0}
+  projectile: {fileID: 2200475941077369339, guid: 56a7c33a08201524b98db35c83c4da4f,
+    type: 3}

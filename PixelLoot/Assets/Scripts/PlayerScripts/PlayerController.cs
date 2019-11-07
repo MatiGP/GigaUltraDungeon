@@ -4,11 +4,9 @@ using UnityEngine;
 using Cinemachine;
 
 public class PlayerController : MonoBehaviour
-{
+{  
     public int moveSpeed;
-    public CinemachineVirtualCamera vcam;
-
-    
+    private CinemachineVirtualCamera vcam;
     private Rigidbody2D rb2d;
     private Animator animator;
     private bool facingRight = true;
@@ -35,11 +33,23 @@ public class PlayerController : MonoBehaviour
         rb2d.velocity = direction * moveSpeed;
         animator.SetBool("IsRunning", direction.x != 0 || direction.y != 0);
 
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             Inventory.instance.useItem(0);
         }
-      
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Inventory.instance.useItem(1);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            Inventory.instance.useItem(2);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            Inventory.instance.useItem(3);
+        }
+
     }
 
     private void LateUpdate()

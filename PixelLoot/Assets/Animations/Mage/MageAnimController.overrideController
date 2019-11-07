@@ -9,7 +9,7 @@ AnimatorOverrideController:
   m_Name: MageAnimController
   m_Controller: {fileID: 9100000, guid: b8419188c5cd8b04595d3b87a0173dfb, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: 1473ca4ffbb3d5b44a779cde9c4228db, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 5da8eaaa874da384a9c59c204a66b25b, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 5b75e6fb6f47ea542b3e3f26b0c3a7ca, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: 9510221a80108d34f86b9a6201a6d572, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: a7a4f8e5291ef544bbe88679d77cd9fd, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 76ca49e95e9443241a8bb93310209feb, type: 2}

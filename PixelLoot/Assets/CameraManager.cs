@@ -31,19 +31,19 @@ public class CameraManager : MonoBehaviour
     {
         switch (numOfChar)
         {
-            case 0:               
+            case 1:               
                 mageCam.SetActive(true);
                 globalCam.SetActive(false);
                 archerCam.SetActive(false);
                 knightCam.SetActive(false);
                 break;
-            case 1:
+            case 2:
                 mageCam.SetActive(false);
                 globalCam.SetActive(false);
                 archerCam.SetActive(true);
                 knightCam.SetActive(false);
                 break;
-            case 2:
+            case 3:
                 mageCam.SetActive(false);
                 globalCam.SetActive(false);
                 archerCam.SetActive(false);

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Knight
   m_EditorClassIdentifier: 
   characterName: Knight
-  characterSprite: {fileID: 4495478712733764576, guid: 0142cbff1d5786b4b9fde6994c0cb687,
+  characterSprite: {fileID: 2382543463544445115, guid: 0a28a1af511ee9f498fda0eb4bfbe02e,
     type: 3}
   characterBaseHealth: 7
   characterBaseMana: 3
-  baseStats: 02000000070000000400000006000000
+  baseStats: 02000000080000000400000006000000
   primaryStat: 1

@@ -13,7 +13,6 @@ public class PlayerProjectile : MonoBehaviour
     private void Start()
     {
         damage = Inventory.instance.weaponHolder.GetComponent<WeaponDamage>().CalculateRandomWeaponDamage();
-        Debug.Log(damage);
         Invoke("DestroyProjectile", lifeTime);
     }
 
