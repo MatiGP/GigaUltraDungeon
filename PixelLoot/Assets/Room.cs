@@ -28,7 +28,7 @@ public class Room
 
                 break;
             case Direction.East:
-                roomHeight = Mathf.Clamp(roomWidth, 1, rows - corridor.EndPositionX);
+                roomWidth = Mathf.Clamp(roomWidth, 1, columns - corridor.EndPositionX);
                 xPos = corridor.EndPositionX;
 
                 yPos = Random.Range(corridor.EndPositionY - roomHeight + 1, corridor.EndPositionY);

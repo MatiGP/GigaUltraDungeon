@@ -70,7 +70,7 @@ public class Corridor
             case Direction.North:
                 startXPos = Random.Range(room.xPos, room.xPos + room.roomWidth - 1);
                 startYPos = room.yPos + room.roomHeight;
-                maxLength = columns - startYPos - roomHeight.m_Min;
+                maxLength = rows - startYPos - roomHeight.m_Min;
                 break;
             case Direction.East:
                 startXPos = room.xPos + room.roomWidth;

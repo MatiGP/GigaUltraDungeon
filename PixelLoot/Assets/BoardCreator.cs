@@ -14,7 +14,7 @@ public class BoardCreator : MonoBehaviour
     public int rows = 100;
     [Space(2)]
     [Header("Pomieszczenia i korytarze")]
-    public IntRange numRooms = new IntRange(15, 20);
+    public IntRange numRooms = new IntRange(5, 10);
     public IntRange roomWidth = new IntRange(3, 10);
     public IntRange roomHeight = new IntRange(3, 10);
     public IntRange corridorLength = new IntRange(5, 7);
