@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ImpCaster
   m_EditorClassIdentifier: 
   enemyName: Imp
-  enemyHealth: 3
+  enemyHealth: 6
   enemySpeed: 8
   projectile: {fileID: 322650785364341849, guid: 45be16f2611362942907780bb936e3ad,
     type: 3}

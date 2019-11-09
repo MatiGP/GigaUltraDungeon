@@ -15,7 +15,7 @@ MonoBehaviour:
   characterName: Knight
   characterSprite: {fileID: 2382543463544445115, guid: 0a28a1af511ee9f498fda0eb4bfbe02e,
     type: 3}
-  characterBaseHealth: 7
+  characterBaseHealth: 15
   characterBaseMana: 3
   baseStats: 02000000080000000400000006000000
   primaryStat: 1
