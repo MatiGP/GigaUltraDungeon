@@ -70,7 +70,7 @@ public class BoardCreator : MonoBehaviour
 
         rooms[0].SetupRoom(roomWidth, roomHeight, columns, rows);
 
-        corridors[0].SetupCorridor(rooms[0], corridorLength, roomWidth, roomHeight, columns, rows, true);
+        corridors[0].SetupCorridor(rooms[0], corridorLength, roomWidth, roomHeight, columns, rows, true, rooms);
 
         Vector3 playerPos = new Vector3(rooms[0].xPos, rooms[0].yPos, 0f);
         Instantiate(playableChars[PlayerPrefs.GetInt("selectedChar")-1], playerPos, Quaternion.identity);
@@ -80,13 +80,13 @@ public class BoardCreator : MonoBehaviour
         {
             rooms[i] = new Room();
 
-            rooms[i].SetupRoom(roomWidth, roomHeight, columns, rows, corridors[i - 1]);
+            rooms[i].SetupRoom(roomWidth, roomHeight, columns, rows, corridors[i - 1], rooms);
 
             if(i < corridors.Length)
             {
                 corridors[i] = new Corridor();
 
-                corridors[i].SetupCorridor(rooms[i], corridorLength, roomWidth, roomHeight, columns, rows, false);
+                corridors[i].SetupCorridor(rooms[i], corridorLength, roomWidth, roomHeight, columns, rows, false, rooms);
             }
             int rand = Random.Range(0, enemies.Length);
             int randX = Random.Range(rooms[i].xPos, rooms[i].xPos + rooms[i].roomWidth);
@@ -187,7 +187,7 @@ public class BoardCreator : MonoBehaviour
 
         while(currentY <= endingY)
         {
-            InstantiateFromArray(outerWallTiles, currentY, xCoord);
+            InstantiateFromArray(outerWallTiles, xCoord, currentY);
             currentY++;
         }
     }
@@ -198,12 +198,9 @@ public class BoardCreator : MonoBehaviour
 
         while (currentX <= endingX)
         {
-            while (currentX <= endingX)
-            {
-                InstantiateFromArray(outerWallTiles, currentX, yCoord);
-                currentX++;
-            }
-        } 
+            InstantiateFromArray(outerWallTiles, currentX, yCoord);
+            currentX++;
+        }
     }
 
     void InstantiateFromArray(GameObject[] prefabs, float xCoord, float yCoord)

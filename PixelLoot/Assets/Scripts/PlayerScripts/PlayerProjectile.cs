@@ -30,7 +30,6 @@ public class PlayerProjectile : MonoBehaviour
         }
         if (collision.CompareTag("Wall"))
         {
-            Debug.Log("hit!");
             DestroyProjectile();
         }
     }

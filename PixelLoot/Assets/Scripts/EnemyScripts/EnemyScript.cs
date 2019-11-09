@@ -27,11 +27,6 @@ public class EnemyScript : MonoBehaviour
         enemyHealthBar.fillAmount = (float)characterCurrentHealth / characterMaxHealth;
     }
 
-    public void Attack()
-    {
-        Instantiate(character.projectile, transform.position, Quaternion.identity);
-    }
-
     public void TakeDamage(int damage)
     {
         characterCurrentHealth -= damage;

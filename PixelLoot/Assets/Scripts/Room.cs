@@ -10,7 +10,7 @@ public class Room
     public int roomHeight;
     public Direction enteringCorridor;
 
-    public void SetupRoom(IntRange widthRange, IntRange heightRange, int columns, int rows, Corridor corridor)
+    public void SetupRoom(IntRange widthRange, IntRange heightRange, int columns, int rows, Corridor corridor, Room[] prevRooms)
     {
         enteringCorridor = corridor.direction;
 
@@ -22,7 +22,6 @@ public class Room
             case Direction.North:
                 roomHeight = Mathf.Clamp(roomHeight, 1, rows - corridor.EndPositionY);
                 yPos = corridor.EndPositionY;
-
                 xPos = Random.Range(corridor.EndPositionX - roomWidth + 1, corridor.EndPositionX);
                 xPos = Mathf.Clamp(xPos, 0, columns - roomWidth);
 
