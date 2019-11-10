@@ -8,12 +8,13 @@ public class PlayerStats : MonoBehaviour
     public PlayableChar_SO character;
     public CharacterStatsUI charactersUI;
     public static PlayerStats instance;
+    public GameObject deathPanel;
 
     public int characterCurrentHealth;
     public int characterMaxHealth;
     public int characterCurrentMana;
     private int characterMaxMana;
-  
+    private PlayerController controller;
     [HideInInspector]
     public bool canCastSpells;
     
@@ -28,6 +29,7 @@ public class PlayerStats : MonoBehaviour
         characterCurrentHealth = characterMaxHealth;
         characterMaxMana = character.characterBaseMana + character.baseStats[0];
         characterCurrentMana = characterMaxMana;
+        controller = GetComponent<PlayerController>();
     }     
     public void RestoreMana(int manaAmount)
     {
@@ -52,6 +54,9 @@ public class PlayerStats : MonoBehaviour
         characterCurrentHealth -= damageTaken;
         if (characterCurrentHealth <= 0)
         {
+            deathPanel.SetActive(false);
+            controller.vcam.enabled = false;
+
             Destroy(gameObject);
         }
     }

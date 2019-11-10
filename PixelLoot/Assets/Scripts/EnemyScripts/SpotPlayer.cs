@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class SpotPlayer : MonoBehaviour
 {
-    EnemyScript es;
+    //EnemyScript es;
 
     private void Start()
     {
-        es = GetComponentInParent<EnemyScript>();
+       // es = GetComponentInParent<EnemyScript>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            es.animator.SetBool("playerSpotted", true);
+            //es.animator.SetBool("playerSpotted", true);
         }
     }
 

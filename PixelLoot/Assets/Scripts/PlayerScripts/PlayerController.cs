@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 using UnityEngine;
 using Cinemachine;
 
 public class PlayerController : MonoBehaviour
 {  
     public int moveSpeed;
-    private CinemachineVirtualCamera vcam;
+    [HideInInspector]
+    public CinemachineVirtualCamera vcam;
     private Rigidbody2D rb2d;
     private Animator animator;
     private bool facingRight = true;
@@ -27,6 +29,11 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         direction = direction.normalized;
 

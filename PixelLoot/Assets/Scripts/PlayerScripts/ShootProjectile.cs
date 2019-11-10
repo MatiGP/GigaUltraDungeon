@@ -16,12 +16,12 @@ public class ShootProjectile : MonoBehaviour
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         rotz = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
 
-        if (GetComponent<WeaponDamage>().weapon != null)
+        if (GetComponent<WeaponDamage>().weapon)
         {
             projectile = GetComponent<WeaponDamage>().weapon.projectile;
         }
 
-        if (timeBtwShots <= 0)
+        if (timeBtwShots <= 0 && projectile)
         {
             if (Input.GetMouseButtonDown(0))
             {
