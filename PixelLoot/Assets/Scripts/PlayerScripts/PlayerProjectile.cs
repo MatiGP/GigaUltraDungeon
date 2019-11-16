@@ -25,13 +25,10 @@ public class PlayerProjectile : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<EnemyScript>().TakeDamage(damage);
+            //collision.gameObject.GetComponent<EnemyScript>().TakeDamage(damage);
             DestroyProjectile();
         }
-        if (collision.CompareTag("Wall"))
-        {
-            DestroyProjectile();
-        }
+        
     }
 
     void DestroyProjectile()

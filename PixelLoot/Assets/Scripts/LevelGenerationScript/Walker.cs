@@ -220,7 +220,7 @@ public class Walker : MonoBehaviour
         {
             int randomX = (int)Random.Range(visitedPos[i].x - 9, visitedPos[i].x + 3);
             int randomY = (int)Random.Range(visitedPos[i].y - 4, visitedPos[i].y + 2);
-            Instantiate(enemies[Random.Range(0, enemies.Length)], new Vector3(randomX, randomY), Quaternion.identity);
+            Instantiate(enemies[Random.Range(0, 0)], new Vector3(randomX, randomY), Quaternion.identity);
         }
     }
 

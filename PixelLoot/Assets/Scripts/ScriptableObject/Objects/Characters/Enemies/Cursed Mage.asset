@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 273df237d0229214695b7834b6ca742e, type: 3}
+  m_Script: {fileID: 11500000, guid: ed287421fce35e24ebf57384e959a449, type: 3}
   m_Name: Cursed Mage
   m_EditorClassIdentifier: 
   enemyName: Cursed Mage
-  enemyHealth: 20
+  enemyHealth: 15
   enemySpeed: 5
-  projectile: {fileID: 322650785364341849, guid: 45be16f2611362942907780bb936e3ad,
+  enemyDamage: 9
+  projectileOrSummon: {fileID: 322650785364341849, guid: 45be16f2611362942907780bb936e3ad,
     type: 3}
