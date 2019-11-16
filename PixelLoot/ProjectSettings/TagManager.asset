@@ -19,7 +19,7 @@ TagManager:
   - 
   - Ground
   - Room
-  - 
+  - RoomNode
   - 
   - 
   - 
@@ -42,6 +42,15 @@ TagManager:
   - HunterLayer
   - KnightLayer
   m_SortingLayers:
+  - name: Floor
+    uniqueID: 3527695425
+    locked: 0
+  - name: Wall
+    uniqueID: 4069184509
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Characters
+    uniqueID: 2891624565
     locked: 0
