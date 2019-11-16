@@ -2,11 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class StartGame : MonoBehaviour
 {
+    public GameObject loadingScreen;
+    public Slider slider; 
+
     public void LoadLevel()
     {
-        SceneManager.LoadScene(1);
+        StartCoroutine(LoadScene());
+    }
+
+    IEnumerator LoadScene()
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(1);
+        loadingScreen.SetActive(true);
+
+        while (!operation.isDone)
+        {
+            float progress = Mathf.Clamp01(operation.progress / 0.9f);
+
+            slider.value = progress;
+
+            yield return null;
+        }
     }
 }

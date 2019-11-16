@@ -175,12 +175,12 @@ MonoBehaviour:
   - {fileID: 4442315074135199494, guid: dd6bbac4202fe6f478903f9f79f94f04, type: 3}
   - {fileID: 4493775378123625137, guid: b17c9e228cb8e6b4e94057380d570691, type: 3}
   playerCharacters:
-  - {fileID: 4774878869926823993, guid: 3bd8be81585c1c94897aaeb0f8720f54, type: 3}
   - {fileID: 4216117577932197737, guid: ed880e27be1dd384c9fb033379412ecd, type: 3}
+  - {fileID: 4774878869926823993, guid: 3bd8be81585c1c94897aaeb0f8720f54, type: 3}
   - {fileID: 5800442564439778520, guid: 0029f882590babf479d09f2f75814e60, type: 3}
   starterWeapons:
-  - {fileID: 6220181981297808656, guid: 5d20c2b191271e5408e98721acd7c71d, type: 3}
   - {fileID: 6168068793686480122, guid: 3dcfbb0c208341940aa5ff6f37a1be64, type: 3}
+  - {fileID: 6220181981297808656, guid: 5d20c2b191271e5408e98721acd7c71d, type: 3}
   - {fileID: 7470204361091653450, guid: b2794236edaf1b141812c9b93755f6e3, type: 3}
   roomWidth: 15
   roomHeight: 11
@@ -799,7 +799,7 @@ PrefabInstance:
     - target: {fileID: 3493018078869123425, guid: d062adb98d60ef74e9f4cfb688b847b8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3493018078869123428, guid: d062adb98d60ef74e9f4cfb688b847b8,
         type: 3}
@@ -950,6 +950,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: leaveGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493018080294197736, guid: d062adb98d60ef74e9f4cfb688b847b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d062adb98d60ef74e9f4cfb688b847b8, type: 3}

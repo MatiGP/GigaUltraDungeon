@@ -6,10 +6,24 @@ using UnityEngine.SceneManagement;
 public class DeathMenuScript : MonoBehaviour
 {
     public GameObject menu;
+    public GameObject deathMenuUI;
+    public static bool isPlayerDead;
+
+    private void Update()
+    {
+        if (isPlayerDead)
+        {
+            deathMenuUI.SetActive(true);
+        }
+        else
+        {
+            deathMenuUI.SetActive(false);
+        }
+    }
 
     public void disableMenu()
     {
-        menu.SetActive(false);
+        PauseScirpt.isGamePaused = false;
     }
 
     public void RestartGame()

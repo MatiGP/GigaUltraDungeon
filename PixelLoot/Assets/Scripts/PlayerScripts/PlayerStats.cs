@@ -24,7 +24,7 @@ public class PlayerStats : MonoBehaviour
         {
             instance = this;
         }
-
+        DeathMenuScript.isPlayerDead = false;
         characterMaxHealth = character.characterBaseHealth + character.baseStats[3];
         characterCurrentHealth = characterMaxHealth;
         characterMaxMana = character.characterBaseMana + character.baseStats[0];
@@ -54,7 +54,7 @@ public class PlayerStats : MonoBehaviour
         characterCurrentHealth -= damageTaken;
         if (characterCurrentHealth <= 0)
         {
-            deathPanel.SetActive(false);
+            DeathMenuScript.isPlayerDead = true;
             controller.vcam.enabled = false;
 
             Destroy(gameObject);
