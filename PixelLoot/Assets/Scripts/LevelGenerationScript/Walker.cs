@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using System.Linq;
+using Pathfinding;
 public enum Direction
 {
     Up,
@@ -41,15 +43,19 @@ public class Walker : MonoBehaviour
     public Tilemap roomUpRightDown;
     public Tilemap roomUpRightDownLeft;
 
-    Tilemap goRoom;
-    List<Vector2> visitedPos;
-    List<GameObject> marks;
-    // Start is called before the first frame update
+    private Tilemap goRoom;
+    private List<Vector2> visitedPos;
+    private List<GameObject> marks;
+
     void Start()
     {
+        var guo = new GraphUpdateObject();
+        var graphToScan = AstarPath.active.data.gridGraph;
+        
         marks = new List<GameObject>();
         visitedPos = new List<Vector2>();
         SetRoomPositions();
+        //AstarPath.active.UpdateGraphs();
         InstantiateRooms();
         InstantiateEnemies();
         InstantiatePlayer();
