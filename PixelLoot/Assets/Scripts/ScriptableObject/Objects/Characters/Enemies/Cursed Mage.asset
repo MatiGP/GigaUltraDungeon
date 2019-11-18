@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Cursed Mage
   enemyHealth: 15
-  enemySpeed: 5
-  enemyDamage: 9
+  enemySpeed: 8
+  enemyDamage: 11
   projectileOrSummon: {fileID: 322650785364341849, guid: 45be16f2611362942907780bb936e3ad,
     type: 3}

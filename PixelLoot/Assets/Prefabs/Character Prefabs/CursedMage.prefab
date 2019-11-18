@@ -85,10 +85,10 @@ GameObject:
   - component: {fileID: 4442315074135199489}
   - component: {fileID: 4442315074135199490}
   - component: {fileID: 4442315074135199491}
-  - component: {fileID: 4442315074135199492}
   - component: {fileID: 4442315074135199493}
   - component: {fileID: 5897837262029619698}
   - component: {fileID: 4814366311732435549}
+  - component: {fileID: 3986257797858854497}
   m_Layer: 12
   m_Name: CursedMage
   m_TagString: Enemy
@@ -182,32 +182,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &4442315074135199492
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4442315074135199494}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!95 &4442315074135199493
 Animator:
   serializedVersion: 3
@@ -275,8 +249,24 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 512
+  nextWaypointDistance: 1.2
   drop: []
-  playerPos: {fileID: 0}
+--- !u!58 &3986257797858854497
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4442315074135199494}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.38
 --- !u!1 &4442315074136936530
 GameObject:
   m_ObjectHideFlags: 0

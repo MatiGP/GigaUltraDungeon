@@ -27,7 +27,7 @@ public class Walker : MonoBehaviour
     public int roomWidth;
     public int roomHeight;
 
-    public Tilemap[] roomDown;
+    public Tilemap roomDown;
     public Tilemap roomUpDown;
     public Tilemap roomDownRight;
     public Tilemap roomLeftDown;
@@ -46,19 +46,48 @@ public class Walker : MonoBehaviour
     private Tilemap goRoom;
     private List<Vector2> visitedPos;
     private List<GameObject> marks;
+    private float minX;
+    private float maxX;
+    private float minY;
+    private float maxY;
 
     void Start()
     {
-        var guo = new GraphUpdateObject();
-        var graphToScan = AstarPath.active.data.gridGraph;
-        
         marks = new List<GameObject>();
         visitedPos = new List<Vector2>();
+        var graph = AstarPath.active.data.gridGraph;
+        
+        
         SetRoomPositions();
-        //AstarPath.active.UpdateGraphs();
+
+        minX = ReturnMinX();
+        maxX = ReturnMaxX();
+        minY = ReturnMinY();
+        maxY = ReturnMaxY();
+
+
+        graph.center = new Vector3((((int)minX + (int)maxX) / 2), (((int)minY + (int)maxY) / 2));
+        graph.center += new Vector3(-3.5f, -1, 0);
+
+        int width = 15 + (int)Mathf.Abs(minX) + (int)Mathf.Abs(maxX);
+        int depth = 10 + (int)Mathf.Abs(minY) + (int)Mathf.Abs(maxY);
+
+       
+
         InstantiateRooms();
+
+        graph.SetDimensions(2*width, 2*depth, 0.5f);
+        Invoke("Scan", 0.1f);
+
         InstantiateEnemies();
         InstantiatePlayer();
+
+        
+    }
+
+    void Scan()
+    {
+        AstarPath.active.Scan();
     }
 
     void SetRoomPositions()
@@ -188,7 +217,7 @@ public class Walker : MonoBehaviour
             if (hitRight.collider == null && hitLeft.collider == null && hitUp.collider == null && hitDown.collider != null)
             {
 
-                goRoom = Instantiate(roomDown[Random.Range(0, roomDown.Length)], roomPos, Quaternion.identity);
+                goRoom = Instantiate(roomDown, roomPos, Quaternion.identity);
                 goRoom.transform.SetParent(gridHolder.transform);
             }
             if (hitRight.collider == null && hitLeft.collider != null && hitUp.collider == null && hitDown.collider != null)
@@ -209,7 +238,7 @@ public class Walker : MonoBehaviour
                 goRoom.transform.SetParent(gridHolder.transform);
             }
 
-
+           
             
 
         }
@@ -235,5 +264,62 @@ public class Walker : MonoBehaviour
         Instantiate(playerCharacters[PlayerPrefs.GetInt("selectedChar") - 1], visitedPos[0], Quaternion.identity);
         Instantiate(starterWeapons[PlayerPrefs.GetInt("selectedChar") - 1], visitedPos[0] + new Vector2(1,1), Quaternion.identity);
 
+    }
+
+    float ReturnMaxX()
+    {
+        float maxX = visitedPos[0].x;
+
+        for (int i = 0; i < visitedPos.Count; i++)
+        {
+            if(maxX < visitedPos[i].x)
+            {
+                maxX = visitedPos[i].x;
+            }
+        }
+
+        return maxX;
+    }
+    float ReturnMinX()
+    {
+        float mixX = visitedPos[0].x;
+
+        for (int i = 0; i < visitedPos.Count; i++)
+        {
+            if (mixX > visitedPos[i].x)
+            {
+                mixX = visitedPos[i].x;
+            }
+        }
+
+        return mixX;
+    }
+    float ReturnMaxY()
+    {
+        float maxY = visitedPos[0].y;
+
+        for (int i = 0; i < visitedPos.Count; i++)
+        {
+            if (maxY < visitedPos[i].y)
+            {
+                maxY = visitedPos[i].y;
+            }
+        }
+
+        return maxY;
+    }
+    float ReturnMinY()
+    {
+        float minY = visitedPos[0].y;
+
+        for (int i = 0; i < visitedPos.Count; i++)
+        {
+            if (minY > visitedPos[i].y)
+            {
+                minY = visitedPos[i].y;
+            }
+        }
+
+        return minY;
     }
 }
