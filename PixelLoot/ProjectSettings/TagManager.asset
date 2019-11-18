@@ -18,9 +18,10 @@ TagManager:
   - 
   - 
   - Ground
-  - Room
+  - Walls
   - RoomNode
   - PlayerLayer
+  - EnemyLayer
   - 
   - 
   - 
@@ -38,9 +39,8 @@ TagManager:
   - 
   - 
   - 
-  - MageLayer
-  - HunterLayer
-  - KnightLayer
+  - 
+  - 
   m_SortingLayers:
   - name: Floor
     uniqueID: 3527695425

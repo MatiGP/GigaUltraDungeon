@@ -6,9 +6,6 @@ public class EnemyTaunt : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
-            GetComponentInParent<Enemy>().playerPos = collision.transform;
-        }
+        
     }
 }

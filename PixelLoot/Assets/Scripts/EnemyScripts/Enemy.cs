@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     public GameObject[] drop;
 
 
-    public Transform playerPos;
+    private Transform playerPos;
     private int enemyMaxHealth;
     private int enemyCurrentHealth;
 
@@ -24,13 +24,15 @@ public class Enemy : MonoBehaviour
         enemyCurrentHealth = enemyMaxHealth;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         Collider2D targetInViewRadius = Physics2D.OverlapCircle(transform.position, 7f, playerLayer);
         if(targetInViewRadius != null)
         {
-            if (!Physics2D.Raycast(transform.position, (targetInViewRadius.transform.position - transform.position).normalized, 7f, obstacleLayer))
+            playerPos = targetInViewRadius.transform;
+            if (!Physics2D.Linecast(transform.position, playerPos.position, obstacleLayer))
             {
+                
                 Debug.Log(targetInViewRadius.name);
             }
         }
