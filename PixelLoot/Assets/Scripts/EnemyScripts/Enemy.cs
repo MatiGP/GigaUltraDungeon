@@ -8,19 +8,21 @@ public class Enemy : MonoBehaviour
 {
     public Enemy_SO enemyTemplate;
     public Image enemyHealthBar;
+    public float tauntRange = 8f;
+    public float attackRange = 4f;
+
+    public GameObject[] drop;
+
+    public float nextWaypointDistance = 1.2f;
+
     [HideInInspector]
     public LayerMask playerLayer;
     [HideInInspector]
     public LayerMask obstacleLayer;
-    public float nextWaypointDistance = 1.2f;
-    
-
-    public GameObject[] drop;
-
     private Animator animator;
     private Rigidbody2D enemyRigidbody;
     private bool isTaunted;
-    private Transform playerPos;
+    public Transform playerPos;
     private Seeker seeker;
     private int enemyMaxHealth;
     private int enemyCurrentHealth;
@@ -41,7 +43,7 @@ public class Enemy : MonoBehaviour
     {
         if (!isTaunted)
         {
-            Collider2D targetInViewRadius = Physics2D.OverlapCircle(transform.position, 7f, playerLayer);
+            Collider2D targetInViewRadius = Physics2D.OverlapCircle(transform.position, tauntRange, playerLayer);
             if (targetInViewRadius != null)
             {
                 playerPos = targetInViewRadius.transform;
@@ -59,9 +61,13 @@ public class Enemy : MonoBehaviour
 
     void UpdatePath()
     {
-        if (seeker.IsDone())
+        if(playerPos != null)
         {
             seeker.StartPath(transform.position, playerPos.position, OnPathComplete);
+        }       
+        if (seeker.IsDone())
+        {
+            
             if(transform.position.x > playerPos.position.x)
             {
                 transform.rotation = Quaternion.Euler(0, 180, 0);
@@ -87,10 +93,26 @@ public class Enemy : MonoBehaviour
             {
                 return;
             }
-            Vector2 direction = ((Vector2)(path.vectorPath[currentWaypoint] - transform.position)).normalized;
-            float distance = Vector2.Distance(transform.position, path.vectorPath[currentWaypoint]);
+            if (playerPos == null)
+            {
+                isTaunted = false;
+                animator.SetBool("isRunning", false);
+                return;
+            }
 
-            enemyRigidbody.velocity = direction * enemyTemplate.enemySpeed;
+            Vector2 direction = ((Vector2)(path.vectorPath[currentWaypoint] - transform.position)).normalized;
+
+            
+            if(Vector2.Distance(transform.position, playerPos.position) > attackRange)
+            {
+                enemyRigidbody.velocity = direction * enemyTemplate.enemySpeed;
+            }
+            else
+            {
+                animator.SetTrigger("attack");
+            }
+           
+            float distance = Vector2.Distance(transform.position, path.vectorPath[currentWaypoint]);           
 
             if (distance < nextWaypointDistance)
             {
@@ -116,6 +138,8 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+   
 
    
 }

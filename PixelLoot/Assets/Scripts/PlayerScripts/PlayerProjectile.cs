@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerProjectile : MonoBehaviour
-{
-    [HideInInspector]
+{   
     public int damage;
     public ParticleSystem onHitParticle;
     public float lifeTime;
+    public int speed = 15;
 
     // Update is called once per frame
     private void Start()
@@ -18,20 +18,20 @@ public class PlayerProjectile : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector2.up * 15 * Time.deltaTime);
+        transform.Translate(Vector2.up * speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
         {
-            //collision.gameObject.GetComponent<EnemyScript>().TakeDamage(damage);
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
             DestroyProjectile();
         }
         
     }
 
-    void DestroyProjectile()
+    public virtual void DestroyProjectile()
     {
         Instantiate(onHitParticle, transform.position, Quaternion.identity);
         Destroy(gameObject);
