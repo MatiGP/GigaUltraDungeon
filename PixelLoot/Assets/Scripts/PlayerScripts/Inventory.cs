@@ -19,11 +19,7 @@ public class Inventory : MonoBehaviour
         items = new Item_SO[5];
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public bool addItem(Item_SO item)
     {

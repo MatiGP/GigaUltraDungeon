@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerProjectile : MonoBehaviour
-{   
+{
+    [HideInInspector]
     public int damage;
     public ParticleSystem onHitParticle;
     public float lifeTime;
@@ -31,7 +32,7 @@ public class PlayerProjectile : MonoBehaviour
         
     }
 
-    public virtual void DestroyProjectile()
+    public void DestroyProjectile()
     {
         Instantiate(onHitParticle, transform.position, Quaternion.identity);
         Destroy(gameObject);

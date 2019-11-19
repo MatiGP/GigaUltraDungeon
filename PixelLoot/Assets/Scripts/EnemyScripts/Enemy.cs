@@ -64,6 +64,10 @@ public class Enemy : MonoBehaviour
         if(playerPos != null)
         {
             seeker.StartPath(transform.position, playerPos.position, OnPathComplete);
+        }
+        else
+        {
+            return;
         }       
         if (seeker.IsDone())
         {

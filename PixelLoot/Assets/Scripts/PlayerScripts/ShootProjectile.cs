@@ -22,7 +22,7 @@ public class ShootProjectile : MonoBehaviour
             {
                 Shoot();
             }
-            timeBtwShots = startTimeBtwShots;
+            
         }
         else
         {
