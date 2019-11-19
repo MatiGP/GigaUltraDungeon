@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.11, y: 0.19}
-  m_SizeDelta: {x: 87, y: 12}
+  m_AnchoredPosition: {x: 0.24, y: 0.26}
+  m_SizeDelta: {x: 94.1, y: 12.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4442315074041279650
 CanvasRenderer:
@@ -63,7 +63,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8744292842307573814, guid: cd44a0578915ccb4e801eb4791b1031e,
+  m_Sprite: {fileID: -7384063275238686602, guid: 399d998053ff17c49b726b1193234745,
     type: 3}
   m_Type: 3
   m_PreserveAspect: 0
@@ -243,14 +243,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTemplate: {fileID: 11400000, guid: fbdabc983c4f0794290c60431c2b8767, type: 2}
   enemyHealthBar: {fileID: 4442315074041279651}
+  tauntRange: 8
+  attackRange: 4
+  drop: []
+  nextWaypointDistance: 1.2
   playerLayer:
     serializedVersion: 2
     m_Bits: 2048
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 512
-  nextWaypointDistance: 1.2
-  drop: []
+  playerPos: {fileID: 0}
 --- !u!58 &3986257797858854497
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -430,9 +433,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8316150575541490755, guid: cd44a0578915ccb4e801eb4791b1031e,
+  m_Sprite: {fileID: -4028826149100973058, guid: 399d998053ff17c49b726b1193234745,
     type: 3}
-  m_Type: 1
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

@@ -14,7 +14,7 @@ public class CharacterStatsUI : MonoBehaviour
     {
         healthBar.fillAmount = stats.GetHealthPercentage();
         manaBar.fillAmount = stats.GetManaPercentage();
-        characterIcon.sprite = stats.character.characterSprite;
+        characterIcon.sprite = stats.character.characterIcon;
     }
 
     public void UpdateBars()

@@ -6,6 +6,8 @@ public class PlayableChar_SO : ScriptableObject
 {
     public string characterName;
     public Sprite characterSprite;
+    public Sprite characterIcon;
+
 
     public int characterBaseHealth;
     public int characterBaseMana;

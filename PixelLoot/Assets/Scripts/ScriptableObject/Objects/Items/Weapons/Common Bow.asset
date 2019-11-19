@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd50eadbb06d8a43aec6c4a90f0bebb, type: 3}
   m_Name: Common Bow
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 21300000, guid: d12ea0751bb3581498ae765b830f290c, type: 3}
+  itemIcon: {fileID: 21300000, guid: 2ae8ca5df35876b4b81fe220e8978912, type: 3}
   itemName: Common Bow
   weaponMinDamage: 2
   weaponMaxDamage: 10
