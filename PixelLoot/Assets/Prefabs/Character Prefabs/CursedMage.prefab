@@ -245,6 +245,8 @@ MonoBehaviour:
   enemyHealthBar: {fileID: 4442315074041279651}
   tauntRange: 8
   attackRange: 4
+  deathParticle: {fileID: 1034945555224309892, guid: 30c19e0c585f260409598b23643f435d,
+    type: 3}
   drop: []
   nextWaypointDistance: 1.2
   playerLayer:

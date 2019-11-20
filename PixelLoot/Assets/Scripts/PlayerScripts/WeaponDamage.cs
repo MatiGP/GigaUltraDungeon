@@ -19,6 +19,8 @@ public class WeaponDamage : MonoBehaviour
         
     }
 
+    
+
     public void UpdateWeaponDamage()
    {
        if((int)weapon.scaling == playerPrimaryStat)

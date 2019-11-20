@@ -10,6 +10,7 @@ public class PlayerStats : MonoBehaviour
     public static PlayerStats instance;
     public GameObject deathPanel;
 
+
     public int characterCurrentHealth;
     public int characterMaxHealth;
     public int characterCurrentMana;
@@ -17,13 +18,18 @@ public class PlayerStats : MonoBehaviour
     private PlayerController controller;
     [HideInInspector]
     public bool canCastSpells;
-    
+    public static bool isPlayerAlive;
     void Awake()
     {
+        
+
         if(instance == null)
         {
+            DontDestroyOnLoad(gameObject);
             instance = this;
         }
+        
+        DontDestroyOnLoad(instance);
         DeathMenuScript.isPlayerDead = false;
         characterMaxHealth = character.characterBaseHealth + character.baseStats[3];
         characterCurrentHealth = characterMaxHealth;
@@ -55,7 +61,7 @@ public class PlayerStats : MonoBehaviour
         if (characterCurrentHealth <= 0)
         {
             DeathMenuScript.isPlayerDead = true;
-            controller.vcam.enabled = false;
+            controller.vcam.enabled = isPlayerAlive;
 
             Destroy(gameObject);
         }
@@ -77,5 +83,15 @@ public class PlayerStats : MonoBehaviour
     private void Update()
     {
         charactersUI.UpdateBars();
+        if (isPlayerAlive)
+        {
+            AttachTheCamera();
+            isPlayerAlive = false;
+        }
+    }
+
+    public void AttachTheCamera()
+    {
+        controller.vcam.enabled = true;
     }
 }

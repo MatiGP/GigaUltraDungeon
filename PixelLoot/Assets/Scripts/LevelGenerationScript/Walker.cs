@@ -23,6 +23,7 @@ public class Walker : MonoBehaviour
     public GameObject[] enemies;
     public GameObject[] playerCharacters;
     public GameObject[] starterWeapons;
+    public GameObject exitRoomPrefab;
 
     public int roomWidth;
     public int roomHeight;
@@ -43,6 +44,7 @@ public class Walker : MonoBehaviour
     public Tilemap roomUpRightDown;
     public Tilemap roomUpRightDownLeft;
 
+    public static bool hasPlayerBeenInstantiated;
     private Tilemap goRoom;
     private List<Vector2> visitedPos;
     private List<GameObject> marks;
@@ -238,7 +240,12 @@ public class Walker : MonoBehaviour
                 goRoom.transform.SetParent(gridHolder.transform);
             }
 
-           
+            if(i == visitedPos.Count - 1)
+            {
+                int randomX = (int)Random.Range(visitedPos[i].x - 9, visitedPos[i].x + 3);
+                int randomY = (int)Random.Range(visitedPos[i].y - 4, visitedPos[i].y + 2);
+                Instantiate(exitRoomPrefab, new Vector3(randomX, randomY), Quaternion.identity);
+            }
             
 
         }
@@ -261,9 +268,15 @@ public class Walker : MonoBehaviour
 
     void InstantiatePlayer()
     {
-        Instantiate(playerCharacters[PlayerPrefs.GetInt("selectedChar") - 1], visitedPos[0], Quaternion.identity);
-        Instantiate(starterWeapons[PlayerPrefs.GetInt("selectedChar") - 1], visitedPos[0] + new Vector2(1,1), Quaternion.identity);
-
+        if (!hasPlayerBeenInstantiated)
+        {
+            Instantiate(playerCharacters[PlayerPrefs.GetInt("selectedChar") - 1], visitedPos[0], Quaternion.identity);
+            Instantiate(starterWeapons[PlayerPrefs.GetInt("selectedChar") - 1], visitedPos[0] + new Vector2(1,1), Quaternion.identity);
+            hasPlayerBeenInstantiated = true;
+        }
+         
+         
+        
     }
 
     float ReturnMaxX()

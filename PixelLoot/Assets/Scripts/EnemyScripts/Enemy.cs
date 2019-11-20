@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public Image enemyHealthBar;
     public float tauntRange = 8f;
     public float attackRange = 4f;
+    public ParticleSystem deathParticle;
 
     public GameObject[] drop;
 
@@ -110,6 +111,7 @@ public class Enemy : MonoBehaviour
             if(Vector2.Distance(transform.position, playerPos.position) > attackRange)
             {
                 enemyRigidbody.velocity = direction * enemyTemplate.enemySpeed;
+                
             }
             else
             {
@@ -140,6 +142,7 @@ public class Enemy : MonoBehaviour
         enemyHealthBar.fillAmount = (float)enemyCurrentHealth / enemyMaxHealth;
         if(enemyCurrentHealth <= 0)
         {
+            Instantiate(deathParticle, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

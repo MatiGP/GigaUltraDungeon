@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2947717004411568928}
   - component: {fileID: 3768862265793055452}
   m_Layer: 0
-  m_Name: mageCastParticle
+  m_Name: CommonStaff_OnHitParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

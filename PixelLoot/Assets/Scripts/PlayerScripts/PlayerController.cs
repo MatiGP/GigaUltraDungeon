@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(this);
         GameObject vCamGameObject = GameObject.FindGameObjectWithTag("VirtualCamera");
         vcam = vCamGameObject.GetComponent<CinemachineVirtualCamera>();
     }
@@ -24,11 +25,14 @@ public class PlayerController : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        
         vcam.Follow = transform;
+        
     }
 
     private void Update()
     {
+
         if (EventSystem.current.IsPointerOverGameObject())
         {
             return;

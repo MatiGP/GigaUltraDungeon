@@ -181,6 +181,8 @@ MonoBehaviour:
   - {fileID: 6168068793686480122, guid: 3dcfbb0c208341940aa5ff6f37a1be64, type: 3}
   - {fileID: 6220181981297808656, guid: 5d20c2b191271e5408e98721acd7c71d, type: 3}
   - {fileID: 7470204361091653450, guid: b2794236edaf1b141812c9b93755f6e3, type: 3}
+  exitRoomPrefab: {fileID: 4099901272896032795, guid: 6f7afdf1b221872429bfde0cc715494c,
+    type: 3}
   roomWidth: 15
   roomHeight: 11
   roomDown: {fileID: 8383531294157994034, guid: c586f98865702334d984c84405b5e001,
@@ -391,6 +393,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -497,6 +500,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f2d91ef487611b40989c0395f565b0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &571392090
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,7 +522,6 @@ GameObject:
   m_Component:
   - component: {fileID: 571392091}
   - component: {fileID: 571392092}
-  - component: {fileID: 571392093}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: VirtualCamera
@@ -565,23 +579,6 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1584614030}
---- !u!114 &571392093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 571392090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2fba25a5cd15594e8f050a11e386c80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ConfineMode: 0
-  m_BoundingVolume: {fileID: 0}
-  m_BoundingShape2D: {fileID: 0}
-  m_ConfineScreenEdges: 1
-  m_Damping: 0.14
 --- !u!114 &1021247531 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 575979939631079754, guid: d062adb98d60ef74e9f4cfb688b847b8,

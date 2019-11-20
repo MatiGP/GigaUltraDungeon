@@ -14,6 +14,8 @@ public class Inventory : MonoBehaviour
 
     private void Awake()
     {
+        
+
         instance = this;
         ui = GetComponentInChildren<InventoryUI>();
         items = new Item_SO[5];

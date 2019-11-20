@@ -35,7 +35,10 @@ public class CastSpell : StateMachineBehaviour
 
         if (timeBtwShots <= 0)
         {
+            
             Instantiate(projectile, animator.transform.position, Quaternion.Euler(0f, 0f, rotz + offset));
+            Instantiate(projectile, animator.transform.position, Quaternion.Euler(0f, 0f, rotz + offset + 20));
+
             timeBtwShots = startTimeBtwShots;
         }
         else
@@ -43,6 +46,8 @@ public class CastSpell : StateMachineBehaviour
             timeBtwShots -= Time.deltaTime;
         }
     }
+
+    
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
