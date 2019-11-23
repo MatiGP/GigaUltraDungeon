@@ -32,7 +32,6 @@ public class CameraManager : MonoBehaviour
 
     public void ChooseChar()
     {
-        titleScreenCam.SetActive(false);
         titleScreenPanel.SetActive(false);
         blackOverlay.SetActive(false);
     }
