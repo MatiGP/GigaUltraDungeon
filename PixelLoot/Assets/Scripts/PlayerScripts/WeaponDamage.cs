@@ -16,7 +16,7 @@ public class WeaponDamage : MonoBehaviour
     {
         playerPrimaryStat = (int)PlayerStats.instance.character.primaryStat;
         shoot = GetComponent<ShootProjectile>();
-        
+        UpdateWeaponDamage();
     }
 
     

@@ -3,10 +3,6 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    public GameObject charSelectCam;
-    public GameObject mageCam;
-    public GameObject archerCam;
-    public GameObject knightCam;
     public GameObject characterStatPanel;
     public GameObject titleScreenCam;
     public GameObject titleScreenPanel;
@@ -15,6 +11,29 @@ public class CameraManager : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1f;
+
+        AudioListener[] myListeners = FindObjectsOfType(typeof(AudioListener)) as AudioListener[];
+
+        int totalListeners = 0;//find out how many listeners are actually active
+        foreach (AudioListener thisListener in myListeners)
+        {
+            if (thisListener.enabled) { totalListeners++; }
+        }
+
+        if (totalListeners > 1)
+        {
+            //turn off my audioListener component
+            AudioListener al = GetComponent<AudioListener>();
+            al.enabled = false;
+        }
+        else
+        {
+            //turn on my audioListener component
+            AudioListener al = GetComponent<AudioListener>();
+            al.enabled = true;
+            //print ("turn on audio "+name);
+        }
+
     }
 
     private void Update()
@@ -37,45 +56,18 @@ public class CameraManager : MonoBehaviour
 
     void SwitchCamera(int numOfChar)
     {
-        switch (numOfChar)
-        {
-            case 1:               
-                mageCam.SetActive(true);
-                charSelectCam.SetActive(false);
-                archerCam.SetActive(false);
-                knightCam.SetActive(false);
-                break;
-            case 2:
-                mageCam.SetActive(false);
-                charSelectCam.SetActive(false);
-                archerCam.SetActive(true);
-                knightCam.SetActive(false);
-                break;
-            case 3:
-                mageCam.SetActive(false);
-                charSelectCam.SetActive(false);
-                archerCam.SetActive(false);
-                knightCam.SetActive(true);
-                break;
-
-        }
+        
         characterStatPanel.SetActive(true);
         characterStatPanel.GetComponent<SetupCharacterStatPanel>().setupWindow(numOfChar);
     }
     public void ResetCamera()
-    {
-        mageCam.SetActive(false);
-        charSelectCam.SetActive(true);
-        archerCam.SetActive(false);
-        knightCam.SetActive(false);
+    {       
         characterStatPanel.SetActive(false);
     }
 
     public void ChooseChar()
     {
         titleScreenCam.SetActive(false);
-        titleScreenPanel.SetActive(false);
-        charSelectCam.SetActive(true);
-
+        titleScreenPanel.SetActive(false);      
     }
 }

@@ -16,7 +16,7 @@ public class StartGame : MonoBehaviour
 
     IEnumerator LoadScene()
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(1);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(2);
         loadingScreen.SetActive(true);
 
         while (!operation.isDone)

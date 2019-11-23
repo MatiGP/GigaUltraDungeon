@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c7f666f435d8194093735f4448218c4, type: 3}
-  m_Name: Archer
+  m_Name: CharacterForNoobs
   m_EditorClassIdentifier: 
-  characterName: Archer
-  characterSprite: {fileID: 3475298383841109393, guid: fb0982bf234e4d14ba3b72d60ad2ba57,
+  characterName: UltraEpicCharacterForNoobs
+  characterSprite: {fileID: 2382543463544445115, guid: 0a28a1af511ee9f498fda0eb4bfbe02e,
     type: 3}
-  characterIcon: {fileID: 21300000, guid: 4e5f9d58dc94aef468cc5e1b6ac7dce2, type: 3}
-  characterBaseHealth: 70
-  characterBaseMana: 5
-  baseStats: 03000000040000000500000004000000
-  primaryStat: 2
+  characterIcon: {fileID: 21300000, guid: 30bc919dd900b5346b633471e44c0e0f, type: 3}
+  characterBaseHealth: 90
+  characterBaseMana: 3
+  baseStats: 0a0000000a0000000a0000000a000000
+  primaryStat: 1

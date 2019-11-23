@@ -1,17 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DontDestroy : MonoBehaviour
 {
     private void Awake()
     {
+        
         GameObject[] objs = GameObject.FindGameObjectsWithTag("MainCamera");
-        if(objs.Length > 1)
+        if (objs.Length > 1)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
 
-        DontDestroyOnLoad(this.gameObject);
+         DontDestroyOnLoad(this.gameObject);
     }
 }
