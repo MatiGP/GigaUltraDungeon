@@ -1,73 +1,75 @@
 ﻿using UnityEngine.EventSystems;
 using UnityEngine;
+using System.Collections;
 
 public class CameraManager : MonoBehaviour
 {
     public GameObject characterStatPanel;
     public GameObject titleScreenCam;
     public GameObject titleScreenPanel;
-    RaycastHit2D hitInfo;
+    public GameObject mageVCam;
+    public GameObject knightVCam;
+    public GameObject archerVCam;
+
+    public GameObject buttons;
+    public GameObject blackOverlay;
+    public SetupCharacterStatPanel setupCharacter;
 
     private void Start()
     {
-        Time.timeScale = 1f;
+        //Time.timeScale = 1f;      
 
-        AudioListener[] myListeners = FindObjectsOfType(typeof(AudioListener)) as AudioListener[];
-
-        int totalListeners = 0;//find out how many listeners are actually active
-        foreach (AudioListener thisListener in myListeners)
-        {
-            if (thisListener.enabled) { totalListeners++; }
-        }
-
-        if (totalListeners > 1)
-        {
-            //turn off my audioListener component
-            AudioListener al = GetComponent<AudioListener>();
-            al.enabled = false;
-        }
-        else
-        {
-            //turn on my audioListener component
-            AudioListener al = GetComponent<AudioListener>();
-            al.enabled = true;
-            //print ("turn on audio "+name);
-        }
-
-    }
-
-    private void Update()
-    {
-        if (EventSystem.current.IsPointerOverGameObject())
-        {
-            return;
-        }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            hitInfo = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            if (hitInfo.collider.CompareTag("Selectable"))
-            {
-                int num = hitInfo.collider.GetComponent<CharacterSelect>().numOfChar;                
-                SwitchCamera(num);
-            }
-        }       
-    }
-
-    void SwitchCamera(int numOfChar)
-    {
-        
-        characterStatPanel.SetActive(true);
-        characterStatPanel.GetComponent<SetupCharacterStatPanel>().setupWindow(numOfChar);
     }
     public void ResetCamera()
     {       
         characterStatPanel.SetActive(false);
+        mageVCam.SetActive(false);
+        knightVCam.SetActive(false);
+        archerVCam.SetActive(false);
+        titleScreenCam.SetActive(true);
+        StartCoroutine(LoadButtons());
     }
 
     public void ChooseChar()
     {
         titleScreenCam.SetActive(false);
-        titleScreenPanel.SetActive(false);      
+        titleScreenPanel.SetActive(false);
+        blackOverlay.SetActive(false);
     }
+
+    public void SelectMage()
+    {
+        mageVCam.SetActive(true);
+        knightVCam.SetActive(false);
+        archerVCam.SetActive(false);
+        characterStatPanel.SetActive(true);
+        buttons.SetActive(false);
+        setupCharacter.setupWindow(1);
+    }
+    public void SelectKnight()
+    {
+        mageVCam.SetActive(false);
+        knightVCam.SetActive(true);
+        archerVCam.SetActive(false);
+        characterStatPanel.SetActive(true);
+        buttons.SetActive(false);
+        setupCharacter.setupWindow(3);
+    }
+    public void SelectArcher()
+    {
+        mageVCam.SetActive(false);
+        knightVCam.SetActive(false);
+        archerVCam.SetActive(true);
+        characterStatPanel.SetActive(true);
+        buttons.SetActive(false);
+        setupCharacter.setupWindow(2);
+    }
+
+    IEnumerator LoadButtons()
+    {
+        yield return new WaitForSeconds(1);
+        buttons.SetActive(true);
+        
+    }
+
 }
