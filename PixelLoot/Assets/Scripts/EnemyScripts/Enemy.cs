@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
     private Animator animator;
     private Rigidbody2D enemyRigidbody;
     private bool isTaunted;
+    [HideInInspector]
     public Transform playerPos;
     private Seeker seeker;
     private int enemyMaxHealth;
