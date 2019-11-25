@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
-  onHitParticle: {fileID: 0}
+  onHitParticle: {fileID: 6901349173364712733, guid: d4b7ab83b9d3c2f42a5bd7e87e7b0db5,
+    type: 3}
   lifeTime: 1
   speed: 4
