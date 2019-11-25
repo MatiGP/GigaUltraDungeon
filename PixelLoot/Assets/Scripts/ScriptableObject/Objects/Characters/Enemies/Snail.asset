@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Snail
   m_EditorClassIdentifier: 
   enemyName: Snail
-  enemyHealth: 6
-  enemySpeed: 6
+  enemyHealth: 7
+  enemySpeed: 14
   enemyDamage: 6
-  projectileOrSummon: {fileID: 0}
+  projectileOrSummon: {fileID: 770735279989949606, guid: 6e84db64993af5f4bb1b06b0b0d33b36,
+    type: 3}

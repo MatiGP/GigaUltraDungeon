@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
 
     public float nextWaypointDistance = 1.2f;
 
-    [HideInInspector]
+    
     public LayerMask playerLayer;
     [HideInInspector]
     public LayerMask obstacleLayer;
@@ -46,8 +46,11 @@ public class Enemy : MonoBehaviour
         if (!isTaunted)
         {
             Collider2D targetInViewRadius = Physics2D.OverlapCircle(transform.position, tauntRange, playerLayer);
+            
+
             if (targetInViewRadius != null)
             {
+                
                 playerPos = targetInViewRadius.transform;
                 if (!Physics2D.Linecast(transform.position, playerPos.position, obstacleLayer))
                 {
@@ -71,18 +74,6 @@ public class Enemy : MonoBehaviour
         {
             return;
         }       
-        if (seeker.IsDone())
-        {
-            
-            if(transform.position.x > playerPos.position.x)
-            {
-                transform.rotation = Quaternion.Euler(0, 180, 0);
-            }
-            else
-            {
-                transform.rotation = Quaternion.Euler(0, 0, 0);
-            }
-        }
     }
     
     private void Update()
@@ -103,6 +94,7 @@ public class Enemy : MonoBehaviour
             {
                 isTaunted = false;
                 animator.SetBool("isRunning", false);
+                animator.SetBool("isInRange", false);
                 return;
             }
 
@@ -112,11 +104,21 @@ public class Enemy : MonoBehaviour
             if(Vector2.Distance(transform.position, playerPos.position) > attackRange)
             {
                 enemyRigidbody.velocity = direction * enemyTemplate.enemySpeed;
-                
+                animator.SetBool("isInRange", false);
+                animator.ResetTrigger("attack");
+                if (transform.position.x > playerPos.position.x)
+                {
+                    transform.rotation = Quaternion.Euler(0, 180, 0);
+                }
+                else
+                {
+                    transform.rotation = Quaternion.Euler(0, 0, 0);
+                }
             }
             else
             {
                 animator.SetTrigger("attack");
+                animator.SetBool("isInRange", true);
             }
            
             float distance = Vector2.Distance(transform.position, path.vectorPath[currentWaypoint]);           
@@ -144,7 +146,18 @@ public class Enemy : MonoBehaviour
         if(enemyCurrentHealth <= 0)
         {
             Instantiate(deathParticle, transform.position, Quaternion.identity);
+            DropItem();
             Destroy(gameObject);
+        }
+    }
+
+    void DropItem()
+    {
+        int rand = Random.Range(1, 100);
+
+        if(rand > 70)
+        {
+            Instantiate(drop[0], transform.position, Quaternion.identity);
         }
     }
 

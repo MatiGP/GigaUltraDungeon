@@ -39,7 +39,7 @@ public class DeathMenuScript : MonoBehaviour
         isPlayerDead = false;
         Walker.hasPlayerBeenInstantiated = false;
         PlayerStats.isPlayerAlive = true;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void leaveGame()

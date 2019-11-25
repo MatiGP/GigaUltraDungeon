@@ -171,16 +171,18 @@ MonoBehaviour:
   previousDirection: 0
   gridHolder: {fileID: 256527195}
   marker: {fileID: 7222921175259052878, guid: 1fe251fe8c30e6d4f849e5c670241f2c, type: 3}
+  minEnemyCountPerRoom: 4
+  maxEnemyCountPerRoom: 6
   enemies:
   - {fileID: 4442315074135199494, guid: dd6bbac4202fe6f478903f9f79f94f04, type: 3}
+  - {fileID: 7638374179885716657, guid: b423f583297cc8d45aec783c4a5ae701, type: 3}
+  - {fileID: 4716889332851332828, guid: 1ba741ad164acab499e76be2177c05a1, type: 3}
+  - {fileID: 5356956911155608612, guid: 4102a25438b4f0b48b8f85a4994050ea, type: 3}
+  - {fileID: 8977572748845382366, guid: 95bc864be47c9104a8892131a686ad63, type: 3}
   playerCharacters:
   - {fileID: 4216117577932197737, guid: ed880e27be1dd384c9fb033379412ecd, type: 3}
   - {fileID: 4774878869926823993, guid: 3bd8be81585c1c94897aaeb0f8720f54, type: 3}
   - {fileID: 5800442564439778520, guid: 0029f882590babf479d09f2f75814e60, type: 3}
-  starterWeapons:
-  - {fileID: 6168068793686480122, guid: 3dcfbb0c208341940aa5ff6f37a1be64, type: 3}
-  - {fileID: 6220181981297808656, guid: 5d20c2b191271e5408e98721acd7c71d, type: 3}
-  - {fileID: 7470204361091653450, guid: b2794236edaf1b141812c9b93755f6e3, type: 3}
   exitRoomPrefab: {fileID: 4099901272896032795, guid: 6f7afdf1b221872429bfde0cc715494c,
     type: 3}
   roomWidth: 15
@@ -301,7 +303,7 @@ MonoBehaviour:
   manualDebugFloorRoof: 0
   showSearchTree: 0
   unwalkableNodeDebugSize: 0.3
-  logPathResults: 1
+  logPathResults: 0
   maxNearestNodeDistance: 100
   scanOnStartup: 0
   fullGetNearestSearch: 1
@@ -909,11 +911,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 575979939631079754, guid: d062adb98d60ef74e9f4cfb688b847b8,
-        type: 3}
-      propertyPath: menu
-      value: 
-      objectReference: {fileID: 435656609}
     - target: {fileID: 3493018078869123428, guid: d062adb98d60ef74e9f4cfb688b847b8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1019,6 +1016,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 575979939631079754, guid: d062adb98d60ef74e9f4cfb688b847b8,
+        type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 435656609}
+    - target: {fileID: 3493018080294197736, guid: d062adb98d60ef74e9f4cfb688b847b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3493018079566515771, guid: d062adb98d60ef74e9f4cfb688b847b8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1063,11 +1070,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: leaveGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493018080294197736, guid: d062adb98d60ef74e9f4cfb688b847b8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d062adb98d60ef74e9f4cfb688b847b8, type: 3}

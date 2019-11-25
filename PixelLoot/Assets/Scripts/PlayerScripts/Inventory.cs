@@ -40,13 +40,16 @@ public class Inventory : MonoBehaviour
     }
 
     public void useItem(int itemIndex)
-    {       
-        items[itemIndex]?.Use();
+    {
+        if (items[itemIndex] != null)
+        {
+            items[itemIndex].Use();
+        }
         if (items[itemIndex] is Weapon_SO)
         {
             weaponHolder.GetComponent<WeaponDamage>().UpdateWeaponDamage();
         }
-        items[itemIndex]= null;
+        items[itemIndex] = null;
         ui.UpdateUI();
     }
 }

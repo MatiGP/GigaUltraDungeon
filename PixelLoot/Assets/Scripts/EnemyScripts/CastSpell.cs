@@ -6,11 +6,7 @@ public class CastSpell : StateMachineBehaviour
 {
    
     public float offset = -90;
-    public float startTimeBtwShots = 1f;
-    [Range(1, 10)]
-    public int numOfProjectiles;
-    [Range(20, 50)]
-    public int projectileSpread;
+    public float startTimeBtwShots = 1f;   
 
     private GameObject projectile;
     private Transform playerPos;
@@ -38,13 +34,8 @@ public class CastSpell : StateMachineBehaviour
         
 
         if (timeBtwShots <= 0)
-        {
-            
-            for(int i = 0; i< numOfProjectiles; i++)
-            {
-                Instantiate(projectile, animator.transform.position, Quaternion.Euler(0, 0, rotz + offset + i * projectileSpread));
-            }
-
+        {                    
+            Instantiate(projectile, animator.transform.position, Quaternion.Euler(0, 0, rotz + offset));
             timeBtwShots = startTimeBtwShots;
         }
         else

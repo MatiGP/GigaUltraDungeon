@@ -13,21 +13,30 @@ public enum Direction
 }
 public class Walker : MonoBehaviour
 {
-
+    [Header("Walker Settings")]
     public LayerMask nodeLayer;
     public int numOfWalks = 10;
     public Direction walkerDirection;
     public Direction previousDirection;
     public Grid gridHolder;
     public GameObject marker;
+    [Space(2)]
+    [Header("Enemy Settings")]
+    public int minEnemyCountPerRoom = 4;
+    public int maxEnemyCountPerRoom = 12;
     public GameObject[] enemies;
-    public GameObject[] playerCharacters;
-    public GameObject[] starterWeapons;
+    [Space(2)]
+    [Header("Playable Chars Settings")]
+    public GameObject[] playerCharacters;    
+    [Space(2)]
     public GameObject exitRoomPrefab;
-
+    [Space(2)]
+    
+    [HideInInspector]
     public int roomWidth;
+    [HideInInspector]
     public int roomHeight;
-
+    [Header("Room Variations")]
     public Tilemap roomDown;
     public Tilemap roomUpDown;
     public Tilemap roomDownRight;
@@ -44,6 +53,7 @@ public class Walker : MonoBehaviour
     public Tilemap roomUpRightDown;
     public Tilemap roomUpRightDownLeft;
 
+    [HideInInspector]
     public static bool hasPlayerBeenInstantiated;
     private Tilemap goRoom;
     private List<Vector2> visitedPos;
@@ -260,9 +270,14 @@ public class Walker : MonoBehaviour
     {
         for(int i = 1; i < visitedPos.Count; i++)
         {
-            int randomX = (int)Random.Range(visitedPos[i].x - 9, visitedPos[i].x + 3);
-            int randomY = (int)Random.Range(visitedPos[i].y - 4, visitedPos[i].y + 2);
-            Instantiate(enemies[Random.Range(0, 0)], new Vector3(randomX, randomY), Quaternion.identity);
+            int enemySpawnRange = Random.Range(minEnemyCountPerRoom, maxEnemyCountPerRoom);
+            for(int x = 0; x < enemySpawnRange; x++)
+            {
+                int randomX = (int)Random.Range(visitedPos[i].x - 9, visitedPos[i].x + 3);
+                int randomY = (int)Random.Range(visitedPos[i].y - 4, visitedPos[i].y + 2);
+                Instantiate(enemies[Random.Range(0, enemies.Length)], new Vector3(randomX, randomY), Quaternion.identity);
+            }
+            
         }
     }
 
@@ -270,13 +285,9 @@ public class Walker : MonoBehaviour
     {
         if (!hasPlayerBeenInstantiated)
         {
-            Instantiate(playerCharacters[PlayerPrefs.GetInt("selectedChar") - 1], visitedPos[0], Quaternion.identity);
-            Instantiate(starterWeapons[PlayerPrefs.GetInt("selectedChar") - 1], visitedPos[0] + new Vector2(1,1), Quaternion.identity);
+            Instantiate(playerCharacters[PlayerPrefs.GetInt("selectedChar") - 1], visitedPos[0], Quaternion.identity);           
             hasPlayerBeenInstantiated = true;
-        }
-         
-         
-        
+        }              
     }
 
     float ReturnMaxX()

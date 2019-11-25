@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 1771526554260089542}
   - component: {fileID: 3958403740967256453}
   - component: {fileID: 7790872321772823622}
-  - component: {fileID: 218873222001591172}
+  - component: {fileID: 4341131741268458901}
+  - component: {fileID: 8678967612977929440}
   m_Layer: 0
   m_Name: Golem_Projectile
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8395937462827641416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.23, y: -0.47, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -93,13 +94,34 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.36
---- !u!114 &218873222001591172
+--- !u!50 &4341131741268458901
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8395937462827641416}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &8678967612977929440
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,11 +130,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8395937462827641416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fd504fa7b761ac41bb48dd89b3f9bb8, type: 3}
+  m_Script: {fileID: 11500000, guid: ca04ec9781b8cdf44b92c6cc17833abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 7
   onHitParticle: {fileID: 2620015094287890968, guid: e46d03c9782d0c2458ddf89f9d196a3e,
     type: 3}
-  lifeTime: 3
-  speed: 6
+  lifeTime: 0.3
+  speed: 10
+  GolemShrapnelProjectiles: {fileID: 7151139535850109495, guid: 5d25f4370ef92964c90ab29e8615d04d,
+    type: 3}

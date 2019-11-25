@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 8977572748845382359}
   - component: {fileID: 8977572748845382356}
   - component: {fileID: 8977572748845382357}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Snail
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,14 +129,15 @@ MonoBehaviour:
   enemyTemplate: {fileID: 11400000, guid: b1795e5fbadc724419aa1994e25ac7da, type: 2}
   enemyHealthBar: {fileID: 3777302416997497890}
   tauntRange: 8
-  attackRange: 2
+  attackRange: 3
   deathParticle: {fileID: 7509090700859477043, guid: 7202898c0485ec04d91a8392213fda3f,
     type: 3}
-  drop: []
+  drop:
+  - {fileID: 6361153842236953747, guid: c4d6f374ae0b8b44da11ae2135b353b4, type: 3}
   nextWaypointDistance: 1.2
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -172,9 +173,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 900
+  m_LinearDrag: 100
+  m_AngularDrag: 100
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0

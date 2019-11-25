@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e08b15ea00b04f5439e4d184b3ca49fd, type: 3}
   m_Name: Healing Potion
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 21300000, guid: 569020e1ff3f363478bcad9d1599b679, type: 3}
+  itemIcon: {fileID: 21300000, guid: 707a1e0ec18345a4dabf558d75f75cd3, type: 3}
   itemName: Lesser Healing Potion
   restoreAmount: 6
   whatToRestore: 0

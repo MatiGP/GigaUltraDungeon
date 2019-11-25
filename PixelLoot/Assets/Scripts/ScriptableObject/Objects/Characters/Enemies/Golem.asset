@@ -16,4 +16,5 @@ MonoBehaviour:
   enemyHealth: 12
   enemySpeed: 3
   enemyDamage: 5
-  projectileOrSummon: {fileID: 0}
+  projectileOrSummon: {fileID: 8395937462827641416, guid: 60bbbd5473a9d98478c651ed5540d458,
+    type: 3}

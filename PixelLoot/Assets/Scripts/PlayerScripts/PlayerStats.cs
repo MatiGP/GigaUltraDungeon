@@ -15,31 +15,29 @@ public class PlayerStats : MonoBehaviour
     public int characterMaxHealth;
     public int characterCurrentMana;
     private int characterMaxMana;
+    private SpriteRenderer spriteRenderer;
     private PlayerController controller;
     [HideInInspector]
     public bool canCastSpells;
     public static bool isPlayerAlive;
     void Awake()
     {
+        DontDestroyOnLoad(gameObject);                  
+        instance = this;           
         
 
-        if(instance == null)
-        {
-            DontDestroyOnLoad(gameObject);
-            instance = this;
-        }
-        
-        DontDestroyOnLoad(instance);
         DeathMenuScript.isPlayerDead = false;
         characterMaxHealth = character.characterBaseHealth + character.baseStats[3];
         characterCurrentHealth = characterMaxHealth;
         characterMaxMana = character.characterBaseMana + character.baseStats[0];
         characterCurrentMana = characterMaxMana;
         controller = GetComponent<PlayerController>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }     
     public void RestoreMana(int manaAmount)
     {
         characterCurrentMana += manaAmount;
+
         if (characterCurrentMana > characterMaxMana)
         {
             characterCurrentMana = characterCurrentMana - (characterCurrentMana % characterMaxMana);
@@ -58,6 +56,9 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(int damageTaken)
     {
         characterCurrentHealth -= damageTaken;
+        charactersUI.UpdateBars();
+
+        changeColorRed();
         if (characterCurrentHealth <= 0)
         {
             DeathMenuScript.isPlayerDead = true;
@@ -65,6 +66,7 @@ public class PlayerStats : MonoBehaviour
 
             Destroy(gameObject);
         }
+        StartCoroutine(changeColorWhite());
     }
 
     public void RestoreHealth(int healthAmount)
@@ -74,6 +76,7 @@ public class PlayerStats : MonoBehaviour
         {
             characterCurrentHealth = characterCurrentHealth - (characterCurrentHealth % characterMaxHealth);
         }
+        charactersUI.UpdateBars();
     }
     public float GetHealthPercentage()
     {
@@ -82,7 +85,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Update()
     {
-        charactersUI.UpdateBars();
+        
         if (isPlayerAlive)
         {
             AttachTheCamera();
@@ -93,5 +96,15 @@ public class PlayerStats : MonoBehaviour
     public void AttachTheCamera()
     {
         controller.vcam.enabled = true;
+    }
+    
+    void changeColorRed()
+    {
+        GetComponent<SpriteRenderer>().color = Color.red;
+    }
+    IEnumerator changeColorWhite()
+    {
+        spriteRenderer.color = new Color(1, 1, 1, 1);
+        yield return null;
     }
 }

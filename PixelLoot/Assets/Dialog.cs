@@ -28,21 +28,26 @@ public class Dialog : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        playerUI.SetActive(false);
-        animator.SetTrigger("hasEnteredTheTrigger");
-        animator.SetBool("isOpen", true);
+        if (collision.CompareTag("Player"))
+        {
+            playerUI.SetActive(false);
+            animator.SetTrigger("hasEnteredTheTrigger");
+            animator.SetBool("isOpen", true);
 
-        StartCoroutine(TypeSentence());
+            StartCoroutine(TypeSentence());
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        
-        animator.SetBool("isOpen", false);
-        uiSentence.text = "";
-        Instantiate(disappearArchitectParticleEffect, boundedArchitect.transform.position, Quaternion.identity);
-        Destroy(boundedArchitect);
-        Destroy(gameObject);
-        playerUI.SetActive(true);
+        if (collision.CompareTag("Player"))
+        {
+            animator.SetBool("isOpen", false);
+            uiSentence.text = "";
+            Instantiate(disappearArchitectParticleEffect, boundedArchitect.transform.position, Quaternion.identity);
+            Destroy(boundedArchitect);
+            Destroy(gameObject);
+            playerUI.SetActive(true);
+        }
     }
 }

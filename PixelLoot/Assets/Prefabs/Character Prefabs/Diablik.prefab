@@ -10,14 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 7638374179885716663}
   - component: {fileID: 7638374179885716656}
-  - component: {fileID: 7638374179885716666}
   - component: {fileID: 7638374179885716667}
   - component: {fileID: 7638374179885716660}
   - component: {fileID: 7638374179885716661}
   - component: {fileID: 7638374179885716662}
-  m_Layer: 0
+  - component: {fileID: 7638374179885716666}
+  m_Layer: 12
   m_Name: Diablik
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,33 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7638374179885716666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7638374179885716657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 852f3b16843be3649bbcf6ad9fc13d68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyTemplate: {fileID: 11400000, guid: bdb2498465c9a7643b19455910d6b93e, type: 2}
-  enemyHealthBar: {fileID: 8498098369687019466}
-  tauntRange: 8
-  attackRange: 4
-  deathParticle: {fileID: 9060203545399369138, guid: f150b7e8d04a35d4b92c93dce94d79ce,
-    type: 3}
-  drop: []
-  nextWaypointDistance: 1.2
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  playerPos: {fileID: 0}
 --- !u!114 &7638374179885716667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,15 +146,15 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 900
+  m_LinearDrag: 100
+  m_AngularDrag: 100
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &7638374179885716662
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -198,6 +171,34 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.41
+--- !u!114 &7638374179885716666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7638374179885716657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 852f3b16843be3649bbcf6ad9fc13d68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyTemplate: {fileID: 11400000, guid: bdb2498465c9a7643b19455910d6b93e, type: 2}
+  enemyHealthBar: {fileID: 8498098369687019466}
+  tauntRange: 8
+  attackRange: 7
+  deathParticle: {fileID: 9060203545399369138, guid: f150b7e8d04a35d4b92c93dce94d79ce,
+    type: 3}
+  drop:
+  - {fileID: 6361153842236953747, guid: c4d6f374ae0b8b44da11ae2135b353b4, type: 3}
+  nextWaypointDistance: 1.2
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  playerPos: {fileID: 0}
 --- !u!1001 &5415635458150788021
 PrefabInstance:
   m_ObjectHideFlags: 0

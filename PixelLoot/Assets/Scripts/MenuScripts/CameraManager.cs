@@ -71,4 +71,8 @@ public class CameraManager : MonoBehaviour
         
     }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
