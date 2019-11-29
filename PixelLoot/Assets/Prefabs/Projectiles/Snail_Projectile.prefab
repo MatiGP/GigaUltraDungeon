@@ -100,7 +100,7 @@ MonoBehaviour:
   onHitParticle: {fileID: 7107809332629615512, guid: 1195d623744d0884f92adc293b5ab40a,
     type: 3}
   lifeTime: 0.6
-  speed: 10
+  speed: 12
 --- !u!61 &1411492456979247469
 BoxCollider2D:
   m_ObjectHideFlags: 0

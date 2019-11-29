@@ -18,7 +18,6 @@ public class Enemy : MonoBehaviour
 
     
     public LayerMask playerLayer;
-    [HideInInspector]
     public LayerMask obstacleLayer;
     private Animator animator;
     private Rigidbody2D enemyRigidbody;
