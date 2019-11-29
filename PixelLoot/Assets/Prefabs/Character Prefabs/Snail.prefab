@@ -181,7 +181,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &8977572748845382357
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -205,11 +205,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8977572748845382354}
     m_Modifications:
-    - target: {fileID: 4523721449249132686, guid: 15d7b09b968852641ae905cd7c37f943,
-        type: 3}
-      propertyPath: m_Name
-      value: enemyUI
-      objectReference: {fileID: 0}
     - target: {fileID: 4523721449249132685, guid: 15d7b09b968852641ae905cd7c37f943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -314,6 +309,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523721449249132686, guid: 15d7b09b968852641ae905cd7c37f943,
+        type: 3}
+      propertyPath: m_Name
+      value: enemyUI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15d7b09b968852641ae905cd7c37f943, type: 3}

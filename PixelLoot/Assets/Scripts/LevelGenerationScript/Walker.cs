@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using System.Linq;
 using Pathfinding;
 public enum Direction
 {
@@ -66,6 +65,7 @@ public class Walker : MonoBehaviour
 
     void Start()
     {
+        DontDestroyOnLoad(this);
         marks = new List<GameObject>();
         visitedPos = new List<Vector2>();
         var graph = AstarPath.active.data.gridGraph;
@@ -284,10 +284,11 @@ public class Walker : MonoBehaviour
 
     void InstantiatePlayer()
     {
-        if (!hasPlayerBeenInstantiated)
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        if (player != null)
         {
             Instantiate(playerCharacters[PlayerPrefs.GetInt("selectedChar") - 1], visitedPos[0], Quaternion.identity);           
-            hasPlayerBeenInstantiated = true;
         }              
     }
 

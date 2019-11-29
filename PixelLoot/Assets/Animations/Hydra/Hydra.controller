@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: -90
-  startTimeBtwShots: 0.15
+  startTimeBtwShots: 0.35
 --- !u!1102 &8135671861108517361
 AnimatorState:
   serializedVersion: 5
