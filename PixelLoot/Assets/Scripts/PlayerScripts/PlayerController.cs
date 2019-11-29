@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
         rb2d.velocity = direction * moveSpeed;
         animator.SetBool("IsRunning", direction.x != 0 || direction.y != 0);
 
+        #region Inventory Buttons
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             Inventory.instance.useItem(0);
@@ -60,6 +61,11 @@ public class PlayerController : MonoBehaviour
         {
             Inventory.instance.useItem(3);
         }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            Inventory.instance.useItem(4);
+        }
+        #endregion
 
     }
 
@@ -83,6 +89,11 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
       
+    }
+
+    public Vector2 GetPlayerDirection()
+    {
+        return direction;
     }
 
 

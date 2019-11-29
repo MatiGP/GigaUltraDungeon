@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4774878869926823990}
   - component: {fileID: 4774878869926823992}
   - component: {fileID: 4699275284331032544}
+  - component: {fileID: 4282453845712603235}
   m_Layer: 11
   m_Name: Archer
   m_TagString: Player
@@ -127,7 +128,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &4774878869926823989
 MonoBehaviour:
@@ -161,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b6852914ed2d94c8ce54d691e438c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7
+  moveSpeed: 6
   vcam: {fileID: 0}
 --- !u!114 &4774878869926823992
 MonoBehaviour:
@@ -194,6 +195,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0.01, y: -0.03}
   m_Size: {x: 0.56, y: 0.98}
   m_Direction: 0
+--- !u!114 &4282453845712603235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4774878869926823993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72531c0333975bc4f9d2b71125953a33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashForce: 100
+  dashCooldown: 1
 --- !u!1001 &3707220474453958881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -369,6 +384,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4774878869926823985}
     m_Modifications:
+    - target: {fileID: 3943522582270200737, guid: 18c5f4c6844f3af45838a4dad640f597,
+        type: 3}
+      propertyPath: m_Name
+      value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 3943522582270200737, guid: 18c5f4c6844f3af45838a4dad640f597,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 3277168817667775531, guid: 18c5f4c6844f3af45838a4dad640f597,
         type: 3}
       propertyPath: stats
@@ -479,16 +504,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3943522582270200737, guid: 18c5f4c6844f3af45838a4dad640f597,
-        type: 3}
-      propertyPath: m_Name
-      value: UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 3943522582270200737, guid: 18c5f4c6844f3af45838a4dad640f597,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 3867608110617124732, guid: 18c5f4c6844f3af45838a4dad640f597,
         type: 3}
       propertyPath: m_Layer
@@ -498,6 +513,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428270898231981619, guid: 18c5f4c6844f3af45838a4dad640f597,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 15.300049
       objectReference: {fileID: 0}
     - target: {fileID: 3943522583997419796, guid: 18c5f4c6844f3af45838a4dad640f597,
         type: 3}

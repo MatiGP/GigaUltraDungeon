@@ -28,16 +28,14 @@ public class DeathMenuScript : MonoBehaviour
 
     public void RestartGame()
     {
-        isPlayerDead = false;
-        Walker.hasPlayerBeenInstantiated = false;
+        isPlayerDead = false;        
         PlayerStats.isPlayerAlive = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void mainMenu()
     {
-        isPlayerDead = false;
-        Walker.hasPlayerBeenInstantiated = false;
+        isPlayerDead = false;       
         PlayerStats.isPlayerAlive = true;
         SceneManager.LoadScene(1);
     }

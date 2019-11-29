@@ -53,8 +53,6 @@ public class Walker : MonoBehaviour
     public Tilemap roomUpRightDown;
     public Tilemap roomUpRightDownLeft;
 
-    [HideInInspector]
-    public static bool hasPlayerBeenInstantiated;
     private Tilemap goRoom;
     private List<Vector2> visitedPos;
     private List<GameObject> marks;
@@ -64,8 +62,7 @@ public class Walker : MonoBehaviour
     private float maxY;
 
     void Start()
-    {
-        DontDestroyOnLoad(this);
+    {       
         marks = new List<GameObject>();
         visitedPos = new List<Vector2>();
         var graph = AstarPath.active.data.gridGraph;
@@ -286,9 +283,13 @@ public class Walker : MonoBehaviour
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-        if (player != null)
+        if (player == null)
         {
-            Instantiate(playerCharacters[PlayerPrefs.GetInt("selectedChar") - 1], visitedPos[0], Quaternion.identity);           
+            Instantiate(playerCharacters[PlayerPrefs.GetInt("selectedChar") - 1], visitedPos[0], Quaternion.identity);
+        }
+        else
+        {
+            Debug.Log("Player Already Exists!");
         }              
     }
 
