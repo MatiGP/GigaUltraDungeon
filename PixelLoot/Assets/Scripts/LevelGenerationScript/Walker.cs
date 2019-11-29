@@ -13,6 +13,7 @@ public enum Direction
 }
 public class Walker : MonoBehaviour
 {
+    
     [Header("Walker Settings")]
     public LayerMask nodeLayer;
     public int numOfWalks = 10;
