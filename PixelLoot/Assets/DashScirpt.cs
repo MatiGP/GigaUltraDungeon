@@ -27,7 +27,6 @@ public class DashScirpt : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 capsuleCollider.enabled = false;
-                Debug.Log(capsuleCollider.enabled);
                 dashDirection = pc.GetPlayerDirection();
                 Dash();
                 currentDashCooldown = dashCooldown;
@@ -43,7 +42,6 @@ public class DashScirpt : MonoBehaviour
 
     void Dash()
     {
-        Debug.Log("Hop!" + dashDirection);
         rb.velocity = dashDirection * dashForce;
     }
 }
