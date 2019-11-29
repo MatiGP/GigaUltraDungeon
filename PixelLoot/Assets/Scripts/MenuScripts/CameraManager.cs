@@ -1,6 +1,7 @@
 ﻿using UnityEngine.EventSystems;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Experimental.Rendering.LWRP;
 
 public class CameraManager : MonoBehaviour
 {
@@ -8,8 +9,11 @@ public class CameraManager : MonoBehaviour
     public GameObject titleScreenCam;
     public GameObject titleScreenPanel;
     public GameObject mageVCam;
+    public Light2D mageLight;
     public GameObject knightVCam;
+    public Light2D knightLight;
     public GameObject archerVCam;
+    public Light2D archerLight;
 
     public GameObject buttons;
     public GameObject blackOverlay;
@@ -23,6 +27,9 @@ public class CameraManager : MonoBehaviour
     public void ResetCamera()
     {       
         characterStatPanel.SetActive(false);
+        mageLight.enabled = false;
+        knightLight.enabled = false;
+        archerLight.enabled = false;
         mageVCam.SetActive(false);
         knightVCam.SetActive(false);
         archerVCam.SetActive(false);
@@ -43,6 +50,9 @@ public class CameraManager : MonoBehaviour
         archerVCam.SetActive(false);
         characterStatPanel.SetActive(true);
         buttons.SetActive(false);
+        mageLight.enabled = true;
+        knightLight.enabled = false;
+        archerLight.enabled = false;
         setupCharacter.setupWindow(1);
     }
     public void SelectKnight()
@@ -52,6 +62,9 @@ public class CameraManager : MonoBehaviour
         archerVCam.SetActive(false);
         characterStatPanel.SetActive(true);
         buttons.SetActive(false);
+        mageLight.enabled = false;
+        knightLight.enabled = true;
+        archerLight.enabled = false;
         setupCharacter.setupWindow(3);
     }
     public void SelectArcher()
@@ -61,6 +74,9 @@ public class CameraManager : MonoBehaviour
         archerVCam.SetActive(true);
         characterStatPanel.SetActive(true);
         buttons.SetActive(false);
+        mageLight.enabled = false;
+        knightLight.enabled = false;
+        archerLight.enabled = true;
         setupCharacter.setupWindow(2);
     }
 

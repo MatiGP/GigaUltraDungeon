@@ -209,6 +209,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashForce: 100
   dashCooldown: 1
+--- !u!114 &5267372859248603065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4774878871218308265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d80c98ed9b281446ada1723a4c6e724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manaCost: 4
+  specialProjectile: {fileID: 2200475941077369339, guid: 56a7c33a08201524b98db35c83c4da4f,
+    type: 3}
+  specialAttackCooldown: 2
 --- !u!1001 &3707220474453958881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -229,7 +245,7 @@ PrefabInstance:
     - target: {fileID: 8156430596971586629, guid: 688c8dd9da08be346855d605e9ebdcb9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.039
       objectReference: {fileID: 0}
     - target: {fileID: 8156430596971586629, guid: 688c8dd9da08be346855d605e9ebdcb9,
         type: 3}

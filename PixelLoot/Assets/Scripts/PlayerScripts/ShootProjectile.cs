@@ -35,4 +35,9 @@ public class ShootProjectile : MonoBehaviour
         Instantiate(projectile, transform.position, Quaternion.Euler(0f, 0f, rotz + offset));
         timeBtwShots = startTimeBtwShots;
     }
+
+    public float GetRotation()
+    {
+        return rotz + offset;
+    }
 }

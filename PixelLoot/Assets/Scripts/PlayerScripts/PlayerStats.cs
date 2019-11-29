@@ -42,11 +42,12 @@ public class PlayerStats : MonoBehaviour
         {
             characterCurrentMana = characterCurrentMana - (characterCurrentMana % characterMaxMana);
         }
-        canCastSpells = true;
+        charactersUI.UpdateBars();
     }
     public void SpendMana(int manaAmount)
     {
         characterCurrentMana -= manaAmount;
+        charactersUI.UpdateBars();
     }
     
     public float GetManaPercentage()

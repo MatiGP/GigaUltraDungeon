@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &367884705118361479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2334727361765494865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 939b2b37163090c46a00db0f2737eb6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manaCost: 2
+  specialProjectile: {fileID: 6124225777189402493, guid: 20cb51355192dac409e8c637593ea33f,
+    type: 3}
+  specialAttackCooldown: 2
 --- !u!1 &5800442564439778520
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +217,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4896218445524977133}
     m_Modifications:
+    - target: {fileID: 3943522582270200737, guid: 18c5f4c6844f3af45838a4dad640f597,
+        type: 3}
+      propertyPath: m_Name
+      value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 3943522582270200737, guid: 18c5f4c6844f3af45838a4dad640f597,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3277168817667775531, guid: 18c5f4c6844f3af45838a4dad640f597,
         type: 3}
       propertyPath: stats
@@ -311,16 +337,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3943522582270200737, guid: 18c5f4c6844f3af45838a4dad640f597,
-        type: 3}
-      propertyPath: m_Name
-      value: UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 3943522582270200737, guid: 18c5f4c6844f3af45838a4dad640f597,
-        type: 3}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 3867608110617124732, guid: 18c5f4c6844f3af45838a4dad640f597,
         type: 3}
       propertyPath: m_Layer
@@ -335,6 +351,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428270898231981619, guid: 18c5f4c6844f3af45838a4dad640f597,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 15.300049
       objectReference: {fileID: 0}
     - target: {fileID: 3943522583997419796, guid: 18c5f4c6844f3af45838a4dad640f597,
         type: 3}
