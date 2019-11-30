@@ -6,6 +6,7 @@ public class DashScirpt : MonoBehaviour
 {
     public int dashForce;
     public float dashCooldown;
+    public GameObject ghost;
     private float currentDashCooldown;
     private Rigidbody2D rb;
     private PlayerController pc;
@@ -39,5 +40,6 @@ public class DashScirpt : MonoBehaviour
     void Dash()
     {
         rb.velocity = dashDirection * dashForce;
+        Instantiate(ghost, transform.position, transform.rotation);
     }
 }

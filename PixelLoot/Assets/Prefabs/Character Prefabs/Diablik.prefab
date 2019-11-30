@@ -191,6 +191,7 @@ MonoBehaviour:
     type: 3}
   drop:
   - {fileID: 6361153842236953747, guid: c4d6f374ae0b8b44da11ae2135b353b4, type: 3}
+  - {fileID: 2613615717838753630, guid: eecd33eca4d3481458ad1bdcf3bc2851, type: 3}
   nextWaypointDistance: 1.2
   playerLayer:
     serializedVersion: 2

@@ -10,7 +10,15 @@ public class Potion_SO : Item_SO
 
     public override void Use()
     {
-        PlayerStats.instance.RestoreHealth(restoreAmount);
+        switch (whatToRestore)
+        {
+            case PotionType.Health:
+                PlayerStats.instance.RestoreHealth(restoreAmount);
+                break;
+            case PotionType.Mana:
+                PlayerStats.instance.RestoreMana(restoreAmount);
+                break;
+        }
     }
 }
 

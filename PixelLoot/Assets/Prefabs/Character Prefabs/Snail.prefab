@@ -134,6 +134,7 @@ MonoBehaviour:
     type: 3}
   drop:
   - {fileID: 6361153842236953747, guid: c4d6f374ae0b8b44da11ae2135b353b4, type: 3}
+  - {fileID: 2613615717838753630, guid: eecd33eca4d3481458ad1bdcf3bc2851, type: 3}
   nextWaypointDistance: 1.2
   playerLayer:
     serializedVersion: 2
@@ -205,6 +206,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8977572748845382354}
     m_Modifications:
+    - target: {fileID: 4523721449249132686, guid: 15d7b09b968852641ae905cd7c37f943,
+        type: 3}
+      propertyPath: m_Name
+      value: enemyUI
+      objectReference: {fileID: 0}
     - target: {fileID: 4523721449249132685, guid: 15d7b09b968852641ae905cd7c37f943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -309,11 +315,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4523721449249132686, guid: 15d7b09b968852641ae905cd7c37f943,
-        type: 3}
-      propertyPath: m_Name
-      value: enemyUI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15d7b09b968852641ae905cd7c37f943, type: 3}
