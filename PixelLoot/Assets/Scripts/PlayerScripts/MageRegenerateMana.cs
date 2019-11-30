@@ -7,6 +7,7 @@ public class MageRegenerateMana : MonoBehaviour
     public int manaRegen;
     public int ticks;
     public float manaRegenCooldown;
+    public ParticleSystem manaRegenEffect;
 
     private float currentManaRegenCooldown;
     private PlayerStats pstats;
@@ -38,7 +39,8 @@ public class MageRegenerateMana : MonoBehaviour
     {        
         for (int i = 0; i < ticks; i++)
         {
-            pstats.RestoreMana(manaRegen);        
+            pstats.RestoreMana(manaRegen);
+            Instantiate(manaRegenEffect, transform.position, Quaternion.identity);
             yield return new WaitForSeconds(1.0f);
         }
     }

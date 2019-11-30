@@ -227,6 +227,8 @@ MonoBehaviour:
   manaRegen: 1
   ticks: 5
   manaRegenCooldown: 10
+  manaRegenEffect: {fileID: 1218142572120812571, guid: 1a3794acbb11809408eb8cf3439a9846,
+    type: 3}
 --- !u!1001 &5454948700336826289
 PrefabInstance:
   m_ObjectHideFlags: 0
