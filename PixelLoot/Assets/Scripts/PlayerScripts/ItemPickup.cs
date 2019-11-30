@@ -10,8 +10,11 @@ public class ItemPickup : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Inventory.instance.addItem(item);
-            Destroy(gameObject);
+            if (Inventory.instance.addItem(item))
+            {
+                Destroy(gameObject);
+            }
+            
         }
     }
 }

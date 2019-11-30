@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e08b15ea00b04f5439e4d184b3ca49fd, type: 3}
-  m_Name: New Potion
+  m_Name: Mana Potion
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 21300000, guid: e7b3caa8ef46de0479616e805c253fdb, type: 3}
+  itemIcon: {fileID: 21300000, guid: 146de9cdffb762d43849f0c917b4377b, type: 3}
   itemName: Mana Potion
-  restoreAmount: 8
+  restoreAmount: 5
   whatToRestore: 1

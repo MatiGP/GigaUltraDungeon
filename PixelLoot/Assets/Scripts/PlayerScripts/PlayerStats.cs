@@ -15,6 +15,7 @@ public class PlayerStats : MonoBehaviour
     public int characterMaxHealth;
     public int characterCurrentMana;
     private int characterMaxMana;
+    private int armor;
     private SpriteRenderer spriteRenderer;
     private PlayerController controller;
     [HideInInspector]
@@ -56,7 +57,7 @@ public class PlayerStats : MonoBehaviour
     }
     public void TakeDamage(int damageTaken)
     {
-        characterCurrentHealth -= damageTaken;
+        characterCurrentHealth -= (damageTaken - armor);
         charactersUI.UpdateBars();
 
         changeColorRed();
@@ -92,6 +93,7 @@ public class PlayerStats : MonoBehaviour
             AttachTheCamera();
             isPlayerAlive = false;
         }
+
     }
 
     public void AttachTheCamera()
@@ -107,5 +109,10 @@ public class PlayerStats : MonoBehaviour
     {
         spriteRenderer.color = new Color(1, 1, 1, 1);
         yield return null;
+    }
+
+    public void SetArmor(int armor)
+    {
+        this.armor = armor;
     }
 }

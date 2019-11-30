@@ -10,7 +10,6 @@ public class Potion_SO : Item_SO
 
     public override void Use()
     {
-        Debug.Log("POTION!");
         PlayerStats.instance.RestoreHealth(restoreAmount);
     }
 }
