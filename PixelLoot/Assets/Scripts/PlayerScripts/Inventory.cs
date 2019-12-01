@@ -8,17 +8,14 @@ public class Inventory : MonoBehaviour
     public InventoryUI ui;
 
     public GameObject weaponHolder;
-    public Item_SO[] items;
+    public Item_SO[] items = new Item_SO[5];
     
 
 
     private void Awake()
-    {
-        
-
+    {       
         instance = this;
         ui = GetComponentInChildren<InventoryUI>();
-        items = new Item_SO[5];
     }
 
     

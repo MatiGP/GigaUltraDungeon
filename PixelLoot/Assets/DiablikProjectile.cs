@@ -20,7 +20,7 @@ public class DiablikProjectile : EnemyProjectile
     void DestroyProjectile()
     {
         Instantiate(onHitParticle, transform.position, Quaternion.identity);
-        for(int i = 0; i<3; i++)
+        for(int i = 0; i<4; i++)
         {
             Instantiate(diablikSmallProjectiles, transform.position, Quaternion.Euler(0,0, i*90));
         }

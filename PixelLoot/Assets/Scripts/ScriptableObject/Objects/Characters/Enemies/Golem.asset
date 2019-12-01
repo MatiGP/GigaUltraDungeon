@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Golem
   enemyHealth: 12
-  enemySpeed: 3
+  enemySpeed: 5
   enemyDamage: 5
   projectileOrSummon: {fileID: 8395937462827641416, guid: 60bbbd5473a9d98478c651ed5540d458,
     type: 3}

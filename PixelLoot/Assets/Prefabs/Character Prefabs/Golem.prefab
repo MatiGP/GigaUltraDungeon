@@ -114,7 +114,7 @@ MonoBehaviour:
     m_Bits: 2048
   obstacleLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   playerPos: {fileID: 0}
 --- !u!114 &4716889332851332826
 MonoBehaviour:

@@ -9,7 +9,7 @@ public class ExitLevel : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.transform.position = new Vector3(0, 0, 0);
+            PlayerStats.instance.SaveState();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

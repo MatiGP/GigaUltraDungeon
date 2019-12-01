@@ -38,8 +38,6 @@ public class PlayerProjectile : MonoBehaviour
 
     }
 
-    
-
     public void DestroyProjectile()
     {
         Instantiate(onHitParticle, transform.position, Quaternion.identity);

@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class KnightSpecialAttack : MonoBehaviour
 {
     public int manaCost;
     public GameObject specialProjectile;
     public float specialAttackCooldown;
+    public Image skillno2;
     private float currentSpecialAttackCooldown;
     private ShootProjectile shootProjectile;
     // Update is called once per frame
@@ -19,7 +21,8 @@ public class KnightSpecialAttack : MonoBehaviour
     {
         if (currentSpecialAttackCooldown <= 0 && PlayerStats.instance.characterCurrentMana >= manaCost)
         {
-            if(Input.GetKeyDown(KeyCode.Mouse1))
+            skillno2.fillAmount = 1;
+            if (Input.GetKeyDown(KeyCode.Mouse1))
             {
                 PlayerStats.instance.SpendMana(manaCost);
                 ShootSpecial();
@@ -29,6 +32,7 @@ public class KnightSpecialAttack : MonoBehaviour
         else
         {
             currentSpecialAttackCooldown -= Time.deltaTime;
+            skillno2.fillAmount = currentSpecialAttackCooldown / specialAttackCooldown;
         }
         
     }

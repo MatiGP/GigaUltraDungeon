@@ -1053,6 +1053,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingScreen: {fileID: 2055566680}
   slider: {fileID: 1748208266}
+  playerSAI: {fileID: 11400000, guid: e09e617ca21f0984fafc3f6346f3a978, type: 2}
+  statPanel: {fileID: 1880444164}
 --- !u!1 &410185988
 GameObject:
   m_ObjectHideFlags: 0

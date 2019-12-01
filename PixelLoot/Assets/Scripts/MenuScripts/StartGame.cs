@@ -7,10 +7,16 @@ using UnityEngine.UI;
 public class StartGame : MonoBehaviour
 {
     public GameObject loadingScreen;
-    public Slider slider; 
+    public Slider slider;
+    public PlayerStatsAndItems playerSAI;
+    public SetupCharacterStatPanel statPanel;
+
 
     public void LoadLevel()
     {
+        playerSAI.currentHealth = statPanel.playableChars[PlayerPrefs.GetInt("selectedChar")-1].characterBaseHealth + statPanel.playableChars[PlayerPrefs.GetInt("selectedChar") - 1].baseStats[3];
+        playerSAI.currentMana = statPanel.playableChars[PlayerPrefs.GetInt("selectedChar")-1].characterBaseMana + statPanel.playableChars[PlayerPrefs.GetInt("selectedChar") - 1].baseStats[0];
+        playerSAI.itemsInInventory = new Item_SO[5];
         StartCoroutine(LoadScene());
     }
 

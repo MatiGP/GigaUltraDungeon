@@ -198,7 +198,7 @@ MonoBehaviour:
     m_Bits: 2048
   obstacleLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   playerPos: {fileID: 0}
 --- !u!1001 &5415635458150788021
 PrefabInstance:
@@ -207,11 +207,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7638374179885716663}
     m_Modifications:
-    - target: {fileID: 4523721449249132686, guid: 15d7b09b968852641ae905cd7c37f943,
-        type: 3}
-      propertyPath: m_Name
-      value: enemyUI
-      objectReference: {fileID: 0}
     - target: {fileID: 4523721449249132685, guid: 15d7b09b968852641ae905cd7c37f943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -316,6 +311,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523721449249132686, guid: 15d7b09b968852641ae905cd7c37f943,
+        type: 3}
+      propertyPath: m_Name
+      value: enemyUI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15d7b09b968852641ae905cd7c37f943, type: 3}

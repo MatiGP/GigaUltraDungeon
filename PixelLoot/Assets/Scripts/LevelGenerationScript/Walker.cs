@@ -61,6 +61,11 @@ public class Walker : MonoBehaviour
     private float minY;
     private float maxY;
 
+    private void Awake()
+    {
+        InstantiatePlayer();
+    }
+
     void Start()
     {       
         marks = new List<GameObject>();
@@ -90,7 +95,7 @@ public class Walker : MonoBehaviour
         Invoke("Scan", 0.1f);
 
         InstantiateEnemies();
-        InstantiatePlayer();
+       
 
         
     }
@@ -281,16 +286,14 @@ public class Walker : MonoBehaviour
 
     void InstantiatePlayer()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-
-        if (player == null)
+        if (!GameObject.FindGameObjectWithTag("Player"))
         {
-            Instantiate(playerCharacters[PlayerPrefs.GetInt("selectedChar") - 1], visitedPos[0], Quaternion.identity);
+            Instantiate(playerCharacters[PlayerPrefs.GetInt("selectedChar")-1], new Vector3(0,0,0), Quaternion.identity);
+            
         }
-        else
         {
-            Debug.Log("Player Already Exists!");
-        }              
+            PlayerStats.instance.LoadState();
+        }       
     }
 
     float ReturnMaxX()

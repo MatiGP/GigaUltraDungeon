@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
         GameObject vCamGameObject = GameObject.FindGameObjectWithTag("VirtualCamera");
         vcam = vCamGameObject.GetComponent<CinemachineVirtualCamera>();
     }

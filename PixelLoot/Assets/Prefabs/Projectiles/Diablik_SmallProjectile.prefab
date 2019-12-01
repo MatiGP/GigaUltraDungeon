@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fd504fa7b761ac41bb48dd89b3f9bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 4
+  damage: 2
   onHitParticle: {fileID: 6901349173364712733, guid: d4b7ab83b9d3c2f42a5bd7e87e7b0db5,
     type: 3}
   lifeTime: 0.75

@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 876d94eb5e1b9094c90dd6aa184d80b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 17
   onHitParticle: {fileID: 7209454340612812753, guid: 0803caa2be7724e44a7ba944dfe8c97d,
     type: 3}
   lifeTime: 0.6

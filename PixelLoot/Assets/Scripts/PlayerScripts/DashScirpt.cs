@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DashScirpt : MonoBehaviour
 {
     public int dashForce;
     public float dashCooldown;
     public GameObject ghost;
+    public Image skillno1;
     private float currentDashCooldown;
     private Rigidbody2D rb;
     private PlayerController pc;
@@ -23,6 +25,7 @@ public class DashScirpt : MonoBehaviour
     {
         if (currentDashCooldown <= 0)
         {
+            skillno1.fillAmount = 1;
             if (Input.GetKeyDown(KeyCode.Space))
             {                
                 dashDirection = pc.GetPlayerDirection();
@@ -33,6 +36,7 @@ public class DashScirpt : MonoBehaviour
         else
         {
             currentDashCooldown -= Time.deltaTime;
+            skillno1.fillAmount = currentDashCooldown / dashCooldown;
         }
         
     }

@@ -14,6 +14,7 @@ public class PlayerStats : MonoBehaviour
     public int characterCurrentHealth;
     public int characterMaxHealth;
     public int characterCurrentMana;
+    public PlayerStatsAndItems playerSAI;
     private int characterMaxMana;
     private int armor;
     private SpriteRenderer spriteRenderer;
@@ -22,8 +23,7 @@ public class PlayerStats : MonoBehaviour
     public bool canCastSpells;
     public static bool isPlayerAlive;
     void Awake()
-    {
-        DontDestroyOnLoad(gameObject);                  
+    {                 
         instance = this;           
         
 
@@ -114,5 +114,20 @@ public class PlayerStats : MonoBehaviour
     public void SetArmor(int armor)
     {
         this.armor = armor;
+    }
+
+    public void SaveState()
+    {
+        playerSAI.currentHealth = characterCurrentHealth;
+        playerSAI.currentMana = characterCurrentMana;
+        playerSAI.itemsInInventory = Inventory.instance.items;
+    }
+
+    public void LoadState()
+    {
+        characterCurrentHealth = playerSAI.currentHealth;
+        characterCurrentMana = playerSAI.currentMana;
+        Inventory.instance.items = playerSAI.itemsInInventory;
+        Inventory.instance.ui.UpdateUI();
     }
 }
