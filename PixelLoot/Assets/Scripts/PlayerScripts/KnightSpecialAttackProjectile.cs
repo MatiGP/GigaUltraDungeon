@@ -26,7 +26,7 @@ public class KnightSpecialAttackProjectile : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
-            DestroyProjectile();
+            Instantiate(onHitParticle, transform.position, Quaternion.identity);
         }
 
         if (collision.CompareTag("Wall"))

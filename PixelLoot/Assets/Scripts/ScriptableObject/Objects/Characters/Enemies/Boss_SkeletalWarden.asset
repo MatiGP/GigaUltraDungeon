@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed287421fce35e24ebf57384e959a449, type: 3}
-  m_Name: ImpCaster
+  m_Name: Boss_SkeletalWarden
   m_EditorClassIdentifier: 
-  enemyName: 
-  enemyHealth: 0
-  enemySpeed: 0
-  enemyDamage: 0
-  projectileOrSummon: {fileID: 0}
+  enemyName: Skeletal Warden
+  enemyHealth: 62
+  enemySpeed: 8
+  projectileOrSummon: {fileID: 4365496328731632561, guid: 45be16f2611362942907780bb936e3ad,
+    type: 3}

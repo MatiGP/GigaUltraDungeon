@@ -102,17 +102,9 @@ public class Enemy : MonoBehaviour
             
             if(Vector2.Distance(transform.position, playerPos.position) > attackRange)
             {
-                enemyRigidbody.velocity = direction * enemyTemplate.enemySpeed;
+                RunTowardsThePlayer(direction);
                 animator.SetBool("isInRange", false);
                 animator.ResetTrigger("attack");
-                if (transform.position.x > playerPos.position.x)
-                {
-                    transform.rotation = Quaternion.Euler(0, 180, 0);
-                }
-                else
-                {
-                    transform.rotation = Quaternion.Euler(0, 0, 0);
-                }
             }
             else
             {
@@ -128,7 +120,21 @@ public class Enemy : MonoBehaviour
             }
         }
     }
-    
+
+    private void RunTowardsThePlayer(Vector2 direction)
+    {
+        enemyRigidbody.velocity = direction * enemyTemplate.enemySpeed;
+        
+        if (transform.position.x > playerPos.position.x)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+    }
+
     void OnPathComplete(Path p)
     {
         if (!p.error)

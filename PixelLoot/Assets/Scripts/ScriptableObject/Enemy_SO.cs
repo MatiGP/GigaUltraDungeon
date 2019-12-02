@@ -7,7 +7,6 @@ public class Enemy_SO : ScriptableObject
     public string enemyName;
     public int enemyHealth;
     public int enemySpeed;
-    public int enemyDamage;
     public GameObject projectileOrSummon;
 
 }
