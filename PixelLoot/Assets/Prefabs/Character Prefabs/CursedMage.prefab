@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5897837262029619698}
   - component: {fileID: 4814366311732435549}
   - component: {fileID: 3986257797858854497}
+  - component: {fileID: 864052785554491551}
   m_Layer: 12
   m_Name: CursedMage
   m_TagString: Enemy
@@ -169,8 +170,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTemplate: {fileID: 11400000, guid: fbdabc983c4f0794290c60431c2b8767, type: 2}
   enemyHealthBar: {fileID: 4442315074041279651}
-  tauntRange: 8
-  attackRange: 4
+  tauntRange: 7
+  attackRange: 5
   deathParticle: {fileID: 1034945555224309892, guid: 30c19e0c585f260409598b23643f435d,
     type: 3}
   drop:
@@ -200,6 +201,32 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.38
+--- !u!114 &864052785554491551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4442315074135199494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 852f3b16843be3649bbcf6ad9fc13d68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyTemplate: {fileID: 0}
+  enemyHealthBar: {fileID: 0}
+  tauntRange: 8
+  attackRange: 4
+  deathParticle: {fileID: 0}
+  drop: []
+  nextWaypointDistance: 1.2
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  playerPos: {fileID: 0}
 --- !u!1001 &243540411350827228
 PrefabInstance:
   m_ObjectHideFlags: 0

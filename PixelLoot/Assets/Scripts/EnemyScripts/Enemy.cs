@@ -158,9 +158,17 @@ public class Enemy : MonoBehaviour
 
     void DropItem()
     {
-        int rand = Random.Range(0, drop.Length);
+        int chance = Random.Range(1, 100);
+        if(chance <=20 || chance >= 1)
+        {
+            Instantiate(drop[0], transform.position, Quaternion.identity);
+        }
+        if (chance <= 25 || chance >= 21)
+        {
+            Instantiate(drop[1], transform.position, Quaternion.identity);
+        }
 
-        Instantiate(drop[rand], transform.position, Quaternion.identity);
+        
     }
 
     

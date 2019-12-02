@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTemplate: {fileID: 11400000, guid: 6bd531709d6af2d43844a058d171c660, type: 2}
   enemyHealthBar: {fileID: 5647018145683691936}
-  tauntRange: 8
+  tauntRange: 7
   attackRange: 6
   deathParticle: {fileID: 6966665745444793108, guid: 2af2054336ab2ed488e47275bd2b2a12,
     type: 3}

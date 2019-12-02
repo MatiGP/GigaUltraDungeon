@@ -7,10 +7,11 @@ public class Boss_CastSpell : StateMachineBehaviour
     public float offset = -90;
     public float startTimeBtwShots = 1f;
 
-    private GameObject[] projectiles;
+    public GameObject[] projectiles;
     private Transform playerPos;
     private float timeBtwShots;
     private float rotz;
+
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -34,7 +35,7 @@ public class Boss_CastSpell : StateMachineBehaviour
 
         if (timeBtwShots <= 0)
         {
-            Instantiate(projectile, animator.transform.position, Quaternion.Euler(0, 0, rotz + offset));
+            //Instantiate(projectile, animator.transform.position, Quaternion.Euler(0, 0, rotz + offset));
             timeBtwShots = startTimeBtwShots;
         }
         else

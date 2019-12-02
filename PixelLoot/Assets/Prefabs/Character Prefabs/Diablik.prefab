@@ -185,8 +185,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTemplate: {fileID: 11400000, guid: bdb2498465c9a7643b19455910d6b93e, type: 2}
   enemyHealthBar: {fileID: 8498098369687019466}
-  tauntRange: 8
-  attackRange: 7
+  tauntRange: 7
+  attackRange: 6
   deathParticle: {fileID: 9060203545399369138, guid: f150b7e8d04a35d4b92c93dce94d79ce,
     type: 3}
   drop:
@@ -207,6 +207,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7638374179885716663}
     m_Modifications:
+    - target: {fileID: 4523721449249132686, guid: 15d7b09b968852641ae905cd7c37f943,
+        type: 3}
+      propertyPath: m_Name
+      value: enemyUI
+      objectReference: {fileID: 0}
     - target: {fileID: 4523721449249132685, guid: 15d7b09b968852641ae905cd7c37f943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -311,11 +316,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4523721449249132686, guid: 15d7b09b968852641ae905cd7c37f943,
-        type: 3}
-      propertyPath: m_Name
-      value: enemyUI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15d7b09b968852641ae905cd7c37f943, type: 3}
