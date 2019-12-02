@@ -15,8 +15,9 @@ MonoBehaviour:
   currentHealth: 0
   currentMana: 0
   itemsInInventory:
+  - {fileID: 11400000, guid: b42745b637bc9864d89e7d42c27c94d0, type: 2}
+  - {fileID: 11400000, guid: 864f74c2001bf384eb6e1f5100163697, type: 2}
+  - {fileID: 11400000, guid: b42745b637bc9864d89e7d42c27c94d0, type: 2}
+  - {fileID: 11400000, guid: 864f74c2001bf384eb6e1f5100163697, type: 2}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  currentLevel: 4

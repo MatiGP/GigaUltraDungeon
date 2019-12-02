@@ -10,6 +10,7 @@ public class ExitLevel : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             PlayerStats.instance.SaveState();
+            PlayerStats.instance.GetComponentInChildren<CharacterStatsUI>().SetFloorText(PlayerStats.instance.playerSAI.currentLevel++);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

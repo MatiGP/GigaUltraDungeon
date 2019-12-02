@@ -7,5 +7,6 @@ public class PlayerStatsAndItems : ScriptableObject
     public int currentHealth;
     public int currentMana;
     public Item_SO[] itemsInInventory = new Item_SO[5];
+    public int currentLevel;
 
 }

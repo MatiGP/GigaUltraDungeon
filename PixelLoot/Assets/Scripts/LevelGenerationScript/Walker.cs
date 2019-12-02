@@ -22,9 +22,11 @@ public class Walker : MonoBehaviour
     public GameObject marker;
     [Space(2)]
     [Header("Enemy Settings")]
+    public int currentFloorLevel;
     public int minEnemyCountPerRoom = 4;
     public int maxEnemyCountPerRoom = 12;
     public GameObject[] enemies;
+    public GameObject boss;
     [Space(2)]
     [Header("Playable Chars Settings")]
     public GameObject[] playerCharacters;    
@@ -71,8 +73,9 @@ public class Walker : MonoBehaviour
         marks = new List<GameObject>();
         visitedPos = new List<Vector2>();
         var graph = AstarPath.active.data.gridGraph;
-        
-        
+        PlayerStats.instance.GetComponentInChildren<CharacterStatsUI>().GetFloorNumber();
+
+
         SetRoomPositions();
 
         minX = ReturnMinX();
@@ -271,17 +274,21 @@ public class Walker : MonoBehaviour
 
     void InstantiateEnemies()
     {
-        for(int i = 1; i < visitedPos.Count; i++)
+        for(int i = 1; i < visitedPos.Count ; i++)
         {
             int enemySpawnRange = Random.Range(minEnemyCountPerRoom, maxEnemyCountPerRoom);
             for(int x = 0; x < enemySpawnRange; x++)
             {
                 int randomX = (int)Random.Range(visitedPos[i].x - 9, visitedPos[i].x + 3);
-                int randomY = (int)Random.Range(visitedPos[i].y - 4, visitedPos[i].y + 2);
+                int randomY = (int)Random.Range(visitedPos[i].y - 4, visitedPos[i].y + 2);                         
                 Instantiate(enemies[Random.Range(0, enemies.Length)], new Vector3(randomX, randomY), Quaternion.identity);
+                             
+                
             }
             
+            
         }
+        
     }
 
     void InstantiatePlayer()
@@ -289,11 +296,14 @@ public class Walker : MonoBehaviour
         if (!GameObject.FindGameObjectWithTag("Player"))
         {
             Instantiate(playerCharacters[PlayerPrefs.GetInt("selectedChar")-1], new Vector3(0,0,0), Quaternion.identity);
-            
+            PlayerStats.instance.GetComponentInChildren<CharacterStatsUI>().SetFloorText(1);
+
         }
         {
             PlayerStats.instance.LoadState();
-        }       
+        }
+
+       
     }
 
     float ReturnMaxX()

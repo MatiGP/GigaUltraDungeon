@@ -6,8 +6,10 @@ public class Boss_CastSpell : StateMachineBehaviour
 {
     public float offset = -90;
     public float startTimeBtwShots = 1f;
-
     public GameObject[] projectiles;
+    public int minProjectileCount;
+    public int maxProjectileCount;
+
     private Transform playerPos;
     private float timeBtwShots;
     private float rotz;
@@ -35,8 +37,16 @@ public class Boss_CastSpell : StateMachineBehaviour
 
         if (timeBtwShots <= 0)
         {
-            //Instantiate(projectile, animator.transform.position, Quaternion.Euler(0, 0, rotz + offset));
-            timeBtwShots = startTimeBtwShots;
+            
+            int randProjectile = Random.Range(0, projectiles.Length);
+
+            for (int i = 1; i <= 5; i++)
+            {
+                Instantiate(projectiles[randProjectile], animator.transform.position, Quaternion.Euler(0, 0, rotz + offset + i * 30));
+                timeBtwShots = startTimeBtwShots;
+            }
+
+            
         }
         else
         {

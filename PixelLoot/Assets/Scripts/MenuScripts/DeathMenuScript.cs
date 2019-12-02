@@ -30,6 +30,7 @@ public class DeathMenuScript : MonoBehaviour
     {
         isPlayerDead = false;        
         PlayerStats.isPlayerAlive = true;
+        PlayerStats.instance.playerSAI.itemsInInventory = new Item_SO[5];
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

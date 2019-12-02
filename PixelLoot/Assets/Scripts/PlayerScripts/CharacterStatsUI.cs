@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CharacterStatsUI : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class CharacterStatsUI : MonoBehaviour
     public Image characterIcon;
     public Image healthBar;
     public Image manaBar;
+    public TextMeshProUGUI floorText;
 
     private void Start()
     {
@@ -21,6 +23,15 @@ public class CharacterStatsUI : MonoBehaviour
     {
         healthBar.fillAmount = stats.GetHealthPercentage();
         manaBar.fillAmount = stats.GetManaPercentage();
+    }
+
+    public void SetFloorText(int floorNum)
+    {
+        floorText.text = floorNum.ToString();
+    }
+    public int GetFloorNumber()
+    {
+        return int.Parse(floorText.text);
     }
 
 }
