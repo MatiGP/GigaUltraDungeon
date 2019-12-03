@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -175,7 +175,8 @@ MonoBehaviour:
   disappearArchitectParticleEffect: {fileID: 1034945555224309892, guid: 30c19e0c585f260409598b23643f435d,
     type: 3}
   playerUI: {fileID: 225437029}
-  typingSpeed: 0.05
+  playerController: {fileID: 1365702989}
+  typingSpeed: 0.06
   sentece: Jeszcze zyjesz? Szkoda. Trudno dzisiaj o dobre slugi. Przejdz przez drzwi
     obok, za nimi znajdziesz dwoch innych smialkow, ktorzy byc moze pomoga ci.
   animator: {fileID: 1694401687}
@@ -1013,7 +1014,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583825908}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.51, y: -1.15, z: 0}
+  m_LocalPosition: {x: -3.51, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 274355680}
@@ -1036,7 +1037,8 @@ MonoBehaviour:
   disappearArchitectParticleEffect: {fileID: 1034945555224309892, guid: 30c19e0c585f260409598b23643f435d,
     type: 3}
   playerUI: {fileID: 225437029}
-  typingSpeed: 0.05
+  playerController: {fileID: 1365702989}
+  typingSpeed: 0.06
   sentece: Witaj podrozniku! Nazywam sie Architekt i oprowadze cie po przedsionku
     mojego lochu. Prosze przejdz do nastepnego pokoju.
   animator: {fileID: 1694401687}
@@ -1759,6 +1761,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bca07cfee3ef4da448b3f52ba331271e, type: 3}
+--- !u!114 &1365702989 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3082859934255297863, guid: 0029f882590babf479d09f2f75814e60,
+    type: 3}
+  m_PrefabInstance: {fileID: 2138575274}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5b6852914ed2d94c8ce54d691e438c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1489308828
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1863,7 +1877,8 @@ MonoBehaviour:
   disappearArchitectParticleEffect: {fileID: 1034945555224309892, guid: 30c19e0c585f260409598b23643f435d,
     type: 3}
   playerUI: {fileID: 225437029}
-  typingSpeed: 0.05
+  playerController: {fileID: 1365702989}
+  typingSpeed: 0.06
   sentece: Czekaja na ciebie rozne niebezpieczenstwa. Pozbadz sie ich klikajac LPM!
     Moze dostaniesz cos ciekawego.
   animator: {fileID: 1694401687}
@@ -1891,7 +1906,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.46, y: 3.9}
+  m_Size: {x: 4.36, y: 3.9}
   m_EdgeRadius: 0
 --- !u!4 &1619380035
 Transform:
@@ -1901,7 +1916,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619380032}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.94, y: 8.13, z: 0}
+  m_LocalPosition: {x: 2.22, y: 8.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 274355680}
@@ -2602,7 +2617,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2128553170}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 18.42, y: 8.44, z: 0}
+  m_LocalPosition: {x: 19.37, y: 8.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 274355680}
@@ -2625,7 +2640,8 @@ MonoBehaviour:
   disappearArchitectParticleEffect: {fileID: 1034945555224309892, guid: 30c19e0c585f260409598b23643f435d,
     type: 3}
   playerUI: {fileID: 225437029}
-  typingSpeed: 0.05
+  playerController: {fileID: 1365702989}
+  typingSpeed: 0.06
   sentece: Gratulacje. Lecz nie mysl ze spotkasz tak zalosnych przeciwnikow. Bedziesz
     umieral podrozniku. Bardzo, bardzo czesto. Przygotuj sie na trudniejsze wyzwanie!
   animator: {fileID: 1694401687}
@@ -2666,11 +2682,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Knight
-      objectReference: {fileID: 0}
-    - target: {fileID: 1908462543816535738, guid: 0029f882590babf479d09f2f75814e60,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4896218445524977133, guid: 0029f882590babf479d09f2f75814e60,
         type: 3}
@@ -2748,6 +2759,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 0d9fd1a348ba4fd4683e590c7c20ddfc,
         type: 2}
+    - target: {fileID: 1908462543816535738, guid: 0029f882590babf479d09f2f75814e60,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1908462543653097896, guid: 0029f882590babf479d09f2f75814e60,
         type: 3}
       propertyPath: m_AnchoredPosition.x

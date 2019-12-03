@@ -9,6 +9,7 @@ public class Dialog : MonoBehaviour
     public GameObject boundedArchitect;
     public ParticleSystem disappearArchitectParticleEffect;
     public GameObject playerUI;
+    public PlayerController playerController;
     public float typingSpeed;
     [TextArea(3,10)]
     public string sentece;
@@ -23,18 +24,24 @@ public class Dialog : MonoBehaviour
         {
             uiSentence.text += letter;
             yield return new WaitForSeconds(typingSpeed);
-        } 
+        }
+
+        playerController.canMove = true;
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            playerController.canMove = false;
             playerUI.SetActive(false);
             animator.SetTrigger("hasEnteredTheTrigger");
             animator.SetBool("isOpen", true);
 
             StartCoroutine(TypeSentence());
+
+            
         }
     }
 

@@ -40,9 +40,9 @@ public class Boss_CastSpell : StateMachineBehaviour
             
             int randProjectile = Random.Range(0, projectiles.Length);
 
-            for (int i = 1; i <= 5; i++)
+            for (int i = 1; i <= 3; i++)
             {
-                Instantiate(projectiles[randProjectile], animator.transform.position, Quaternion.Euler(0, 0, rotz + offset + i * 30));
+                Instantiate(projectiles[randProjectile], new Vector3(animator.transform.position.x - 0.5f, animator.transform.position.y - 0.4f), Quaternion.Euler(0, 0, (rotz + offset) - (90 - i * 60)));
                 timeBtwShots = startTimeBtwShots;
             }
 

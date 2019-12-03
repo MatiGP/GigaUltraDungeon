@@ -55,6 +55,7 @@ public class Walker : MonoBehaviour
     public Tilemap roomUpRightDown;
     public Tilemap roomUpRightDownLeft;
 
+    private int floorNum;
     private Tilemap goRoom;
     private List<Vector2> visitedPos;
     private List<GameObject> marks;
@@ -73,7 +74,7 @@ public class Walker : MonoBehaviour
         marks = new List<GameObject>();
         visitedPos = new List<Vector2>();
         var graph = AstarPath.active.data.gridGraph;
-        PlayerStats.instance.GetComponentInChildren<CharacterStatsUI>().GetFloorNumber();
+        floorNum = PlayerStats.instance.GetComponentInChildren<CharacterStatsUI>().GetFloorNumber();
 
 
         SetRoomPositions();
@@ -274,35 +275,46 @@ public class Walker : MonoBehaviour
 
     void InstantiateEnemies()
     {
-        for(int i = 1; i < visitedPos.Count ; i++)
+        if (floorNum % 2 == 0)
         {
-            int enemySpawnRange = Random.Range(minEnemyCountPerRoom, maxEnemyCountPerRoom);
-            for(int x = 0; x < enemySpawnRange; x++)
+            for (int i = 1; i < visitedPos.Count - 1; i++)
             {
-                int randomX = (int)Random.Range(visitedPos[i].x - 9, visitedPos[i].x + 3);
-                int randomY = (int)Random.Range(visitedPos[i].y - 4, visitedPos[i].y + 2);                         
-                Instantiate(enemies[Random.Range(0, enemies.Length)], new Vector3(randomX, randomY), Quaternion.identity);
-                             
-                
+                int enemySpawnRange = Random.Range(minEnemyCountPerRoom, maxEnemyCountPerRoom);
+                for (int x = 0; x < enemySpawnRange; x++)
+                {
+                    int randomX = (int)Random.Range(visitedPos[i].x - 9, visitedPos[i].x + 3);
+                    int randomY = (int)Random.Range(visitedPos[i].y - 4, visitedPos[i].y + 2);
+                    Instantiate(enemies[Random.Range(0, enemies.Length)], new Vector3(randomX, randomY), Quaternion.identity);
+                }
             }
-            
-            
+            Instantiate(boss, new Vector3(visitedPos[visitedPos.Count - 1].x, visitedPos[visitedPos.Count - 1].y), Quaternion.identity);
         }
-        
+        else
+        {
+            for (int i = 1; i < visitedPos.Count; i++)
+            {
+                int enemySpawnRange = Random.Range(minEnemyCountPerRoom, maxEnemyCountPerRoom);
+                for (int x = 0; x < enemySpawnRange; x++)
+                {
+                    int randomX = (int)Random.Range(visitedPos[i].x - 9, visitedPos[i].x + 3);
+                    int randomY = (int)Random.Range(visitedPos[i].y - 4, visitedPos[i].y + 2);
+                    Instantiate(enemies[Random.Range(0, enemies.Length)], new Vector3(randomX, randomY), Quaternion.identity);
+                }
+            }
+        }
     }
 
     void InstantiatePlayer()
     {
         if (!GameObject.FindGameObjectWithTag("Player"))
         {
-            Instantiate(playerCharacters[PlayerPrefs.GetInt("selectedChar")-1], new Vector3(0,0,0), Quaternion.identity);
-            PlayerStats.instance.GetComponentInChildren<CharacterStatsUI>().SetFloorText(1);
+            Instantiate(playerCharacters[PlayerPrefs.GetInt("selectedChar")-1], new Vector3(0,0,0), Quaternion.identity);            
 
         }
         {
             PlayerStats.instance.LoadState();
         }
-
+        
        
     }
 

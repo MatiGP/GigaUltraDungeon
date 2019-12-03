@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 6809432457496928783}
   - component: {fileID: 7205311748125344034}
   - component: {fileID: 6224886060020536262}
-  m_Layer: 0
+  - component: {fileID: 3090933639158436347}
+  m_Layer: 12
   m_Name: BOSS_SkeletalWarden
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1403342731
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -6885652126502832787, guid: 6283eb80ce063e1489eb956e2df863ef,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -179,6 +180,25 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   playerPos: {fileID: 0}
+--- !u!95 &3090933639158436347
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5131662975506787585}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1f6f7d02b61455b4c9b1aa6529f2dcf8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &5594942428812632464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -190,6 +210,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: enemyUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523721449220027519, guid: 15d7b09b968852641ae905cd7c37f943,
+        type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523721449220027519, guid: 15d7b09b968852641ae905cd7c37f943,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4523721449249132685, guid: 15d7b09b968852641ae905cd7c37f943,
         type: 3}
@@ -295,16 +325,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4523721449220027519, guid: 15d7b09b968852641ae905cd7c37f943,
-        type: 3}
-      propertyPath: m_FillAmount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4523721449220027519, guid: 15d7b09b968852641ae905cd7c37f943,
-        type: 3}
-      propertyPath: m_PreserveAspect
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4523721449471387185, guid: 15d7b09b968852641ae905cd7c37f943,
         type: 3}

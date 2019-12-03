@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Boss_SkeletalWarden
   m_EditorClassIdentifier: 
   enemyName: Skeletal Warden
-  enemyHealth: 62
+  enemyHealth: 100
   enemySpeed: 8
   projectileOrSummon: {fileID: 4365496328731632561, guid: 45be16f2611362942907780bb936e3ad,
     type: 3}

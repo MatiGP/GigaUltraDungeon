@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private bool facingRight = true;
     private Vector2 direction;
+    public bool canMove = true;
 
     private void Awake()
     {
@@ -33,17 +34,20 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
 
-        if (EventSystem.current.IsPointerOverGameObject())
-        {
-            return;
-        }
-
+        
+        
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         direction = direction.normalized;
-
-        rb2d.velocity = direction * moveSpeed;
-        animator.SetBool("IsRunning", direction.x != 0 || direction.y != 0);
-
+        if (canMove)
+        {
+            rb2d.velocity = direction * moveSpeed;
+            animator.SetBool("IsRunning", direction.x != 0 || direction.y != 0);
+        }
+        else
+        {
+            rb2d.velocity = Vector2.zero;
+            animator.SetBool("IsRunning", false);
+        }
         #region Inventory Buttons
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
