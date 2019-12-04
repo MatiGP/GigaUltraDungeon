@@ -44,9 +44,14 @@ public class Inventory : MonoBehaviour
         }
         if (items[itemIndex] is Weapon_SO)
         {
-            weaponHolder.GetComponent<WeaponDamage>().UpdateWeaponDamage();
+            UpdateDamage();
         }
         items[itemIndex] = null;
         ui.UpdateUI();
+    }
+
+    public void UpdateDamage()
+    {
+        weaponHolder.GetComponent<WeaponDamage>().UpdateWeaponDamage();
     }
 }

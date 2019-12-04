@@ -11,27 +11,38 @@ public class PlayerStats : MonoBehaviour
     public GameObject deathPanel;
 
 
-    public int characterCurrentHealth;
-    public int characterMaxHealth;
+    private int characterCurrentHealth;
+    private int characterMaxHealth;
     public int characterCurrentMana;
     public PlayerStatsAndItems playerSAI;
+
+    public int characterSTR;
+    public int characterINT;
+    public int characterDEX;
+    public int characterVIT;
+
     private int characterMaxMana;
     private int armor;
     private SpriteRenderer spriteRenderer;
     private PlayerController controller;
     [HideInInspector]
-    public bool canCastSpells;
     public static bool isPlayerAlive;
+
     void Awake()
     {                 
-        instance = this;           
-        
+        instance = this; 
+
+        characterINT = character.baseStats[0];
+        characterSTR = character.baseStats[1];
+        characterDEX = character.baseStats[2];
+        characterVIT = character.baseStats[3];
 
         DeathMenuScript.isPlayerDead = false;
-        characterMaxHealth = character.characterBaseHealth + character.baseStats[3];
+        characterMaxHealth = character.characterBaseHealth + characterVIT;
         characterCurrentHealth = characterMaxHealth;
-        characterMaxMana = character.characterBaseMana + character.baseStats[0];
+        characterMaxMana = character.characterBaseMana + characterINT;
         characterCurrentMana = characterMaxMana;
+
         controller = GetComponent<PlayerController>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }     
@@ -130,4 +141,64 @@ public class PlayerStats : MonoBehaviour
         Inventory.instance.items = playerSAI.itemsInInventory;
         Inventory.instance.ui.UpdateUI();
     }
+
+    private void RecalculateHealth()
+    {
+        characterMaxHealth = character.characterBaseHealth + characterVIT;
+    }
+
+    private void RecalculateMana()
+    {
+        characterMaxMana = character.characterBaseMana + characterINT;
+    }
+
+    private void RecalculateINT(int bonus)
+    {
+        characterINT = characterINT + bonus;
+        characterCurrentMana += bonus;
+        RecalculateMana();
+        Inventory.instance.UpdateDamage();
+        charactersUI.UpdateBars();
+    }
+    private void RecalculateSTR(int bonus)
+    {
+        characterSTR = characterSTR + bonus;
+        Inventory.instance.UpdateDamage();
+    }
+    private void RecalculateDEX(int bonus)
+    {
+        characterDEX = characterDEX + bonus;
+        Inventory.instance.UpdateDamage();
+    }
+
+    private void RecalculateVIT(int bonus)
+    {
+        characterVIT = characterVIT + bonus;
+        characterCurrentHealth += bonus;
+        RecalculateHealth();
+        charactersUI.UpdateBars();
+        
+    }
+
+    public void RecalculateStat(int index, int bonus)
+    {
+        switch (index)
+        {
+            case 0:
+                RecalculateINT(bonus);
+                break;
+            case 1:
+                RecalculateSTR(bonus);
+                break;
+            case 2:
+                RecalculateDEX(bonus);
+                break;
+            case 3:
+                RecalculateVIT(bonus);
+                break;
+        }
+    }
+
+
+
 }
