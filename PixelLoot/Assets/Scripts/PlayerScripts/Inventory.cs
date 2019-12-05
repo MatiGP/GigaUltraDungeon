@@ -9,6 +9,8 @@ public class Inventory : MonoBehaviour
 
     public GameObject weaponHolder;
     public Item_SO[] items = new Item_SO[5];
+
+    public Relic_SO[] relics = new Relic_SO[9];
     
 
 
