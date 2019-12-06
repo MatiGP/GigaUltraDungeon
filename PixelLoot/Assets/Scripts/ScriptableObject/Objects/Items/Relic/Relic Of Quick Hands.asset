@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41c199da52da9814896a8f8f60772888, type: 3}
-  m_Name: Relic Of AttackSpeed
+  m_Name: Relic Of Quick Hands
   m_EditorClassIdentifier: 
   itemIcon: {fileID: -4647760809331457815, guid: fdf964233282d5342a64226804748211,
     type: 3}
-  itemName: Rune of AttackSpeed
+  itemName: Relic of Quick Hands
   slot: 3
   rarity: 2
   affectedStats: 060000000100000004000000

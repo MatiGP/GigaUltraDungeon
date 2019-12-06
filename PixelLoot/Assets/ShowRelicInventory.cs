@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShowRelicInventory : MonoBehaviour
 {
-    public bool isRelicInventoryOpen = false;
+    private bool isRelicInventoryOpen = false;
     public GameObject equiptedRelicsUI;
     public GameObject relicsUI;
 

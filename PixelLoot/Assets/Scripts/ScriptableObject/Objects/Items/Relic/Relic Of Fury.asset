@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: -8880696727773663898, guid: fdf964233282d5342a64226804748211,
     type: 3}
-  itemName: Rune Of Fury
+  itemName: Relic Of Fury
   slot: 0
   rarity: 1
   affectedStats: 0600000005000000
