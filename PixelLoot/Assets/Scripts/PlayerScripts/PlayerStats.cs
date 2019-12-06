@@ -150,31 +150,30 @@ public class PlayerStats : MonoBehaviour
     private void RecalculateMana()
     {
         characterMaxMana = character.characterBaseMana + characterINT;
+
     }
 
     private void RecalculateINT(int bonus)
     {
-        characterINT = characterINT + bonus;
-        characterCurrentMana += bonus;
+        characterINT = character.baseStats[0] + bonus;
         RecalculateMana();
         Inventory.instance.UpdateDamage();
         charactersUI.UpdateBars();
     }
     private void RecalculateSTR(int bonus)
     {
-        characterSTR = characterSTR + bonus;
+        characterSTR = character.baseStats[1] + bonus;
         Inventory.instance.UpdateDamage();
     }
     private void RecalculateDEX(int bonus)
     {
-        characterDEX = characterDEX + bonus;
+        characterDEX = character.baseStats[2] + bonus;
         Inventory.instance.UpdateDamage();
     }
 
     private void RecalculateVIT(int bonus)
     {
-        characterVIT = characterVIT + bonus;
-        characterCurrentHealth += bonus;
+        characterVIT = character.baseStats[3] + bonus;
         RecalculateHealth();
         charactersUI.UpdateBars();
         

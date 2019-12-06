@@ -18,12 +18,12 @@ public class RelicInventory : MonoBehaviour
         {
             if(inventory.relics[i] != null)
             {
-                relicButttons[i].enabled = true;
+                relicButttons[i].gameObject.SetActive(true);
                 relicButttons[i].image.sprite = inventory.relics[i].itemIcon;
             }
             else
             {
-                relicButttons[i].enabled = false;
+                relicButttons[i].gameObject.SetActive(false);
             }
         }
     }
@@ -31,9 +31,11 @@ public class RelicInventory : MonoBehaviour
     public void UseRelic(int index)
     {
         inventory.relics[index].Use();
+        Debug.Log((int)inventory.relics[index].slot);
         equiptedRelics.wornRelics[(int)inventory.relics[index].slot] = inventory.relics[index];
         equiptedRelics.UpdateUI();
         inventory.relics[index] = null;
+        UpdateUI();
 
     }
 }

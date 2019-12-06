@@ -7,12 +7,33 @@ public class EquiptedRelics : MonoBehaviour
 {
     public Relic_SO[] wornRelics = new Relic_SO[4];
     public Button[] wornRelicsButtons;
+    public RelicInventory relicInventory;
     
     public void UpdateUI()
     {
        for(int i = 0; i < 4; i++)
         {
-            wornRelicsButtons[i].image.sprite = wornRelics[i].itemIcon;
+            if(wornRelics[i] != null)
+            {
+                wornRelicsButtons[i].gameObject.SetActive(true);
+                wornRelicsButtons[i].image.sprite = wornRelics[i].itemIcon;
+            }
+            else
+            {
+                wornRelicsButtons[i].gameObject.SetActive(false);
+            }
         }
+    }
+
+    public void Unequip(int index)
+    {
+        if (Inventory.instance.addItem(wornRelics[index]))
+        {
+            PlayerStats.instance.RecalculateStat((int)wornRelics[index].slot, 0);
+            wornRelics[index] = null;
+            UpdateUI();
+            relicInventory.UpdateUI();
+            
+        }        
     }
 }

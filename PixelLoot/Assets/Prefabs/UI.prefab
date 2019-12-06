@@ -850,7 +850,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8343004749688421635}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 508971042528750452}
+        m_MethodName: Unequip
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2234567004062666865
 GameObject:
   m_ObjectHideFlags: 0
@@ -3374,7 +3385,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7883064064405821}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 508971042528750452}
+        m_MethodName: Unequip
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5544966454858652538
 GameObject:
   m_ObjectHideFlags: 0
@@ -4401,10 +4423,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   wornRelicsButtons:
-  - {fileID: 7933615018794248281}
-  - {fileID: 3192595954759658052}
   - {fileID: 946778632103602062}
+  - {fileID: 3192595954759658052}
+  - {fileID: 7933615018794248281}
   - {fileID: 8399736191779265576}
+  relicInventory: {fileID: 4444745487640388722}
 --- !u!1 &7101439499505564492
 GameObject:
   m_ObjectHideFlags: 0
@@ -4668,7 +4691,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5182667013863000831}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 508971042528750452}
+        m_MethodName: Unequip
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7586390240913332103
 GameObject:
   m_ObjectHideFlags: 0
@@ -5126,7 +5160,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6064560643813024383}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 508971042528750452}
+        m_MethodName: Unequip
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9084716938103714360
 GameObject:
   m_ObjectHideFlags: 0
