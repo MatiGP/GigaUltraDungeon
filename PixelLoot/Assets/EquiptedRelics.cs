@@ -31,12 +31,11 @@ public class EquiptedRelics : MonoBehaviour
         {
             for (int i = 0; i < wornRelics[index].affectedStats.Length; i++)
             {
-                PlayerStats.instance.RecalculateStat((int)wornRelics[index].affectedStats[i], 0);
+                PlayerStats.instance.RecalculateStat((int)wornRelics[index].affectedStats[i], -wornRelics[index].values[i]);
             }          
             wornRelics[index] = null;
             UpdateUI();
-            relicInventory.UpdateUI();
-            
+            relicInventory.UpdateUI();           
         }        
     }
 }

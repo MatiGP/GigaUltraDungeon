@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41c199da52da9814896a8f8f60772888, type: 3}
-  m_Name: Relic Of Escape
+  m_Name: Relic Of Fury
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: -2746726671558969141, guid: c60e0344c2ea10d4ca2a394a0679ac2e,
+  itemIcon: {fileID: -8880696727773663898, guid: fdf964233282d5342a64226804748211,
     type: 3}
-  itemName: Relic of Escape
-  slot: 2
+  itemName: Rune Of Fury
+  slot: 0
   rarity: 1
-  affectedStats: 0500000001000000
-  values: 0600000002000000
+  affectedStats: 0600000005000000
+  values: 1400000003000000

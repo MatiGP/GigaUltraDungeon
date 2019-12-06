@@ -30,11 +30,27 @@ public class RelicInventory : MonoBehaviour
 
     public void UseRelic(int index)
     {
+        if(equiptedRelics.wornRelics[(int)inventory.relics[index].slot] != null)
+        {
+            equiptedRelics.Unequip((int)inventory.relics[index].slot);
+            Relic_SO tmpRelic = equiptedRelics.wornRelics[(int)inventory.relics[index].slot];
+            EquipRelic(index, tmpRelic);
+        }
+        else
+        {
+            EquipRelic(index, null);
+        }
+
+
+    }
+
+    private void EquipRelic(int index, Relic_SO relic)
+    {
         inventory.relics[index].Use();
         equiptedRelics.wornRelics[(int)inventory.relics[index].slot] = inventory.relics[index];
         equiptedRelics.UpdateUI();
-        inventory.relics[index] = null;
+        inventory.relics[index] = relic;
         UpdateUI();
-
     }
+
 }

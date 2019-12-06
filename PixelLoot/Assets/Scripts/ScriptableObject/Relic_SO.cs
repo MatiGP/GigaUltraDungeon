@@ -14,6 +14,7 @@ public class Relic_SO : Item_SO
     {      
         for(int i = 0; i < affectedStats.Length; i++)
         {
+            
             PlayerStats.instance.RecalculateStat((int)affectedStats[i], values[i]);
         }
     }
@@ -22,6 +23,6 @@ public class Relic_SO : Item_SO
 
 public enum RelicSlot { HEAD, TORSO, BOOTS, WEAPON }
 
-public enum AffectedStat { INT, STR, DEX, VIT, DMG, SPD}
+public enum AffectedStat { INT, STR, DEX, VIT, DMG, MVMSPD, ATKSPD }
 
 public enum RelicRarity { COMMON, MAGIC, RARE, LEGENDARY }

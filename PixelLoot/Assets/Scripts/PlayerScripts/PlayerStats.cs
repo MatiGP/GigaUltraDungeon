@@ -157,25 +157,25 @@ public class PlayerStats : MonoBehaviour
 
     private void RecalculateINT(int bonus)
     {
-        characterINT = character.baseStats[0] + bonus;
+        characterINT += bonus;
         RecalculateMana();
         Inventory.instance.weaponHolder.GetComponent<WeaponDamage>().UpdateWeaponDamage(bonus);
         charactersUI.UpdateBars();
     }
     private void RecalculateSTR(int bonus)
     {
-        characterSTR = character.baseStats[1] + bonus;
+        characterSTR += bonus;
         Inventory.instance.weaponHolder.GetComponent<WeaponDamage>().UpdateWeaponDamage(bonus);
     }
     private void RecalculateDEX(int bonus)
     {
-        characterDEX = character.baseStats[2] + bonus;
+        characterDEX += bonus;
         Inventory.instance.weaponHolder.GetComponent<WeaponDamage>().UpdateWeaponDamage(bonus);
     }
 
     private void RecalculateVIT(int bonus)
     {
-        characterVIT = character.baseStats[3] + bonus;
+        characterVIT += bonus;
         RecalculateHealth();
         charactersUI.UpdateBars();
         
@@ -201,7 +201,10 @@ public class PlayerStats : MonoBehaviour
                 Inventory.instance.weaponHolder.GetComponent<WeaponDamage>().UpdateWeaponDamage(bonus);
                 break;
             case 5:
-                controller.moveSpeed = character.moveSpeed + bonus;
+                controller.moveSpeed += bonus;
+                break;
+            case 6:
+                Inventory.instance.weaponHolder.GetComponent<ShootProjectile>().startTimeBtwShots += (float)bonus / 100;
                 break;
 
         }
