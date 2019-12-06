@@ -6,6 +6,7 @@ using Cinemachine;
 
 public class PlayerController : MonoBehaviour
 {  
+    
     public int moveSpeed;
     [HideInInspector]
     public CinemachineVirtualCamera vcam;

@@ -12,8 +12,9 @@ public class PlayerProjectile : MonoBehaviour
 
     // Update is called once per frame
     private void Start()
-    {
+    {   
         damage = Inventory.instance.weaponHolder.GetComponent<WeaponDamage>().CalculateRandomWeaponDamage();
+        Debug.Log(damage);
         Invoke("DestroyProjectile", lifeTime);
     }
 

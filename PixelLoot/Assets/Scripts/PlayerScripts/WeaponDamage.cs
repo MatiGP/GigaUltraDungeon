@@ -16,22 +16,22 @@ public class WeaponDamage : MonoBehaviour
     {
         playerPrimaryStat = (int)PlayerStats.instance.character.primaryStat;
         shoot = GetComponent<ShootProjectile>();
-        UpdateWeaponDamage();
+        UpdateWeaponDamage(0);
     }
 
     
 
-    public void UpdateWeaponDamage()
+    public void UpdateWeaponDamage(int bonus)
    {
        if((int)weapon.scaling == playerPrimaryStat)
        {
-            minDamage = weapon.weaponMinDamage + stats.character.baseStats[playerPrimaryStat] / 2;
-            maxDamage = weapon.weaponMaxDamage + stats.character.baseStats[playerPrimaryStat] / 2;
+            minDamage = weapon.weaponMinDamage + stats.character.baseStats[playerPrimaryStat] / 2 + bonus;
+            maxDamage = weapon.weaponMaxDamage + stats.character.baseStats[playerPrimaryStat] / 2 + bonus;
        }
        else
        {
-           minDamage = weapon.weaponMinDamage + stats.character.baseStats[playerPrimaryStat] / 4;
-           maxDamage = weapon.weaponMaxDamage + stats.character.baseStats[playerPrimaryStat] / 4;
+           minDamage = weapon.weaponMinDamage + stats.character.baseStats[playerPrimaryStat] / 4 + bonus;
+           maxDamage = weapon.weaponMaxDamage + stats.character.baseStats[playerPrimaryStat] / 4 + bonus;
        }
         shoot.projectile = weapon.projectile;
         shoot.startTimeBtwShots = weapon.timeBetweenAttacks;
@@ -40,6 +40,9 @@ public class WeaponDamage : MonoBehaviour
    }
     public int CalculateRandomWeaponDamage()
     {
-        return Random.Range(minDamage, maxDamage);
+        
+        return Random.Range(minDamage, maxDamage); 
+        
     }
+    
 }

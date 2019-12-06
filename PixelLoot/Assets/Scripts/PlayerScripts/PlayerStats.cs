@@ -11,8 +11,8 @@ public class PlayerStats : MonoBehaviour
     public GameObject deathPanel;
 
 
-    private int characterCurrentHealth;
-    private int characterMaxHealth;
+    public int characterCurrentHealth;
+    public int characterMaxHealth;
     public int characterCurrentMana;
     public PlayerStatsAndItems playerSAI;
 
@@ -21,7 +21,7 @@ public class PlayerStats : MonoBehaviour
     public int characterDEX;
     public int characterVIT;
 
-    private int characterMaxMana;
+    public int characterMaxMana;
     private int armor;
     private SpriteRenderer spriteRenderer;
     private PlayerController controller;
@@ -45,6 +45,8 @@ public class PlayerStats : MonoBehaviour
 
         controller = GetComponent<PlayerController>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        controller.moveSpeed = character.moveSpeed;
     }     
     public void RestoreMana(int manaAmount)
     {
@@ -157,18 +159,18 @@ public class PlayerStats : MonoBehaviour
     {
         characterINT = character.baseStats[0] + bonus;
         RecalculateMana();
-        Inventory.instance.UpdateDamage();
+        Inventory.instance.weaponHolder.GetComponent<WeaponDamage>().UpdateWeaponDamage(bonus);
         charactersUI.UpdateBars();
     }
     private void RecalculateSTR(int bonus)
     {
         characterSTR = character.baseStats[1] + bonus;
-        Inventory.instance.UpdateDamage();
+        Inventory.instance.weaponHolder.GetComponent<WeaponDamage>().UpdateWeaponDamage(bonus);
     }
     private void RecalculateDEX(int bonus)
     {
         characterDEX = character.baseStats[2] + bonus;
-        Inventory.instance.UpdateDamage();
+        Inventory.instance.weaponHolder.GetComponent<WeaponDamage>().UpdateWeaponDamage(bonus);
     }
 
     private void RecalculateVIT(int bonus)
@@ -195,6 +197,13 @@ public class PlayerStats : MonoBehaviour
             case 3:
                 RecalculateVIT(bonus);
                 break;
+            case 4:
+                Inventory.instance.weaponHolder.GetComponent<WeaponDamage>().UpdateWeaponDamage(bonus);
+                break;
+            case 5:
+                controller.moveSpeed = character.moveSpeed + bonus;
+                break;
+
         }
     }
 

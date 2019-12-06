@@ -22,6 +22,6 @@ public class Relic_SO : Item_SO
 
 public enum RelicSlot { HEAD, TORSO, BOOTS, WEAPON }
 
-public enum AffectedStat { INT, STR, DEX, VIT }
+public enum AffectedStat { INT, STR, DEX, VIT, DMG, SPD}
 
 public enum RelicRarity { COMMON, MAGIC, RARE, LEGENDARY }

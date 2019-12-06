@@ -20,3 +20,4 @@ MonoBehaviour:
   characterBaseMana: 10
   baseStats: 09000000030000000300000004000000
   primaryStat: 0
+  moveSpeed: 8

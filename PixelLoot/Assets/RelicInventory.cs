@@ -31,7 +31,6 @@ public class RelicInventory : MonoBehaviour
     public void UseRelic(int index)
     {
         inventory.relics[index].Use();
-        Debug.Log((int)inventory.relics[index].slot);
         equiptedRelics.wornRelics[(int)inventory.relics[index].slot] = inventory.relics[index];
         equiptedRelics.UpdateUI();
         inventory.relics[index] = null;

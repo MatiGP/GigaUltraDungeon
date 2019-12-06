@@ -29,7 +29,10 @@ public class EquiptedRelics : MonoBehaviour
     {
         if (Inventory.instance.addItem(wornRelics[index]))
         {
-            PlayerStats.instance.RecalculateStat((int)wornRelics[index].slot, 0);
+            for (int i = 0; i < wornRelics[index].affectedStats.Length; i++)
+            {
+                PlayerStats.instance.RecalculateStat((int)wornRelics[index].affectedStats[i], 0);
+            }          
             wornRelics[index] = null;
             UpdateUI();
             relicInventory.UpdateUI();
