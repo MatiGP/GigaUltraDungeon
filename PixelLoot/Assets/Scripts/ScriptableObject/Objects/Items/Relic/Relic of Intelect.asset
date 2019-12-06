@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41c199da52da9814896a8f8f60772888, type: 3}
   m_Name: Relic of Intelect
   m_EditorClassIdentifier: 
-  relicIcon: {fileID: 0}
+  itemIcon: {fileID: 5271099922422654926, guid: 703154ce7e4ed1d4a9f7559b3870a691,
+    type: 3}
+  itemName: Relic Of Intelect
   slot: 0
-  rarity: 1
-  affectedStats: 0000000003000000
-  values: 03000000ffffffff
+  rarity: 0
+  affectedStats: 00000000
+  values: 05000000

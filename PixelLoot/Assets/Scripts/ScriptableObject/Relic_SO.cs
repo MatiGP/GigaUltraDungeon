@@ -11,7 +11,7 @@ public class Relic_SO : Item_SO
     public int[] values;
 
     public override void Use()
-    {
+    {      
         for(int i = 0; i<affectedStats.Length; i++)
         {
             PlayerStats.instance.RecalculateStat((int)affectedStats[i], values[i]);
