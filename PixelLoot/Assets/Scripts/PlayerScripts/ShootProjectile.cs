@@ -8,15 +8,12 @@ public class ShootProjectile : MonoBehaviour
     public float offset = -90;
     public float startTimeBtwShots = 1f;
 
-    [HideInInspector]
-    public float standardTimeBtwShots;
     
     private float timeBtwShots;
     private float rotz;
 
     void Update()
     {
-        standardTimeBtwShots = startTimeBtwShots;
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         rotz = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
 

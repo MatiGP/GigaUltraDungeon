@@ -3747,6 +3747,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TorsoRelicSlot
       objectReference: {fileID: 0}
+    - target: {fileID: 2869209810777381917, guid: 0029f882590babf479d09f2f75814e60,
+        type: 3}
+      propertyPath: startTimeBtwShots
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0029f882590babf479d09f2f75814e60, type: 3}
 --- !u!1001 &3202845055540274403

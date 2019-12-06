@@ -34,7 +34,7 @@ public class WeaponDamage : MonoBehaviour
            maxDamage = weapon.weaponMaxDamage + stats.character.baseStats[playerPrimaryStat] / 4 + bonus;
        }
         shoot.projectile = weapon.projectile;
-        shoot.startTimeBtwShots = weapon.timeBetweenAttacks;
+        
 
        
    }

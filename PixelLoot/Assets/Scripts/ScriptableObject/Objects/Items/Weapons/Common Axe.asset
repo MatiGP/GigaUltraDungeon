@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: Common Axe
   weaponMinDamage: 4
   weaponMaxDamage: 8
-  timeBetweenAttacks: 0.9
+  timeBetweenAttacks: 1
   weaponType: 0
   scaling: 1
   projectile: {fileID: 3908731808860097810, guid: d84f39c41ddaf1c4dbc56800359aafe7,

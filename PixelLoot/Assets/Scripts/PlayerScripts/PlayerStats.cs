@@ -204,7 +204,7 @@ public class PlayerStats : MonoBehaviour
                 controller.moveSpeed += bonus;
                 break;
             case 6:
-                Inventory.instance.weaponHolder.GetComponent<ShootProjectile>().startTimeBtwShots += (float)bonus / 100;
+                Inventory.instance.weaponHolder.GetComponent<ShootProjectile>().startTimeBtwShots -= (float)bonus / 100;
                 break;
 
         }

@@ -18,4 +18,4 @@ MonoBehaviour:
   slot: 3
   rarity: 2
   affectedStats: 060000000100000004000000
-  values: 3200000003000000ffffffff
+  values: 1e00000003000000ffffffff
