@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RipperCastSpell : CastSpell
+public class RipperCastSpell : StateMachineBehaviour
 {
+    public float offset = -90;
+    public float startTimeBtwShots = 1f;
 
     private GameObject projectile;
     private Transform playerPos;

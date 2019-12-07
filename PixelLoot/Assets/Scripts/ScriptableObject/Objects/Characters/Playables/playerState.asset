@@ -12,12 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32e13eb27c0d66b4f8d3b355554ad922, type: 3}
   m_Name: playerState
   m_EditorClassIdentifier: 
-  currentHealth: 0
-  currentMana: 0
+  currentHealth: 11
+  currentMana: 19
   itemsInInventory:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  currentLevel: 0
+  currentLevel: 1
+  relicsInEQ:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  wornEQ:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

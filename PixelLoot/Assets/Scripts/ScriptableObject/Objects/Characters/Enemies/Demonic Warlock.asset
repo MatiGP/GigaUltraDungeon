@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed287421fce35e24ebf57384e959a449, type: 3}
   m_Name: Demonic Warlock
   m_EditorClassIdentifier: 
-  enemyName: 
-  enemyHealth: 0
-  enemySpeed: 0
-  projectileOrSummon: {fileID: 0}
+  enemyName: Demonic Warlock
+  enemyHealth: 5
+  enemySpeed: 6
+  projectileOrSummon: {fileID: 7842425648813054596, guid: 24d016c06e16c064aac338e69943aa92,
+    type: 3}

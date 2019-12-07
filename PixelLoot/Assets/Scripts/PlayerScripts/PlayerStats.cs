@@ -134,6 +134,8 @@ public class PlayerStats : MonoBehaviour
         playerSAI.currentHealth = characterCurrentHealth;
         playerSAI.currentMana = characterCurrentMana;
         playerSAI.itemsInInventory = Inventory.instance.items;
+        playerSAI.relicsInEQ = Inventory.instance.relics;
+        playerSAI.wornEQ = Inventory.instance.relicInventory.equiptedRelics.wornRelics;
     }
 
     public void LoadState()
@@ -142,6 +144,10 @@ public class PlayerStats : MonoBehaviour
         characterCurrentMana = playerSAI.currentMana;
         Inventory.instance.items = playerSAI.itemsInInventory;
         Inventory.instance.ui.UpdateUI();
+        Inventory.instance.relics = playerSAI.relicsInEQ;
+        Inventory.instance.relicInventory.equiptedRelics.wornRelics = playerSAI.wornEQ;
+        Inventory.instance.relicInventory.UpdateUI();
+        Inventory.instance.relicInventory.equiptedRelics.UpdateUI();
     }
 
     private void RecalculateHealth()

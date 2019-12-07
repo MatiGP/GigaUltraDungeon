@@ -26,7 +26,7 @@ public class Walker : MonoBehaviour
     public int minEnemyCountPerRoom = 4;
     public int maxEnemyCountPerRoom = 12;
     public GameObject[] enemies;
-    public GameObject boss;
+    public GameObject[] boss;
     [Space(2)]
     [Header("Playable Chars Settings")]
     public GameObject[] playerCharacters;    
@@ -287,7 +287,7 @@ public class Walker : MonoBehaviour
                     Instantiate(enemies[Random.Range(0, enemies.Length)], new Vector3(randomX, randomY), Quaternion.identity);
                 }
             }
-            Instantiate(boss, new Vector3(visitedPos[visitedPos.Count - 1].x, visitedPos[visitedPos.Count - 1].y), Quaternion.identity);
+            Instantiate(boss[Random.Range(0, boss.Length)], new Vector3(visitedPos[visitedPos.Count - 1].x, visitedPos[visitedPos.Count - 1].y), Quaternion.identity);
         }
         else
         {

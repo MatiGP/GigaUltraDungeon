@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     public ParticleSystem deathParticle;
 
     public GameObject[] drop;
+    public GameObject[] relicDrop;
 
     public float nextWaypointDistance = 1.2f;
 
@@ -166,6 +167,10 @@ public class Enemy : MonoBehaviour
         if (chance <= 25 && chance >= 21)
         {
             Instantiate(drop[1], transform.position, Quaternion.identity);
+        }
+        if(chance >= 26 && chance <= 35)
+        {
+            Instantiate(relicDrop[Random.Range(0, relicDrop.Length)], transform.position, Quaternion.identity);
         }
 
         

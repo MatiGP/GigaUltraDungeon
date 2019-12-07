@@ -109,6 +109,11 @@ MonoBehaviour:
   drop:
   - {fileID: 6361153842236953747, guid: c4d6f374ae0b8b44da11ae2135b353b4, type: 3}
   - {fileID: 2613615717838753630, guid: eecd33eca4d3481458ad1bdcf3bc2851, type: 3}
+  relicDrop:
+  - {fileID: 6242095654994877378, guid: cf01ace28ea4ef54883edc0fdb929de3, type: 3}
+  - {fileID: 4278775309113467664, guid: 883e87e79026964418d057287293bb96, type: 3}
+  - {fileID: 3669618429700869400, guid: 00da779e6c04adc47b96d59539b0c652, type: 3}
+  - {fileID: 2384667572444051179, guid: 1407fc96130910d42a08390e36a11e54, type: 3}
   nextWaypointDistance: 1.2
   playerLayer:
     serializedVersion: 2

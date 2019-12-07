@@ -7,9 +7,7 @@ public class EquiptedRelics : MonoBehaviour
     public Relic_SO[] wornRelics = new Relic_SO[4];
     public Button[] wornRelicsButtons;
     public RelicInventory relicInventory;
-
-
-
+    
     public void UpdateUI()
     {
        for(int i = 0; i < 4; i++)
@@ -36,6 +34,7 @@ public class EquiptedRelics : MonoBehaviour
             }          
             wornRelics[index] = null;
             UpdateUI();
+            relicInventory.DeactivateRelicInfoWindow();
             relicInventory.UpdateUI();           
         }        
     }

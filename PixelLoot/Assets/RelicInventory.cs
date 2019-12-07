@@ -105,4 +105,28 @@ public class RelicInventory : MonoBehaviour
         }
     }
 
+    public void SetupEquipedRelicInfoWindow(int index)
+    {
+        relicInfoPanel.SetActive(true);
+
+        relicName.text = equiptedRelics.wornRelics[index].itemName;
+        SwapColor(equiptedRelics.wornRelics[index]);
+
+        for (int i = 0; i < equiptedRelics.wornRelics[index].affectedStats.Length; i++)
+        {
+            relicStats[i].text = equiptedRelics.wornRelics[index].affectedStats[i].ToString();
+            relicStatsValues[i].text = equiptedRelics.wornRelics[index].values[i].ToString();
+        }
+        slotValue.text = equiptedRelics.wornRelics[index].slot.ToString();
+    }
+
+
+    public void DisposeRelic(int index)
+    {
+        inventory.relics[index] = null;
+        DeactivateRelicInfoWindow();
+        UpdateUI();
+    }
+
+
 }
