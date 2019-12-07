@@ -7011,6 +7011,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equiptedRelicsUI: {fileID: 7085844928444774701}
   relicsUI: {fileID: 9084716938103714360}
+  relicInfo: {fileID: 8792354966754310928}
 --- !u!1 &8163804308668998274
 GameObject:
   m_ObjectHideFlags: 0

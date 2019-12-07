@@ -55,6 +55,7 @@ public class RelicInventory : MonoBehaviour
         equiptedRelics.wornRelics[(int)inventory.relics[index].slot] = inventory.relics[index];
         equiptedRelics.UpdateUI();
         inventory.relics[index] = relic;
+        DeactivateRelicInfoWindow();
         UpdateUI();
     }
 
@@ -63,8 +64,9 @@ public class RelicInventory : MonoBehaviour
         relicInfoPanel.SetActive(true);
 
         relicName.text = inventory.relics[index].itemName;
+        SwapColor(inventory.relics[index]);
 
-        for(int i = 0; i < inventory.relics[index].affectedStats.Length; i++)
+        for (int i = 0; i < inventory.relics[index].affectedStats.Length; i++)
         {
             relicStats[i].text = inventory.relics[index].affectedStats[i].ToString();
             relicStatsValues[i].text = inventory.relics[index].values[i].ToString();
@@ -82,6 +84,25 @@ public class RelicInventory : MonoBehaviour
 
         }
         slotValue.text = "";
+    }
+
+    void SwapColor(Relic_SO relic)
+    {
+        switch (relic.rarity)
+        {
+            case RelicRarity.COMMON:
+                relicName.color = Color.white;
+                break;
+            case RelicRarity.LEGENDARY:
+                relicName.color = new Color32(255, 102, 0, 255);
+                break;
+            case RelicRarity.MAGIC:
+                relicName.color = new Color32(92, 214, 92, 255);
+                break;
+            case RelicRarity.RARE:
+                relicName.color = Color.yellow;
+                break;
+        }
     }
 
 }
