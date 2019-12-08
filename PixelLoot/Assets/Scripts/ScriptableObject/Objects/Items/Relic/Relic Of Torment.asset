@@ -17,5 +17,5 @@ MonoBehaviour:
   itemName: Relic of Torment
   slot: 1
   rarity: 1
-  affectedStats: 0100000003000000
-  values: fdfffffffbffffff
+  affectedStats: 0400000003000000
+  values: 05000000fbffffff

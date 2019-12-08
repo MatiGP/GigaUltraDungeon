@@ -16,9 +16,9 @@ GameObject:
   - component: {fileID: 3783800449148609306}
   - component: {fileID: 3783800449148609305}
   - component: {fileID: 3783800449148609304}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BOSS_Summoner
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -311,11 +311,12 @@ public class Walker : MonoBehaviour
             Instantiate(playerCharacters[PlayerPrefs.GetInt("selectedChar")-1], new Vector3(0,0,0), Quaternion.identity);            
 
         }
+        if(PlayerStats.instance.playerSAI.currentLevel >= 2)
         {
             PlayerStats.instance.LoadState();
         }
-        
-       
+
+
     }
 
     float ReturnMaxX()

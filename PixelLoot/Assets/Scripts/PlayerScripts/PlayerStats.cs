@@ -136,6 +136,13 @@ public class PlayerStats : MonoBehaviour
         playerSAI.itemsInInventory = Inventory.instance.items;
         playerSAI.relicsInEQ = Inventory.instance.relics;
         playerSAI.wornEQ = Inventory.instance.relicInventory.equiptedRelics.wornRelics;
+        playerSAI.speed = controller.moveSpeed;
+        playerSAI.dexterity = characterDEX;
+        playerSAI.intelect = characterINT;
+        playerSAI.maxHealth = characterMaxHealth;
+        playerSAI.maxMana = characterMaxMana;
+        playerSAI.strength = characterSTR;
+        playerSAI.vitality = characterVIT;
     }
 
     public void LoadState()
@@ -148,6 +155,13 @@ public class PlayerStats : MonoBehaviour
         Inventory.instance.relicInventory.equiptedRelics.wornRelics = playerSAI.wornEQ;
         Inventory.instance.relicInventory.UpdateUI();
         Inventory.instance.relicInventory.equiptedRelics.UpdateUI();
+        controller.moveSpeed = playerSAI.speed;
+        characterDEX = playerSAI.dexterity;
+        characterINT = playerSAI.intelect;
+        characterMaxHealth = playerSAI.maxHealth;
+        characterMaxMana = playerSAI.maxMana;
+        characterSTR = playerSAI.strength;
+        characterVIT = playerSAI.vitality;
     }
 
     private void RecalculateHealth()

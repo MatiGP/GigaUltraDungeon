@@ -17,5 +17,5 @@ MonoBehaviour:
   itemName: Relic of Escape
   slot: 2
   rarity: 1
-  affectedStats: 0500000001000000
-  values: 0600000002000000
+  affectedStats: 0500000002000000
+  values: 0300000002000000
