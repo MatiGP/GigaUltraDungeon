@@ -7,8 +7,8 @@ public class ShootProjectile : MonoBehaviour
     public GameObject projectile;
     public float offset = -90;
     public float startTimeBtwShots = 1f;
-
-    
+    [SerializeField]
+    private PlayerController controller;
     private float timeBtwShots;
     private float rotz;
 
@@ -19,7 +19,7 @@ public class ShootProjectile : MonoBehaviour
 
         if (timeBtwShots <= 0 && projectile)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && controller.canAttack)
             {
                 Shoot();
             }

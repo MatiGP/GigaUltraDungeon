@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShowRelicInventory : MonoBehaviour
 {
@@ -8,7 +9,8 @@ public class ShowRelicInventory : MonoBehaviour
     public GameObject equiptedRelicsUI;
     public GameObject relicsUI;
     public GameObject relicInfo;
-
+    public Image characterImage;
+    public Image characterWeapon;
 
     private void Update()
     {
@@ -23,6 +25,12 @@ public class ShowRelicInventory : MonoBehaviour
                 Open();
             }
         }
+    }
+
+    private void Start()
+    {
+        characterImage.sprite = PlayerStats.instance.character.characterSprite;
+        characterWeapon.sprite = Inventory.instance.weaponHolder.GetComponent<WeaponDamage>().weapon.itemIcon;
     }
 
     void Close()

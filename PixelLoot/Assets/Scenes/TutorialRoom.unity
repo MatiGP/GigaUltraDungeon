@@ -255,31 +255,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3493018079751188063, guid: d062adb98d60ef74e9f4cfb688b847b8,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493018079751188063, guid: d062adb98d60ef74e9f4cfb688b847b8,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493018079751188063, guid: d062adb98d60ef74e9f4cfb688b847b8,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493018079751188063, guid: d062adb98d60ef74e9f4cfb688b847b8,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3493018079751188063, guid: d062adb98d60ef74e9f4cfb688b847b8,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3493018079104938490, guid: d062adb98d60ef74e9f4cfb688b847b8,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -321,6 +296,31 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3493018080225002113, guid: d062adb98d60ef74e9f4cfb688b847b8,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493018079751188063, guid: d062adb98d60ef74e9f4cfb688b847b8,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493018079751188063, guid: d062adb98d60ef74e9f4cfb688b847b8,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493018079751188063, guid: d062adb98d60ef74e9f4cfb688b847b8,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493018079751188063, guid: d062adb98d60ef74e9f4cfb688b847b8,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493018079751188063, guid: d062adb98d60ef74e9f4cfb688b847b8,
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
@@ -397,9 +397,10 @@ MonoBehaviour:
     type: 3}
   playerUI: {fileID: 225437029}
   playerController: {fileID: 1365702989}
+  skipButton: {fileID: 686166375}
   typingSpeed: 0.06
-  sentece: Jeszcze zyjesz? Szkoda. Trudno dzisiaj o dobre slugi. Przejdz przez drzwi
-    obok, za nimi znajdziesz dwoch innych smialkow, ktorzy byc moze pomoga ci.
+  sentence: Jeszcze zyjesz? Szkoda. Trudno dzisiaj o slugi. Przejdz przez drzwi obok,
+    za nimi znajdziesz dwoch innych smialkow, ktorzy byc moze pomoga Ci.
   animator: {fileID: 1694401687}
 --- !u!61 &145427413
 BoxCollider2D:
@@ -1374,8 +1375,9 @@ MonoBehaviour:
     type: 3}
   playerUI: {fileID: 225437029}
   playerController: {fileID: 1365702989}
+  skipButton: {fileID: 686166375}
   typingSpeed: 0.06
-  sentece: Witaj podrozniku! Nazywam sie Architekt i oprowadze cie po przedsionku
+  sentence: Witaj podrozniku! Nazywam sie Architekt i oprowadze cie po przedsionku
     mojego lochu. Prosze przejdz do nastepnego pokoju.
   animator: {fileID: 1694401687}
 --- !u!4 &602522894 stripped
@@ -1453,6 +1455,124 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 384faa3fdf1202a4f9bbbaa9cc3fad18, type: 3}
+--- !u!1 &686166373
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 686166374}
+  - component: {fileID: 686166377}
+  - component: {fileID: 686166376}
+  - component: {fileID: 686166375}
+  m_Layer: 5
+  m_Name: Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &686166374
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686166373}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2013674882}
+  m_Father: {fileID: 1694401684}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 349.2, y: -136.5}
+  m_SizeDelta: {x: 160, y: 40}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &686166375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686166373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 686166376}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &686166376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686166373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &686166377
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686166373}
+  m_CullTransparentMesh: 0
 --- !u!4 &703320674 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4442315074135199489, guid: dd6bbac4202fe6f478903f9f79f94f04,
@@ -2333,9 +2453,10 @@ MonoBehaviour:
     type: 3}
   playerUI: {fileID: 225437029}
   playerController: {fileID: 1365702989}
+  skipButton: {fileID: 686166375}
   typingSpeed: 0.06
-  sentece: Czekaja na ciebie rozne niebezpieczenstwa. Pozbadz sie ich klikajac LPM!
-    Moze dostaniesz cos ciekawego.
+  sentence: Czekaja na ciebie rozne niebezpieczenstwa. Pozbadz sie ich klikajac LPM!
+    Moze dostaniesz jakas miksture. By ich uzyc nacisnij klawisze 1-5.
   animator: {fileID: 1694401687}
 --- !u!61 &1619380034
 BoxCollider2D:
@@ -2639,6 +2760,7 @@ RectTransform:
   m_Children:
   - {fileID: 202337626}
   - {fileID: 1635093940}
+  - {fileID: 686166374}
   m_Father: {fileID: 1927885091}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3045,6 +3167,83 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &2013674881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2013674882}
+  - component: {fileID: 2013674884}
+  - component: {fileID: 2013674883}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2013674882
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013674881}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 686166374}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2013674883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013674881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 947c054ba0c03c44292b91f0239d4ef9, type: 3}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 1
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Pomin
+--- !u!222 &2013674884
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013674881}
+  m_CullTransparentMesh: 0
 --- !u!4 &2059085226 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4442315074135199489, guid: dd6bbac4202fe6f478903f9f79f94f04,
@@ -3101,8 +3300,9 @@ MonoBehaviour:
     type: 3}
   playerUI: {fileID: 225437029}
   playerController: {fileID: 1365702989}
+  skipButton: {fileID: 686166375}
   typingSpeed: 0.06
-  sentece: Gratulacje. Lecz nie mysl ze spotkasz tak zalosnych przeciwnikow. Bedziesz
+  sentence: Gratulacje. Lecz nie mysl ze spotkasz tak zalosnych przeciwnikow. Bedziesz
     umieral podrozniku. Bardzo, bardzo czesto. Przygotuj sie na trudniejsze wyzwanie!
   animator: {fileID: 1694401687}
 --- !u!61 &2128553173
@@ -3244,6 +3444,21 @@ PrefabInstance:
       propertyPath: startTimeBtwShots
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2869209810777381917, guid: 0029f882590babf479d09f2f75814e60,
+        type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1365702989}
+    - target: {fileID: 367884705118361479, guid: 0029f882590babf479d09f2f75814e60,
+        type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1365702989}
+    - target: {fileID: 153680452793891141, guid: 0029f882590babf479d09f2f75814e60,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2442550036636615317, guid: 0029f882590babf479d09f2f75814e60,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -3378,6 +3593,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167637932447766673, guid: 0029f882590babf479d09f2f75814e60,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3112628499584087137, guid: 0029f882590babf479d09f2f75814e60,
         type: 3}

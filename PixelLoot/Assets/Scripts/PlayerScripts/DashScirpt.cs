@@ -29,8 +29,13 @@ public class DashScirpt : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {                
                 dashDirection = pc.GetPlayerDirection();
-                Dash();
-                currentDashCooldown = dashCooldown;
+                dashDirection = dashDirection.normalized;
+                if(dashDirection != Vector2.zero)
+                {
+                    Dash();
+                    currentDashCooldown = dashCooldown;
+                }
+                
             }            
         }
         else

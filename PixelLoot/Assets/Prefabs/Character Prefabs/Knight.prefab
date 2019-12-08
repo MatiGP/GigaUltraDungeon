@@ -17,6 +17,7 @@ MonoBehaviour:
     type: 3}
   specialAttackCooldown: 2
   skillno2: {fileID: 7241142852685482092}
+  controller: {fileID: 3082859934255297863}
 --- !u!1 &5800442564439778520
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,6 +191,8 @@ MonoBehaviour:
   moveSpeed: 5
   vcam: {fileID: 0}
   canMove: 1
+  canAttack: 1
+  canCastSpells: 1
 --- !u!114 &3943996736151601716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -531,12 +534,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 5240986517740825975, guid: 18c5f4c6844f3af45838a4dad640f597,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 180d7cd2e8924bc41ba741e2548ae6bc,
-        type: 3}
     - target: {fileID: 6393972166789083557, guid: 18c5f4c6844f3af45838a4dad640f597,
         type: 3}
       propertyPath: m_Layer
@@ -711,11 +708,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3943522582089970866, guid: 18c5f4c6844f3af45838a4dad640f597,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.34901962
       objectReference: {fileID: 0}
     - target: {fileID: 3943522582181113190, guid: 18c5f4c6844f3af45838a4dad640f597,
         type: 3}
@@ -1037,6 +1029,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5240986517740825975, guid: 18c5f4c6844f3af45838a4dad640f597,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 180d7cd2e8924bc41ba741e2548ae6bc,
+        type: 3}
+    - target: {fileID: 3943522582089970866, guid: 18c5f4c6844f3af45838a4dad640f597,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.34901962
+      objectReference: {fileID: 0}
     - target: {fileID: 7993335868650807860, guid: 18c5f4c6844f3af45838a4dad640f597,
         type: 3}
       propertyPath: m_Sprite
@@ -1341,6 +1344,11 @@ PrefabInstance:
       propertyPath: stats
       value: 
       objectReference: {fileID: 6331559486567677817}
+    - target: {fileID: 8540675769645869060, guid: 688c8dd9da08be346855d605e9ebdcb9,
+        type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 3082859934255297863}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 688c8dd9da08be346855d605e9ebdcb9, type: 3}
 --- !u!1 &2334727361765494865 stripped

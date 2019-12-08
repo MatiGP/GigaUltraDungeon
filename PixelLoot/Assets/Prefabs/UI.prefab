@@ -4752,8 +4752,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 75, y: -10}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 86.5, y: -3.5}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7117574157350966701
 CanvasRenderer:
@@ -6203,7 +6203,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 61.9, y: -15.9}
+  m_AnchoredPosition: {x: 69.6, y: -13.6}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3839925599286242398
@@ -8464,6 +8464,8 @@ MonoBehaviour:
   equiptedRelicsUI: {fileID: 7085844928444774701}
   relicsUI: {fileID: 9084716938103714360}
   relicInfo: {fileID: 8792354966754310928}
+  characterImage: {fileID: 8308911426913145365}
+  characterWeapon: {fileID: 6868693810349130715}
 --- !u!1 &7752147199030147129
 GameObject:
   m_ObjectHideFlags: 0

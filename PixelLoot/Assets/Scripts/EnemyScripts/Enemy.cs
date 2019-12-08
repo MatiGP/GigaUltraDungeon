@@ -149,7 +149,8 @@ public class Enemy : MonoBehaviour
     {
         enemyCurrentHealth -= damage;
         enemyHealthBar.fillAmount = (float)enemyCurrentHealth / enemyMaxHealth;
-        if(enemyCurrentHealth <= 0)
+        isTaunted = true;
+        if (enemyCurrentHealth <= 0)
         {
             Instantiate(deathParticle, transform.position, Quaternion.identity);
             DropItem();

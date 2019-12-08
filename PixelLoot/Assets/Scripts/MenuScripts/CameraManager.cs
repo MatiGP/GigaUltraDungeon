@@ -17,11 +17,17 @@ public class CameraManager : MonoBehaviour
 
     public GameObject buttons;
     public GameObject blackOverlay;
-    public SetupCharacterStatPanel setupCharacter;
+    public SetupCharacterStatPanel setupCharacter;  
+
+    private void Awake()
+    {
+        
+        
+    }
 
     private void Start()
     {
-        //Time.timeScale = 1f;      
+        Time.timeScale = 1f;      
 
     }
     public void ResetCamera()

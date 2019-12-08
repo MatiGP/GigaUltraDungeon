@@ -15,8 +15,8 @@ MonoBehaviour:
   itemIcon: {fileID: -5654132603176922363, guid: 5673781b0efe2bc43b9c9b3d5dba95f8,
     type: 3}
   itemName: Common Staff
-  weaponMinDamage: 3
-  weaponMaxDamage: 7
+  weaponMinDamage: 5
+  weaponMaxDamage: 9
   timeBetweenAttacks: 0.6
   weaponType: 1
   scaling: 0

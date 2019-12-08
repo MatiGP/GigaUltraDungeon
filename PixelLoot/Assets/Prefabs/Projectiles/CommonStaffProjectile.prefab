@@ -4882,7 +4882,7 @@ MonoBehaviour:
   damage: 0
   onHitParticle: {fileID: 2947717004411568928, guid: 59c4aa4368cf4ef488db9b613d220763,
     type: 3}
-  lifeTime: 0.5
+  lifeTime: 0.4
   speed: 15
 --- !u!50 &7533662817135370029
 Rigidbody2D:

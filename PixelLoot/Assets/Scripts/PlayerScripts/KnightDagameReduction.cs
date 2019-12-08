@@ -12,10 +12,12 @@ public class KnightDagameReduction : MonoBehaviour
     public GameObject damageReductionEffect;
     private PlayerStats pstats;
     private float currentDamageReductionCooldown;
+    private PlayerController controller;
 
     private void Start()
     {
         pstats = GetComponent<PlayerStats>();
+        controller = GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -24,7 +26,7 @@ public class KnightDagameReduction : MonoBehaviour
         if(currentDamageReductionCooldown <= 0)
         {
             skillno1.fillAmount = 1;
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && controller.canCastSpells)
             {              
                 StartCoroutine(ReduceDamageForDuration(damageReductionDuration));
                 currentDamageReductionCooldown = damageReductionCooldown;

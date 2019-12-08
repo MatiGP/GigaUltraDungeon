@@ -11,6 +11,8 @@ public class KnightSpecialAttack : MonoBehaviour
     public Image skillno2;
     private float currentSpecialAttackCooldown;
     private ShootProjectile shootProjectile;
+    [SerializeField]
+    private PlayerController controller;
     // Update is called once per frame
 
     private void Start()
@@ -22,7 +24,7 @@ public class KnightSpecialAttack : MonoBehaviour
         if (currentSpecialAttackCooldown <= 0 && PlayerStats.instance.characterCurrentMana >= manaCost)
         {
             skillno2.fillAmount = 1;
-            if (Input.GetKeyDown(KeyCode.Mouse1))
+            if (Input.GetKeyDown(KeyCode.Mouse1) && controller.canCastSpells)
             {
                 PlayerStats.instance.SpendMana(manaCost);
                 ShootSpecial();

@@ -112,11 +112,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fd504fa7b761ac41bb48dd89b3f9bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 4
+  damage: 2
   onHitParticle: {fileID: 2620015094287890968, guid: e46d03c9782d0c2458ddf89f9d196a3e,
     type: 3}
-  lifeTime: 2
-  speed: 6
+  lifeTime: 0.7
+  speed: 5
 --- !u!50 &-7296392382318804844
 Rigidbody2D:
   serializedVersion: 4

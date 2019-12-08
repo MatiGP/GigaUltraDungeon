@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     private bool facingRight = true;
     private Vector2 direction;
     public bool canMove = true;
+    public bool canAttack = true;
+    public bool canCastSpells = true;
 
     private void Awake()
     {

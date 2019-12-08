@@ -133,10 +133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca04ec9781b8cdf44b92c6cc17833abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 7
+  damage: 5
   onHitParticle: {fileID: 2620015094287890968, guid: e46d03c9782d0c2458ddf89f9d196a3e,
     type: 3}
-  lifeTime: 0.2
+  lifeTime: 0.15
   speed: 11
   GolemShrapnelProjectiles: {fileID: 7151139535850109495, guid: 5d25f4370ef92964c90ab29e8615d04d,
     type: 3}

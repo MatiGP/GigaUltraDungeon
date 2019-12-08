@@ -172,6 +172,8 @@ MonoBehaviour:
   moveSpeed: 6
   vcam: {fileID: 0}
   canMove: 1
+  canAttack: 1
+  canCastSpells: 1
 --- !u!114 &4774878869926823992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,6 +447,11 @@ PrefabInstance:
       propertyPath: stats
       value: 
       objectReference: {fileID: 4774878869926823989}
+    - target: {fileID: 8540675769645869060, guid: 688c8dd9da08be346855d605e9ebdcb9,
+        type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 4774878869926823990}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 688c8dd9da08be346855d605e9ebdcb9, type: 3}
 --- !u!1 &4774878871218308265 stripped
