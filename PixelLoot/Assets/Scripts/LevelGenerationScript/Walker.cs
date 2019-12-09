@@ -96,11 +96,11 @@ public class Walker : MonoBehaviour
         InstantiateRooms();
 
         graph.SetDimensions(2*width, 2*depth, 0.5f);
-        Invoke("Scan", 0.1f);
+        
 
         InstantiateEnemies();
        
-
+        Invoke("Scan", 0.1f);
         
     }
 
