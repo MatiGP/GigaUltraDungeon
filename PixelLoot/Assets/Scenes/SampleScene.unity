@@ -172,21 +172,6 @@ MonoBehaviour:
   gridHolder: {fileID: 256527195}
   marker: {fileID: 7222921175259052878, guid: 1fe251fe8c30e6d4f849e5c670241f2c, type: 3}
   currentFloorLevel: 0
-  minEnemyCountPerRoom: 4
-  maxEnemyCountPerRoom: 7
-  enemies:
-  - {fileID: 4442315074135199494, guid: dd6bbac4202fe6f478903f9f79f94f04, type: 3}
-  - {fileID: 7638374179885716657, guid: b423f583297cc8d45aec783c4a5ae701, type: 3}
-  - {fileID: 4716889332851332828, guid: 1ba741ad164acab499e76be2177c05a1, type: 3}
-  - {fileID: 5356956911155608612, guid: 4102a25438b4f0b48b8f85a4994050ea, type: 3}
-  - {fileID: 8977572748845382366, guid: 95bc864be47c9104a8892131a686ad63, type: 3}
-  - {fileID: 2129735327082035971, guid: b4fe28f40e39bf24098d7ebd7fb859b4, type: 3}
-  - {fileID: 6821207392567998238, guid: 18e024ed6f674b248976e7a62e6f8647, type: 3}
-  - {fileID: 7842425648813054596, guid: 24d016c06e16c064aac338e69943aa92, type: 3}
-  - {fileID: 7210194531840236615, guid: 9b5c0f7a072bde84a8162d0dfc3660ce, type: 3}
-  boss:
-  - {fileID: 3783800449148609303, guid: 851009fb7bcc5f942af4718bee28d873, type: 3}
-  - {fileID: 5131662975506787585, guid: ed89db406bcff5942ab78b73a2b509a0, type: 3}
   playerCharacters:
   - {fileID: 4216117577932197737, guid: ed880e27be1dd384c9fb033379412ecd, type: 3}
   - {fileID: 4774878869926823993, guid: 3bd8be81585c1c94897aaeb0f8720f54, type: 3}
@@ -201,8 +186,9 @@ MonoBehaviour:
     type: 3}
   roomDownRight: {fileID: 3294915585977158907, guid: 00cda7d5715eefb48a0354b0a42ef2e4,
     type: 3}
-  roomLeftDown: {fileID: 2426722376350908343, guid: 96d7ecb945824244c9dd4e90814df79c,
-    type: 3}
+  roomLeftDown:
+  - {fileID: 2426722376350908343, guid: 96d7ecb945824244c9dd4e90814df79c, type: 3}
+  - {fileID: 4019391539066561797, guid: 4c1d207fc21c1f34fa4eaa31b14684f5, type: 3}
   roomUp: {fileID: 136073512671499484, guid: 06dd4544cc44581488564545cca8e793, type: 3}
   roomUpRight: {fileID: 1537185696523579094, guid: 2b4f95f5f338b044882deb41ac87b35d,
     type: 3}
@@ -224,6 +210,21 @@ MonoBehaviour:
     type: 3}
   roomUpRightDownLeft: {fileID: 7290872130846395392, guid: c57b0a60722e2f74a9142b9d89e6131b,
     type: 3}
+  playerStarterRoomDown: {fileID: 0}
+  playerStarterRoomUpDown: {fileID: 0}
+  playerStarterRoomDownRight: {fileID: 0}
+  playerStarterRoomLeftDown: {fileID: 0}
+  playerStarterRoomUp: {fileID: 0}
+  playerStarterRoomUpRight: {fileID: 0}
+  playerStarterRoomUpLeft: {fileID: 0}
+  playerStarterRoomRight: {fileID: 0}
+  playerStarterRoomRightLeft: {fileID: 0}
+  playerStarterRoomLeft: {fileID: 0}
+  playerStarterRoomLeftRightUp: {fileID: 0}
+  playerStarterRoomUpLeftDown: {fileID: 0}
+  playerStarterRoomDownLeftRight: {fileID: 0}
+  playerStarterRoomRightDown: {fileID: 0}
+  playerStarterRoomUpRightDownLeft: {fileID: 0}
 --- !u!1 &256527194
 GameObject:
   m_ObjectHideFlags: 0
