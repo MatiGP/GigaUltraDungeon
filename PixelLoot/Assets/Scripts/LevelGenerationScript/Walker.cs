@@ -35,21 +35,21 @@ public class Walker : MonoBehaviour
     [HideInInspector]
     public int roomHeight;
     [Header("Room Variations")]
-    public Tilemap roomDown;
-    public Tilemap roomUpDown;
-    public Tilemap roomDownRight;
+    public Tilemap[] roomDown;
+    public Tilemap[] roomUpDown;
+    public Tilemap[] roomDownRight;
     public Tilemap[] roomLeftDown;
-    public Tilemap roomUp;
-    public Tilemap roomUpRight;
-    public Tilemap roomUpLeft;
-    public Tilemap roomRight;
-    public Tilemap roomRightLeft;
-    public Tilemap roomLeft;
-    public Tilemap roomLeftRightUp;
-    public Tilemap roomUpLeftDown;
-    public Tilemap roomDownLeftRight;
-    public Tilemap roomUpRightDown;
-    public Tilemap roomUpRightDownLeft;
+    public Tilemap[] roomUp;
+    public Tilemap[] roomUpRight;
+    public Tilemap[] roomUpLeft;
+    public Tilemap[] roomRight;
+    public Tilemap[] roomRightLeft;
+    public Tilemap[] roomLeft;
+    public Tilemap[] roomLeftRightUp;
+    public Tilemap[] roomUpLeftDown;
+    public Tilemap[] roomDownLeftRight;
+    public Tilemap[] roomUpRightDown;
+    public Tilemap[] roomUpRightDownLeft;
     public Tilemap playerStarterRoomDown;
     public Tilemap playerStarterRoomUpDown;
     public Tilemap playerStarterRoomDownRight;
@@ -200,73 +200,73 @@ public class Walker : MonoBehaviour
 
         if (hitRight.collider != null && hitLeft.collider != null && hitUp.collider != null && hitDown.collider != null)
         {
-            goRoom = Instantiate(roomUpRightDownLeft, roomPos, Quaternion.identity);
+            goRoom = Instantiate(roomUpRightDownLeft[Random.Range(0, roomUpRightDownLeft.Length)], roomPos, Quaternion.identity);
             goRoom.transform.SetParent(gridHolder.transform);
         }
         if (hitRight.collider != null && hitLeft.collider != null && hitUp.collider != null && hitDown.collider == null)
         {
 
-            goRoom = Instantiate(roomLeftRightUp, roomPos, Quaternion.identity);
+            goRoom = Instantiate(roomLeftRightUp[Random.Range(0, roomLeftRightUp.Length)], roomPos, Quaternion.identity);
             goRoom.transform.SetParent(gridHolder.transform);
         }
         if (hitRight.collider == null && hitLeft.collider != null && hitUp.collider != null && hitDown.collider != null)
         {
 
-            goRoom = Instantiate(roomUpLeftDown, roomPos, Quaternion.identity);
+            goRoom = Instantiate(roomUpLeftDown[Random.Range(0, roomUpLeftDown.Length)], roomPos, Quaternion.identity);
             goRoom.transform.SetParent(gridHolder.transform);
         }
         if (hitRight.collider != null && hitLeft.collider != null && hitUp.collider == null && hitDown.collider != null)
         {
 
-            goRoom = Instantiate(roomDownLeftRight, roomPos, Quaternion.identity);
+            goRoom = Instantiate(roomDownLeftRight[Random.Range(0, roomDownLeftRight.Length)], roomPos, Quaternion.identity);
             goRoom.transform.SetParent(gridHolder.transform);
         }
         if (hitRight.collider != null && hitLeft.collider == null && hitUp.collider != null && hitDown.collider != null)
         {
 
-            goRoom = Instantiate(roomUpRightDown, roomPos, Quaternion.identity);
+            goRoom = Instantiate(roomUpRightDown[Random.Range(0, roomUpRightDown.Length)], roomPos, Quaternion.identity);
             goRoom.transform.SetParent(gridHolder.transform);
         }
         if (hitRight.collider == null && hitLeft.collider != null && hitUp.collider == null && hitDown.collider == null)
         {
 
-            goRoom = Instantiate(roomLeft, roomPos, Quaternion.identity);
+            goRoom = Instantiate(roomLeft[Random.Range(0, roomLeft.Length)], roomPos, Quaternion.identity);
             goRoom.transform.SetParent(gridHolder.transform);
         }
         if (hitRight.collider != null && hitLeft.collider == null && hitUp.collider == null && hitDown.collider == null)
         {
 
-            goRoom = Instantiate(roomRight, roomPos, Quaternion.identity);
+            goRoom = Instantiate(roomRight[Random.Range(0, roomRight.Length)], roomPos, Quaternion.identity);
             goRoom.transform.SetParent(gridHolder.transform);
         }
         if (hitRight.collider != null && hitLeft.collider != null && hitUp.collider == null && hitDown.collider == null)
         {
 
-            goRoom = Instantiate(roomRightLeft, roomPos, Quaternion.identity);
+            goRoom = Instantiate(roomRightLeft[Random.Range(0, roomRightLeft.Length)], roomPos, Quaternion.identity);
             goRoom.transform.SetParent(gridHolder.transform);
         }
         if (hitRight.collider == null && hitLeft.collider == null && hitUp.collider != null && hitDown.collider == null)
         {
 
-            goRoom = Instantiate(roomUp, roomPos, Quaternion.identity);
+            goRoom = Instantiate(roomUp[Random.Range(0, roomUp.Length)], roomPos, Quaternion.identity);
             goRoom.transform.SetParent(gridHolder.transform);
         }
         if (hitRight.collider != null && hitLeft.collider == null && hitUp.collider != null && hitDown.collider == null)
         {
 
-            goRoom = Instantiate(roomUpRight, roomPos, Quaternion.identity);
+            goRoom = Instantiate(roomUpRight[Random.Range(0, roomUpRight.Length)], roomPos, Quaternion.identity);
             goRoom.transform.SetParent(gridHolder.transform);
         }
         if (hitRight.collider == null && hitLeft.collider != null && hitUp.collider != null && hitDown.collider == null)
         {
 
-            goRoom = Instantiate(roomUpLeft, roomPos, Quaternion.identity);
+            goRoom = Instantiate(roomUpLeft[Random.Range(0, roomUpLeft.Length)], roomPos, Quaternion.identity);
             goRoom.transform.SetParent(gridHolder.transform);
         }
         if (hitRight.collider == null && hitLeft.collider == null && hitUp.collider == null && hitDown.collider != null)
         {
 
-            goRoom = Instantiate(roomDown, roomPos, Quaternion.identity);
+            goRoom = Instantiate(roomDown[Random.Range(0, roomDown.Length)], roomPos, Quaternion.identity);
             goRoom.transform.SetParent(gridHolder.transform);
         }
         if (hitRight.collider == null && hitLeft.collider != null && hitUp.collider == null && hitDown.collider != null)
@@ -277,13 +277,13 @@ public class Walker : MonoBehaviour
         if (hitRight.collider != null && hitLeft.collider == null && hitUp.collider == null && hitDown.collider != null)
         {
 
-            goRoom = Instantiate(roomDownRight, roomPos, Quaternion.identity);
+            goRoom = Instantiate(roomDownRight[Random.Range(0, roomDownRight.Length)], roomPos, Quaternion.identity);
             goRoom.transform.SetParent(gridHolder.transform);
         }
         if (hitRight.collider == null && hitLeft.collider == null && hitUp.collider != null && hitDown.collider != null)
         {
 
-            goRoom = Instantiate(roomUpDown, roomPos, Quaternion.identity);
+            goRoom = Instantiate(roomUpDown[Random.Range(0, roomUpDown.Length)], roomPos, Quaternion.identity);
             goRoom.transform.SetParent(gridHolder.transform);
         }
     }
@@ -323,7 +323,7 @@ public class Walker : MonoBehaviour
         if (hitRight.collider != null && hitLeft.collider == null && hitUp.collider != null && hitDown.collider != null)
         {
 
-            goRoom = Instantiate(roomUpRightDown, roomPos, Quaternion.identity);
+            goRoom = Instantiate(roomUpRightDown[Random.Range(0, roomUpRightDown.Length)], roomPos, Quaternion.identity);
             goRoom.transform.SetParent(gridHolder.transform);
         }
         if (hitRight.collider == null && hitLeft.collider != null && hitUp.collider == null && hitDown.collider == null)
