@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &55085719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 55085720}
+  m_Layer: 9
+  m_Name: PlayerSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &55085720
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55085719}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.5, y: -2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2219207414960324610}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &158534032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 158534033}
+  m_Layer: 9
+  m_Name: DoorSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &158534033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158534032}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1, y: -0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2219207414960324610}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &716006602133887281
 GameObject:
   m_ObjectHideFlags: 0
@@ -39,6 +99,8 @@ Transform:
   - {fileID: 5524353909301464097}
   - {fileID: 4282866469694524654}
   - {fileID: 1615328179631207681}
+  - {fileID: 55085720}
+  - {fileID: 158534033}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -525,6 +587,8 @@ MonoBehaviour:
   bosses:
   - {fileID: 3783800449148609303, guid: 851009fb7bcc5f942af4718bee28d873, type: 3}
   - {fileID: 5131662975506787585, guid: ed89db406bcff5942ab78b73a2b509a0, type: 3}
+  doorSpawnPoint: {fileID: 158534033}
+  playerSpawnPoint: {fileID: 55085720}
   spawnBoss: 0
 --- !u!1 &1615328178920271464
 GameObject:
@@ -1351,11 +1415,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2219207414960324610}
     m_Modifications:
-    - target: {fileID: 7831292364677737874, guid: 043a509274d5f2346854a1b033a48fd4,
-        type: 3}
-      propertyPath: m_Name
-      value: Torch (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 739396576453993920, guid: 043a509274d5f2346854a1b033a48fd4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1411,6 +1470,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7831292364677737874, guid: 043a509274d5f2346854a1b033a48fd4,
+        type: 3}
+      propertyPath: m_Name
+      value: Torch (2)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 043a509274d5f2346854a1b033a48fd4, type: 3}
 --- !u!4 &628202638956385714 stripped
@@ -1426,11 +1490,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2219207414960324610}
     m_Modifications:
-    - target: {fileID: 7831292364677737874, guid: 043a509274d5f2346854a1b033a48fd4,
-        type: 3}
-      propertyPath: m_Name
-      value: Torch
-      objectReference: {fileID: 0}
     - target: {fileID: 739396576453993920, guid: 043a509274d5f2346854a1b033a48fd4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1486,6 +1545,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7831292364677737874, guid: 043a509274d5f2346854a1b033a48fd4,
+        type: 3}
+      propertyPath: m_Name
+      value: Torch
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 043a509274d5f2346854a1b033a48fd4, type: 3}
 --- !u!4 &196100321446360204 stripped
@@ -1501,11 +1565,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2219207414960324610}
     m_Modifications:
-    - target: {fileID: 7831292364677737874, guid: 043a509274d5f2346854a1b033a48fd4,
-        type: 3}
-      propertyPath: m_Name
-      value: Torch (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 739396576453993920, guid: 043a509274d5f2346854a1b033a48fd4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1561,6 +1620,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7831292364677737874, guid: 043a509274d5f2346854a1b033a48fd4,
+        type: 3}
+      propertyPath: m_Name
+      value: Torch (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 6042807143603071030, guid: 043a509274d5f2346854a1b033a48fd4,
         type: 3}
       propertyPath: m_Intensity
@@ -1581,11 +1645,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2219207414960324610}
     m_Modifications:
-    - target: {fileID: 7831292364677737874, guid: 043a509274d5f2346854a1b033a48fd4,
-        type: 3}
-      propertyPath: m_Name
-      value: Torch (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 739396576453993920, guid: 043a509274d5f2346854a1b033a48fd4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1641,6 +1700,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7831292364677737874, guid: 043a509274d5f2346854a1b033a48fd4,
+        type: 3}
+      propertyPath: m_Name
+      value: Torch (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 6042807143603071030, guid: 043a509274d5f2346854a1b033a48fd4,
         type: 3}
       propertyPath: m_Intensity
@@ -1661,11 +1725,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2219207414960324610}
     m_Modifications:
-    - target: {fileID: 7831292364677737874, guid: 043a509274d5f2346854a1b033a48fd4,
-        type: 3}
-      propertyPath: m_Name
-      value: Torch (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 739396576453993920, guid: 043a509274d5f2346854a1b033a48fd4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1721,6 +1780,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7831292364677737874, guid: 043a509274d5f2346854a1b033a48fd4,
+        type: 3}
+      propertyPath: m_Name
+      value: Torch (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 6042807143603071030, guid: 043a509274d5f2346854a1b033a48fd4,
         type: 3}
       propertyPath: m_Intensity
@@ -1741,11 +1805,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2219207414960324610}
     m_Modifications:
-    - target: {fileID: 7831292364677737874, guid: 043a509274d5f2346854a1b033a48fd4,
-        type: 3}
-      propertyPath: m_Name
-      value: Torch (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 739396576453993920, guid: 043a509274d5f2346854a1b033a48fd4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1800,6 +1859,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7831292364677737874, guid: 043a509274d5f2346854a1b033a48fd4,
+        type: 3}
+      propertyPath: m_Name
+      value: Torch (3)
       objectReference: {fileID: 0}
     - target: {fileID: 6042807143603071030, guid: 043a509274d5f2346854a1b033a48fd4,
         type: 3}

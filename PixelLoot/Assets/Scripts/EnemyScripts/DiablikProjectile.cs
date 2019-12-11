@@ -6,8 +6,11 @@ public class DiablikProjectile : EnemyProjectile
 {
 
     public GameObject diablikSmallProjectiles;
+    public string projectileTag;
+    private ObjectPooler pooler;
     private void Start()
     {
+        pooler = ObjectPooler.instance;
         Invoke("DestroyProjectile", lifeTime);
     }
 
@@ -22,7 +25,8 @@ public class DiablikProjectile : EnemyProjectile
         Instantiate(onHitParticle, transform.position, Quaternion.identity);
         for(int i = 0; i<4; i++)
         {
-            Instantiate(diablikSmallProjectiles, transform.position, Quaternion.Euler(0,0, i*90));
+            pooler.SpawnFromPool(projectileTag, transform.position, Quaternion.Euler(0, 0, i * 90));
+            //Instantiate(diablikSmallProjectiles, transform.position, Quaternion.Euler(0,0, i*90));
         }
         Destroy(gameObject);
     }

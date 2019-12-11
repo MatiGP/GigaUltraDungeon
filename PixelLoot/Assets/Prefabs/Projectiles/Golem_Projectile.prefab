@@ -140,3 +140,4 @@ MonoBehaviour:
   speed: 11
   GolemShrapnelProjectiles: {fileID: 7151139535850109495, guid: 5d25f4370ef92964c90ab29e8615d04d,
     type: 3}
+  projectileTag: golemSmallProjectile

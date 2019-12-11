@@ -7,9 +7,12 @@ public class Boss_CastSpell : StateMachineBehaviour
     public float offset = -90;
     public float startTimeBtwShots = 1f;
     public GameObject[] projectiles;
+
+    public string[] projectileTags;
     public int minProjectileCount;
     public int maxProjectileCount;
 
+    private ObjectPooler pooler;
     private Transform playerPos;
     private float timeBtwShots;
     private float rotz;
@@ -18,6 +21,7 @@ public class Boss_CastSpell : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        pooler = ObjectPooler.instance;
         playerPos = animator.GetComponent<Enemy>().playerPos;
     }
 
@@ -42,7 +46,8 @@ public class Boss_CastSpell : StateMachineBehaviour
 
             for (int i = 1; i <= 3; i++)
             {
-                Instantiate(projectiles[randProjectile], new Vector3(animator.transform.position.x - 0.5f, animator.transform.position.y - 0.4f), Quaternion.Euler(0, 0, (rotz + offset) - (90 - i * 60)));
+                pooler.SpawnFromPool(projectileTags[randProjectile], new Vector3(animator.transform.position.x - 0.5f, animator.transform.position.y - 0.4f), Quaternion.Euler(0, 0, (rotz + offset) - (90 - i * 60)));
+                //Instantiate(projectiles[randProjectile], new Vector3(animator.transform.position.x - 0.5f, animator.transform.position.y - 0.4f), Quaternion.Euler(0, 0, (rotz + offset) - (90 - i * 60)));
                 timeBtwShots = startTimeBtwShots;
             }
 

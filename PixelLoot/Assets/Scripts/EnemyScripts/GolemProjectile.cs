@@ -5,8 +5,11 @@ using UnityEngine;
 public class GolemProjectile : EnemyProjectile
 {
     public GameObject GolemShrapnelProjectiles;
+    public string projectileTag;
+    private ObjectPooler pooler;
     private void Start()
     {
+        pooler = ObjectPooler.instance;
         Invoke("DestroyProjectile", lifeTime);
     }
 
@@ -22,7 +25,8 @@ public class GolemProjectile : EnemyProjectile
         float rotz = transform.rotation.eulerAngles.z;
         for (int i = 1; i <= 5; i++)
         {
-            Instantiate(GolemShrapnelProjectiles, transform.position, Quaternion.Euler(0,0,rotz -90 + i * 30)) ;
+            pooler.SpawnFromPool(projectileTag, transform.position, Quaternion.Euler(0, 0, rotz - 90 + i * 30));
+            //Instantiate(GolemShrapnelProjectiles, transform.position, Quaternion.Euler(0,0,rotz -90 + i * 30)) ;
         }
         Destroy(gameObject);
     }

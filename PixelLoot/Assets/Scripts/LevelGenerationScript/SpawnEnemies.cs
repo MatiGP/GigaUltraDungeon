@@ -7,13 +7,18 @@ public class SpawnEnemies : MonoBehaviour
     public Transform[] positions;
     public GameObject[] enemies;
     public GameObject[] bosses;
+    public Transform doorSpawnPoint;
+    public Transform playerSpawnPoint;
+
     public bool spawnBoss;
+    
 
     public void Spawn()
     {
         if (spawnBoss)
         {
             Instantiate(bosses[Random.Range(0, bosses.Length)], positions[Random.Range(0, positions.Length)].position, Quaternion.identity);
+
         }
         else
         {
@@ -23,6 +28,8 @@ public class SpawnEnemies : MonoBehaviour
             }
         }
     }
+
+    
 
     
 }

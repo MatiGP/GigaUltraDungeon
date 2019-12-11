@@ -135,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -90
   startTimeBtwShots: 1.2
+  projectileTag: diablikGigaProjectile
 --- !u!1101 &1258391733691243484
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -90
   startTimeBtwShots: 1
+  projectileTag: impProjectile
 --- !u!1107 &-6639278196604050996
 AnimatorStateMachine:
   serializedVersion: 5

@@ -360,6 +360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -90
   startTimeBtwShots: 1
+  projectileTag: cursedMageProjectile
 --- !u!1107 &6401780296666781086
 AnimatorStateMachine:
   serializedVersion: 5

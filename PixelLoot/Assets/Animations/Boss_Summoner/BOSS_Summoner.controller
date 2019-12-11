@@ -144,19 +144,19 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isInRange
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: attack
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -268,6 +268,9 @@ MonoBehaviour:
   projectiles:
   - {fileID: 2695324145697602942, guid: 627a2d34011337347862d69fe1fb6ae3, type: 3}
   - {fileID: 4365496328731632561, guid: 45be16f2611362942907780bb936e3ad, type: 3}
+  projectileTags:
+  - ripperProjectile
+  - cursedMageProjectile
   startTimeBtwSummons: 4
   summonMaxDistanceX: 3
   summonMaxDistanceY: 3

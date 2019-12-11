@@ -6,7 +6,9 @@ public class CastSpell : StateMachineBehaviour
 {
    
     public float offset = -90;
-    public float startTimeBtwShots = 1f;   
+    public float startTimeBtwShots = 1f;
+    public string projectileTag;
+    private ObjectPooler pooler;
 
     private GameObject projectile;
     private Transform playerPos;
@@ -18,6 +20,7 @@ public class CastSpell : StateMachineBehaviour
     {
         playerPos = animator.GetComponent<Enemy>().playerPos;
         projectile = animator.GetComponent<Enemy>().enemyTemplate.projectileOrSummon;
+        pooler = ObjectPooler.instance;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -34,8 +37,9 @@ public class CastSpell : StateMachineBehaviour
         
 
         if (timeBtwShots <= 0)
-        {                    
-            Instantiate(projectile, animator.transform.position, Quaternion.Euler(0, 0, rotz + offset));
+        {
+            pooler.SpawnFromPool(projectileTag, animator.transform.position, Quaternion.Euler(0, 0, rotz + offset));
+            //Instantiate(projectile, animator.transform.position, Quaternion.Euler(0, 0, rotz + offset));
             timeBtwShots = startTimeBtwShots;
         }
         else

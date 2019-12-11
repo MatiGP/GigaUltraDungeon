@@ -8,6 +8,8 @@ public class BossSummoner : StateMachineBehaviour
     public float startTimeBtwShots = 1f;
 
     public GameObject[] projectiles;
+    public string[] projectileTags;
+    private ObjectPooler pooler;
     private Transform playerPos;
     private float timeBtwShots;
     private float rotz;
@@ -26,6 +28,7 @@ public class BossSummoner : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        pooler = ObjectPooler.instance;
         playerPos = animator.GetComponent<Enemy>().playerPos;       
     }
 
@@ -50,8 +53,9 @@ public class BossSummoner : StateMachineBehaviour
                 {
                     for(int i = 0; i < 3; i++)
                     {
-                        GameObject go = Instantiate(projectiles[projectileIndex], animator.transform.position, Quaternion.Euler(0, 0, rotz + offset + ( - 30 + i * 30)));
-                        go.GetComponent<RipperProjectile>().SetRipperPos(animator.transform);                  
+                        pooler.SpawnFromPool(projectileTags[projectileIndex], animator.transform.position, Quaternion.Euler(0, 0, rotz + offset + (-30 + i * 30))).GetComponent<RipperProjectile>().SetRipperPos(animator.transform);
+                        //GameObject go = Instantiate(projectiles[projectileIndex], animator.transform.position, Quaternion.Euler(0, 0, rotz + offset + ( - 30 + i * 30)));
+                        //go.GetComponent<RipperProjectile>().SetRipperPos(animator.transform);                  
                     }
                     timeBtwShots = startTimeBtwShots;
                 }
@@ -59,7 +63,8 @@ public class BossSummoner : StateMachineBehaviour
                 {
                     for(int i = 0; i < 8; i++)
                     {
-                        Instantiate(projectiles[projectileIndex], animator.transform.position, Quaternion.Euler(0, 0, rotz + offset + (i * 45)));
+                        pooler.SpawnFromPool(projectileTags[projectileIndex], animator.transform.position, Quaternion.Euler(0, 0, rotz + offset + (i * 45)));
+                        //Instantiate(projectiles[projectileIndex], animator.transform.position, Quaternion.Euler(0, 0, rotz + offset + (i * 45)));
                     }
                     
                     timeBtwShots = startTimeBtwShots;

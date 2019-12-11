@@ -6,6 +6,8 @@ public class RipperCastSpell : StateMachineBehaviour
 {
     public float offset = -90;
     public float startTimeBtwShots = 1f;
+    public string projectileTag;
+    private ObjectPooler pooler;
 
     private GameObject projectile;
     private Transform playerPos;
@@ -14,6 +16,7 @@ public class RipperCastSpell : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        pooler = ObjectPooler.instance;
         playerPos = animator.GetComponent<Enemy>().playerPos;
         projectile = animator.GetComponent<Enemy>().enemyTemplate.projectileOrSummon;
     }
@@ -34,8 +37,9 @@ public class RipperCastSpell : StateMachineBehaviour
 
         if (timeBtwShots <= 0)
         {
-            GameObject go = Instantiate(projectile, animator.transform.position, Quaternion.Euler(0, 0, rotz + offset));
-            go.GetComponent<RipperProjectile>().SetRipperPos(animator.transform); 
+            pooler.SpawnFromPool(projectileTag, animator.transform.position, Quaternion.Euler(0, 0, rotz + offset)).GetComponent<RipperProjectile>().SetRipperPos(animator.transform);
+           // GameObject go = Instantiate(projectile, animator.transform.position, Quaternion.Euler(0, 0, rotz + offset));
+           // go.GetComponent<RipperProjectile>().SetRipperPos(animator.transform); 
             timeBtwShots = startTimeBtwShots;
         }
         else
@@ -44,21 +48,5 @@ public class RipperCastSpell : StateMachineBehaviour
         }
     }
 
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
-
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
-
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
+    
 }

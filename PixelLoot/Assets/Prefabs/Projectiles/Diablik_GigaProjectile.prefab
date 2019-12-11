@@ -103,6 +103,7 @@ MonoBehaviour:
   speed: 6
   diablikSmallProjectiles: {fileID: 3975138612875970684, guid: 3ca8efa606d6e7e4a96c77109dee630d,
     type: 3}
+  projectileTag: diablikSmallProjectile
 --- !u!61 &3991346928927827116
 BoxCollider2D:
   m_ObjectHideFlags: 0

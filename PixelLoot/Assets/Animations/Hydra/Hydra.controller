@@ -241,6 +241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -90
   startTimeBtwShots: 0.4
+  projectileTag: hydraProjectile
 --- !u!1102 &8135671861108517361
 AnimatorState:
   serializedVersion: 5
