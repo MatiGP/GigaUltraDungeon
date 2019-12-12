@@ -46,8 +46,7 @@ public class Boss_CastSpell : StateMachineBehaviour
 
             for (int i = 1; i <= 3; i++)
             {
-                pooler.SpawnFromPool(projectileTags[randProjectile], new Vector3(animator.transform.position.x - 0.5f, animator.transform.position.y - 0.4f), Quaternion.Euler(0, 0, (rotz + offset) - (90 - i * 60)));
-                //Instantiate(projectiles[randProjectile], new Vector3(animator.transform.position.x - 0.5f, animator.transform.position.y - 0.4f), Quaternion.Euler(0, 0, (rotz + offset) - (90 - i * 60)));
+                pooler.SpawnFromPool(projectileTags[randProjectile], new Vector3(animator.transform.position.x - 0.5f, animator.transform.position.y - 0.4f), Quaternion.Euler(0, 0, (rotz + offset) - (90 - i * 60)));                
                 timeBtwShots = startTimeBtwShots;
             }
 

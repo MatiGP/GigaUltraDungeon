@@ -61,7 +61,7 @@ public class RipperProjectile : EnemyProjectile
     void DestroyProjectile()
     {
         Instantiate(onHitParticle, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }  
     public void SetRipperPos(Transform pos)
     {

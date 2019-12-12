@@ -25,10 +25,9 @@ public class GolemProjectile : EnemyProjectile
         float rotz = transform.rotation.eulerAngles.z;
         for (int i = 1; i <= 5; i++)
         {
-            pooler.SpawnFromPool(projectileTag, transform.position, Quaternion.Euler(0, 0, rotz - 90 + i * 30));
-            //Instantiate(GolemShrapnelProjectiles, transform.position, Quaternion.Euler(0,0,rotz -90 + i * 30)) ;
+            pooler.SpawnFromPool(projectileTag, transform.position, Quaternion.Euler(0, 0, rotz - 90 + i * 30));            
         }
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

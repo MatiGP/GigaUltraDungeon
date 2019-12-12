@@ -24,7 +24,7 @@ public class EnemyProjectile : MonoBehaviour
     void DestroyProjectile()
     {
         Instantiate(onHitParticle, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

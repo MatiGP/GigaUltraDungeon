@@ -54,8 +54,6 @@ public class BossSummoner : StateMachineBehaviour
                     for(int i = 0; i < 3; i++)
                     {
                         pooler.SpawnFromPool(projectileTags[projectileIndex], animator.transform.position, Quaternion.Euler(0, 0, rotz + offset + (-30 + i * 30))).GetComponent<RipperProjectile>().SetRipperPos(animator.transform);
-                        //GameObject go = Instantiate(projectiles[projectileIndex], animator.transform.position, Quaternion.Euler(0, 0, rotz + offset + ( - 30 + i * 30)));
-                        //go.GetComponent<RipperProjectile>().SetRipperPos(animator.transform);                  
                     }
                     timeBtwShots = startTimeBtwShots;
                 }
@@ -63,8 +61,7 @@ public class BossSummoner : StateMachineBehaviour
                 {
                     for(int i = 0; i < 8; i++)
                     {
-                        pooler.SpawnFromPool(projectileTags[projectileIndex], animator.transform.position, Quaternion.Euler(0, 0, rotz + offset + (i * 45)));
-                        //Instantiate(projectiles[projectileIndex], animator.transform.position, Quaternion.Euler(0, 0, rotz + offset + (i * 45)));
+                        pooler.SpawnFromPool(projectileTags[projectileIndex], animator.transform.position, Quaternion.Euler(0, 0, rotz + offset + (i * 45)));                      
                     }
                     
                     timeBtwShots = startTimeBtwShots;

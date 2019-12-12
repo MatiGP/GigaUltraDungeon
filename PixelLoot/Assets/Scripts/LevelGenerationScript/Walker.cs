@@ -69,6 +69,7 @@ public class Walker : MonoBehaviour
 
     private int floorNum;
     private Tilemap goRoom;
+    private Tilemap firstRoom;
     private List<Vector2> visitedPos;
     private List<GameObject> marks;
     private float minX;
@@ -76,17 +77,11 @@ public class Walker : MonoBehaviour
     private float minY;
     private float maxY;
 
-    private void Awake()
-    {
-        InstantiatePlayer();
-    }
-
     void Start()
     {       
         marks = new List<GameObject>();
         visitedPos = new List<Vector2>();
         var graph = AstarPath.active.data.gridGraph;
-        floorNum = PlayerStats.instance.GetComponentInChildren<CharacterStatsUI>().GetFloorNumber();
 
 
         SetRoomPositions();
@@ -165,17 +160,15 @@ public class Walker : MonoBehaviour
         RaycastHit2D hitUp;
         RaycastHit2D hitDown;
 
-        SelectRoom(out hitRight, out hitLeft, out hitUp, out hitDown, 0);
+        SelectRoom(out hitRight, out hitLeft, out hitUp, out hitDown, 0, true);
 
         for (int i = 1; i < visitedPos.Count; i++)
         {
-            SelectRoom(out hitRight, out hitLeft, out hitUp, out hitDown, i);
+            SelectRoom(out hitRight, out hitLeft, out hitUp, out hitDown, i, false);
 
             if (i == visitedPos.Count - 1)
-            {
-                int randomX = (int)Random.Range(visitedPos[i].x - 9, visitedPos[i].x + 3);
-                int randomY = (int)Random.Range(visitedPos[i].y - 4, visitedPos[i].y + 2);
-                Instantiate(exitRoomPrefab, new Vector3(randomX, randomY), Quaternion.identity);
+            {                
+                Instantiate(exitRoomPrefab, goRoom.GetComponent<SpawnEnemies>().doorSpawnPoint.position, Quaternion.identity);
                 goRoom.GetComponent<SpawnEnemies>().spawnBoss = true;
 
             }
@@ -189,7 +182,7 @@ public class Walker : MonoBehaviour
         }
     }
 
-    private void SelectRoom(out RaycastHit2D hitRight, out RaycastHit2D hitLeft, out RaycastHit2D hitUp, out RaycastHit2D hitDown, int i)
+    private void SelectRoom(out RaycastHit2D hitRight, out RaycastHit2D hitLeft, out RaycastHit2D hitUp, out RaycastHit2D hitDown, int i, bool spawnPlayer)
     {
         Vector2 roomPos = visitedPos[i];
         hitRight = Physics2D.Raycast(new Vector2(visitedPos[i].x + 1, visitedPos[i].y), Vector2.right, 16, nodeLayer);
@@ -285,6 +278,10 @@ public class Walker : MonoBehaviour
 
             goRoom = Instantiate(roomUpDown[Random.Range(0, roomUpDown.Length)], roomPos, Quaternion.identity);
             goRoom.transform.SetParent(gridHolder.transform);
+        }
+        if (spawnPlayer)
+        {
+            InstantiatePlayer(goRoom.GetComponent<SpawnEnemies>().playerSpawnPoint.position);
         }
     }
 
@@ -387,11 +384,11 @@ public class Walker : MonoBehaviour
         }
     }
 
-    void InstantiatePlayer()
+    void InstantiatePlayer(Vector3 position)
     {
         if (!GameObject.FindGameObjectWithTag("Player"))
         {
-            Instantiate(playerCharacters[PlayerPrefs.GetInt("selectedChar")-1], new Vector3(0,0,0), Quaternion.identity);            
+            Instantiate(playerCharacters[PlayerPrefs.GetInt("selectedChar")-1], position, Quaternion.identity);            
 
         }
         if(PlayerStats.instance.playerSAI.currentLevel >= 2)
