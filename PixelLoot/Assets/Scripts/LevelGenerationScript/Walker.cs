@@ -167,8 +167,9 @@ public class Walker : MonoBehaviour
             SelectRoom(out hitRight, out hitLeft, out hitUp, out hitDown, i, false);
 
             if (i == visitedPos.Count - 1)
-            {                
-                Instantiate(exitRoomPrefab, goRoom.GetComponent<SpawnEnemies>().doorSpawnPoint.position, Quaternion.identity);
+            {
+                Vector2 doorSpawnPoint = goRoom.GetComponent<SpawnEnemies>().doorSpawnPoint.position;
+                exitRoomPrefab.transform.position = doorSpawnPoint;
                 goRoom.GetComponent<SpawnEnemies>().spawnBoss = true;
 
             }

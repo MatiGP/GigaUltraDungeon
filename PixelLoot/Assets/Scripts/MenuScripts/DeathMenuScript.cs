@@ -8,6 +8,7 @@ public class DeathMenuScript : MonoBehaviour
     public GameObject menu;
     public GameObject deathMenuUI;
     public static bool isPlayerDead;
+    public LevelFader fader;
 
     private void Update()
     {
@@ -31,14 +32,14 @@ public class DeathMenuScript : MonoBehaviour
         isPlayerDead = false;        
         PlayerStats.isPlayerAlive = true;
         PlayerStats.instance.playerSAI.itemsInInventory = new Item_SO[5];
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        fader.FadeOut(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void mainMenu()
     {
         isPlayerDead = false;       
         PlayerStats.isPlayerAlive = true;
-        SceneManager.LoadScene(1);
+        fader.FadeOut(2);
     }
 
     public void leaveGame()

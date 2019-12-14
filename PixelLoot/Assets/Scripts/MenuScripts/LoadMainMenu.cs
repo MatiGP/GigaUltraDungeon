@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class LoadMainMenu : MonoBehaviour
 {
+    public LevelFader fader;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            SceneManager.LoadScene(1);
+            fader.FadeOut(2);
         }
         
     }

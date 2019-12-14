@@ -8,7 +8,7 @@ public class PauseScirpt : MonoBehaviour
     public static bool isGamePaused;
 
     public GameObject pauseMenuUI;
-
+    public LevelFader fader;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -44,7 +44,7 @@ public class PauseScirpt : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene(1);
-
+        Time.timeScale = 1f;
+        fader.FadeOut(2);
     }
 }

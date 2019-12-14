@@ -6,10 +6,9 @@ using UnityEngine.UI;
 
 public class StartGame : MonoBehaviour
 {
-    public GameObject loadingScreen;
-    public Slider slider;
     public PlayerStatsAndItems playerSAI;
     public SetupCharacterStatPanel statPanel;
+    public LevelFader fader;
 
 
     public void LoadLevel()
@@ -18,21 +17,7 @@ public class StartGame : MonoBehaviour
         playerSAI.currentMana = statPanel.playableChars[PlayerPrefs.GetInt("selectedChar")-1].characterBaseMana + statPanel.playableChars[PlayerPrefs.GetInt("selectedChar") - 1].baseStats[0];
         playerSAI.itemsInInventory = new Item_SO[5];
         playerSAI.currentLevel = 1;
-        StartCoroutine(LoadScene());
+        fader.FadeOut(3);
     }
-
-    IEnumerator LoadScene()
-    {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(2);
-        loadingScreen.SetActive(true);
-
-        while (!operation.isDone)
-        {
-            float progress = Mathf.Clamp01(operation.progress / 0.9f);
-
-            slider.value = progress;
-
-            yield return null;
-        }
-    }
+  
 }
