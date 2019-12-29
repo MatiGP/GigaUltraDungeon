@@ -83,3 +83,11 @@ MonoBehaviour:
   - tag: snailProjectile
     prefab: {fileID: 770735279989949606, guid: 6e84db64993af5f4bb1b06b0b0d33b36, type: 3}
     size: 10
+  - tag: ArchitectMinionProjectile
+    prefab: {fileID: 2771807331570675960, guid: c9b3d8112bed0aa4db38ee5c8b05e4da,
+      type: 3}
+    size: 15
+  - tag: ArchitectProjectile
+    prefab: {fileID: 5933771689679961097, guid: b2fc229b4099f76489c6eb93bc1034f4,
+      type: 3}
+    size: 10

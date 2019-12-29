@@ -30,6 +30,8 @@ public class Enemy : MonoBehaviour
     private int enemyCurrentHealth;
     private Path path;
     private int currentWaypoint = 0;
+    private bool canBeDamaged = true;
+    public bool isBusy = false;
 
     private void Start()
     {
@@ -43,7 +45,7 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!isTaunted)
+        if (!isTaunted && !isBusy)
         {
             Collider2D targetInViewRadius = Physics2D.OverlapCircle(transform.position, tauntRange, playerLayer);
             
@@ -78,7 +80,7 @@ public class Enemy : MonoBehaviour
     
     private void Update()
     {
-        if (isTaunted)
+        if (isTaunted && !isBusy)
         {
 
             if (path == null)
@@ -101,7 +103,7 @@ public class Enemy : MonoBehaviour
             Vector2 direction = ((Vector2)(path.vectorPath[currentWaypoint] - transform.position)).normalized;
 
             
-            if(Vector2.Distance(transform.position, playerPos.position) > attackRange)
+            if(Vector2.Distance(transform.position, playerPos.position) > attackRange || Physics2D.Linecast(transform.position, playerPos.position, obstacleLayer))
             {
                 RunTowardsThePlayer(direction);
                 animator.SetBool("isInRange", false);
@@ -147,14 +149,17 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        enemyCurrentHealth -= damage;
-        enemyHealthBar.fillAmount = (float)enemyCurrentHealth / enemyMaxHealth;
-        isTaunted = true;
-        if (enemyCurrentHealth <= 0)
+        if (canBeDamaged)
         {
-            Instantiate(deathParticle, transform.position, Quaternion.identity);
-            DropItem();
-            Destroy(gameObject);
+            enemyCurrentHealth -= damage;
+            enemyHealthBar.fillAmount = (float)enemyCurrentHealth / enemyMaxHealth;
+            isTaunted = true;
+            if (enemyCurrentHealth <= 0)
+            {
+                Instantiate(deathParticle, transform.position, Quaternion.identity);
+                DropItem();
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -177,9 +182,25 @@ public class Enemy : MonoBehaviour
         
     }
 
+    public float GetHealthPercentage()
+    {
+        return (float)enemyCurrentHealth / enemyMaxHealth;
+    }
     
+    public bool GetIsTaunted()
+    {
+        return isTaunted;
+    }
 
+    public void DisableAttackAndMovement(bool value)
+    {
+        isBusy = value;
+    }
 
+    public void CanBeDamaged(bool value)
+    {
+        canBeDamaged = value;
+    }
 
 
 }
