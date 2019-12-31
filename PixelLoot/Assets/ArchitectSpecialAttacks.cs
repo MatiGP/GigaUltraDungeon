@@ -39,8 +39,9 @@ public class ArchitectSpecialAttacks : MonoBehaviour
 
     IEnumerator phaseTwoManager()
     {
+        GetComponent<Enemy>().DisableAttackAndMovement(true);
         yield return new WaitForSeconds(11f);
-
+        
         for(int i = 0; i< numOfWavesPhaseTwo; i++)
         {
             SpawnMinions();

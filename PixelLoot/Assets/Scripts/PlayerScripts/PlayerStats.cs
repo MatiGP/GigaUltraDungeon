@@ -16,10 +16,9 @@ public class PlayerStats : MonoBehaviour
     public int characterCurrentMana;
     public PlayerStatsAndItems playerSAI;
 
-    public int characterSTR;
-    public int characterINT;
-    public int characterDEX;
-    public int characterVIT;
+    
+
+    public int[] characterStats = new int[4];
 
     public int characterMaxMana;
     private int armor;
@@ -30,17 +29,13 @@ public class PlayerStats : MonoBehaviour
 
     void Awake()
     {                 
-        instance = this; 
-
-        characterINT = character.baseStats[0];
-        characterSTR = character.baseStats[1];
-        characterDEX = character.baseStats[2];
-        characterVIT = character.baseStats[3];
+        instance = this;
+        characterStats = character.baseStats;        
 
         DeathMenuScript.isPlayerDead = false;
-        characterMaxHealth = character.characterBaseHealth + characterVIT;
+        characterMaxHealth = character.characterBaseHealth + characterStats[3];
         characterCurrentHealth = characterMaxHealth;
-        characterMaxMana = character.characterBaseMana + characterINT;
+        characterMaxMana = character.characterBaseMana + characterStats[0];
         characterCurrentMana = characterMaxMana;
 
         controller = GetComponent<PlayerController>();
@@ -137,12 +132,12 @@ public class PlayerStats : MonoBehaviour
         playerSAI.relicsInEQ = Inventory.instance.relics;
         playerSAI.wornEQ = Inventory.instance.relicInventory.equiptedRelics.wornRelics;
         playerSAI.speed = controller.moveSpeed;
-        playerSAI.dexterity = characterDEX;
-        playerSAI.intelect = characterINT;
+        playerSAI.dexterity = characterStats[2];
+        playerSAI.intelect = characterStats[0];
         playerSAI.maxHealth = characterMaxHealth;
         playerSAI.maxMana = characterMaxMana;
-        playerSAI.strength = characterSTR;
-        playerSAI.vitality = characterVIT;
+        playerSAI.strength = characterStats[1];
+        playerSAI.vitality = characterStats[3];
     }
 
     public void LoadState()
@@ -156,46 +151,46 @@ public class PlayerStats : MonoBehaviour
         Inventory.instance.relicInventory.UpdateUI();
         Inventory.instance.relicInventory.equiptedRelics.UpdateUI();
         controller.moveSpeed = playerSAI.speed;
-        characterDEX = playerSAI.dexterity;
-        characterINT = playerSAI.intelect;
+        characterStats[2] = playerSAI.dexterity;
+        characterStats[0] = playerSAI.intelect;
         characterMaxHealth = playerSAI.maxHealth;
         characterMaxMana = playerSAI.maxMana;
-        characterSTR = playerSAI.strength;
-        characterVIT = playerSAI.vitality;
+        characterStats[1] = playerSAI.strength;
+        characterStats[3] = playerSAI.vitality;
     }
 
     private void RecalculateHealth()
     {
-        characterMaxHealth = character.characterBaseHealth + characterVIT;
+        characterMaxHealth = character.characterBaseHealth + characterStats[3];
     }
 
     private void RecalculateMana()
     {
-        characterMaxMana = character.characterBaseMana + characterINT;
+        characterMaxMana = character.characterBaseMana + characterStats[0];
 
     }
 
     private void RecalculateINT(int bonus)
     {
-        characterINT += bonus;
+        characterStats[0] += bonus;
         RecalculateMana();
-        Inventory.instance.weaponHolder.GetComponent<WeaponDamage>().UpdateWeaponDamage(bonus);
+        Inventory.instance.weaponHolder.GetComponent<WeaponDamage>().UpdateDamageBonusFromStats(bonus, PrimaryStat.INT);
         charactersUI.UpdateBars();
     }
     private void RecalculateSTR(int bonus)
     {
-        characterSTR += bonus;
-        Inventory.instance.weaponHolder.GetComponent<WeaponDamage>().UpdateWeaponDamage(bonus);
+        characterStats[1] += bonus;
+        Inventory.instance.weaponHolder.GetComponent<WeaponDamage>().UpdateDamageBonusFromStats(bonus, PrimaryStat.STR);
     }
     private void RecalculateDEX(int bonus)
     {
-        characterDEX += bonus;
-        Inventory.instance.weaponHolder.GetComponent<WeaponDamage>().UpdateWeaponDamage(bonus);
+        characterStats[2] += bonus;
+        Inventory.instance.weaponHolder.GetComponent<WeaponDamage>().UpdateDamageBonusFromStats(bonus, PrimaryStat.DEX);
     }
 
     private void RecalculateVIT(int bonus)
     {
-        characterVIT += bonus;
+        characterStats[3] += bonus;
         RecalculateHealth();
         charactersUI.UpdateBars();
         
@@ -206,19 +201,19 @@ public class PlayerStats : MonoBehaviour
         switch (index)
         {
             case 0:
-                RecalculateINT(bonus);
+                RecalculateINT(bonus);                
                 break;
             case 1:
-                RecalculateSTR(bonus);
+                RecalculateSTR(bonus);               
                 break;
             case 2:
-                RecalculateDEX(bonus);
+                RecalculateDEX(bonus);             
                 break;
             case 3:
                 RecalculateVIT(bonus);
                 break;
             case 4:
-                Inventory.instance.weaponHolder.GetComponent<WeaponDamage>().UpdateWeaponDamage(bonus);
+                Inventory.instance.weaponHolder.GetComponent<WeaponDamage>().RawDamageBonusUpdate(bonus);
                 break;
             case 5:
                 controller.moveSpeed += bonus;

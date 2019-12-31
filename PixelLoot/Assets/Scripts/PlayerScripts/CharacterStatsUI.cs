@@ -30,6 +30,10 @@ public class CharacterStatsUI : MonoBehaviour
     {
         floorText.text = floorNum.ToString();
     }
+    public void SetFloorText(string text)
+    {
+        floorText.text = text;
+    }
     public int GetFloorNumber()
     {
         return PlayerStats.instance.playerSAI.currentLevel;
