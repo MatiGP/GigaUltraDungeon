@@ -7690,11 +7690,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd8063774b967c048b2e3ec89452ffaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wornRelics:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   wornRelicsButtons:
   - {fileID: 946778632103602062}
   - {fileID: 3192595954759658052}
@@ -9346,7 +9341,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -180.39, y: 99.7}
+  m_AnchoredPosition: {x: -180.39, y: -100}
   m_SizeDelta: {x: 200, y: 180.89}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &7697626003759599840
@@ -9430,8 +9425,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -95.5}
-  m_SizeDelta: {x: -100, y: -209}
+  m_AnchoredPosition: {x: 0, y: -95}
+  m_SizeDelta: {x: -100, y: -210}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2917723893479134697
 CanvasRenderer:

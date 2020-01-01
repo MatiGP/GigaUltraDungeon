@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class EquiptedRelics : MonoBehaviour
 {
-    public Relic_SO[] wornRelics = new Relic_SO[4];
+    public Relic[] wornRelics = new Relic[4];
     public Button[] wornRelicsButtons;
     public RelicInventory relicInventory;
     

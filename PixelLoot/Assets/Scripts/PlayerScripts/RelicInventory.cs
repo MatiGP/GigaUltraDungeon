@@ -17,6 +17,7 @@ public class RelicInventory : MonoBehaviour
     public TextMeshProUGUI[] relicStats;
     public TextMeshProUGUI[] relicStatsValues;
     public TextMeshProUGUI slotValue;
+
     public void UpdateUI()
     {
         for(int i = 0; i < 9; i++)
@@ -35,21 +36,28 @@ public class RelicInventory : MonoBehaviour
 
     public void UseRelic(int index)
     {
-        if(equiptedRelics.wornRelics[(int)inventory.relics[index].slot] != null)
+        if (RelicForge.isForgeUiOpen)
         {
-            equiptedRelics.Unequip((int)inventory.relics[index].slot);
-            Relic_SO tmpRelic = equiptedRelics.wornRelics[(int)inventory.relics[index].slot];
-            EquipRelic(index, tmpRelic);
+            RelicForge.instance.PutRelicInTheForge(inventory.relics[index]);
+            DisposeRelic(index);
         }
         else
         {
-            EquipRelic(index, null);
+            if (equiptedRelics.wornRelics[(int)inventory.relics[index].slot] != null)
+            {
+                equiptedRelics.Unequip((int)inventory.relics[index].slot);
+                Relic tmpRelic = equiptedRelics.wornRelics[(int)inventory.relics[index].slot];
+                EquipRelic(index, tmpRelic);
+            }
+            else
+            {
+                EquipRelic(index, null);
+            }
         }
-
 
     }
 
-    private void EquipRelic(int index, Relic_SO relic)
+    private void EquipRelic(int index, Relic relic)
     {
         inventory.relics[index].Use();
         equiptedRelics.wornRelics[(int)inventory.relics[index].slot] = inventory.relics[index];
@@ -86,7 +94,7 @@ public class RelicInventory : MonoBehaviour
         slotValue.text = "";
     }
 
-    void SwapColor(Relic_SO relic)
+    void SwapColor(Relic relic)
     {
         switch (relic.rarity)
         {

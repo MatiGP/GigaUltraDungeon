@@ -14,8 +14,8 @@ public class PlayerStatsAndItems : ScriptableObject
     public int vitality;
     public Item_SO[] itemsInInventory = new Item_SO[5];
     public int currentLevel;
-    public Relic_SO[] relicsInEQ = new Relic_SO[9];
-    public Relic_SO[] wornEQ = new Relic_SO[4];
+    public Relic[] relicsInEQ = new Relic[9];
+    public Relic[] wornEQ = new Relic[4];
     public int speed;
 
 }

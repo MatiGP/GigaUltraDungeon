@@ -20,6 +20,18 @@ TextureImporter:
   - first:
       213: -8341639105892753789
     second: ShoopkeeperRoomFloorTile_5
+  - first:
+      213: -2097314878315501684
+    second: ShoopkeeperRoomFloorTile_6
+  - first:
+      213: -3981927060908598256
+    second: ShoopkeeperRoomFloorTile_7
+  - first:
+      213: 4375245749554743762
+    second: ShoopkeeperRoomFloorTile_8
+  - first:
+      213: -1153080663191922331
+    second: ShoopkeeperRoomFloorTile_9
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -108,7 +120,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -118,7 +130,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bdaca9ee9eab95246914f30fe89dec1d
+      spriteID: 2894aa150fa318240bcf0aab700f7382
       internalID: 5741544855561938681
       vertices: []
       indices: 
@@ -129,6 +141,48 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ab5285d23cb3f74e8b394994dff2c69
+      internalID: 5283908601875794630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoopkeeperRoomFloorTile_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8967c7ee3076d8b45977b3f616ce44ec
+      internalID: -8082590609023790403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoopkeeperRoomFloorTile_3
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 64
         width: 32
         height: 32
@@ -139,49 +193,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ece09f3a4e86142459a43ffd04101f68
-      internalID: 5283908601875794630
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ShoopkeeperRoomFloorTile_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 899d4665d7e929941a6fcfb715fc55ed
-      internalID: -8082590609023790403
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ShoopkeeperRoomFloorTile_3
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a2a2addf5eddc5e4eba7acd2a1c3f0a7
+      spriteID: 14d030463acd5ed408acd9ef364b6490
       internalID: -5845908376298594305
       vertices: []
       indices: 
@@ -191,6 +203,111 @@ TextureImporter:
       name: ShoopkeeperRoomFloorTile_4
       rect:
         serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7f72575fa996a849bc13a038f4fdfc3
+      internalID: -2791140847895932459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoopkeeperRoomFloorTile_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4efd5633d4ab94943903d0ecd785be27
+      internalID: -8341639105892753789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoopkeeperRoomFloorTile_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fee07f00c4899ad4390fcf7a03944c66
+      internalID: -2097314878315501684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoopkeeperRoomFloorTile_7
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2321fa9d642d0034dadc00ee191c1aec
+      internalID: -3981927060908598256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoopkeeperRoomFloorTile_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 708e301b250e8f54885bb665ab419bb3
+      internalID: 4375245749554743762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoopkeeperRoomFloorTile_9
+      rect:
+        serializedVersion: 2
         x: 0
         y: 0
         width: 32
@@ -202,29 +319,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ce53c1b0e9a76a4b9092d46b0a0f127
-      internalID: -2791140847895932459
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ShoopkeeperRoomFloorTile_5
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cfda4cef9a625b94e8b7669432358e70
-      internalID: -8341639105892753789
+      spriteID: 258745644bdd2bc46870332dce8239e2
+      internalID: -1153080663191922331
       vertices: []
       indices: 
       edges: []

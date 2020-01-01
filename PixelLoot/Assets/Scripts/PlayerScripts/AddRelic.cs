@@ -9,12 +9,12 @@ public class AddRelic : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
-        {
-            if (Inventory.instance.addItem(relic))
+        {            
+            if (Inventory.instance.addItem(new Relic(relic.itemIcon, relic.itemName, relic.slot, relic.rarity, relic.affectedStats, relic.values)))
             {
+                 
                 Destroy(gameObject);
             }
-
         }
     }
 }

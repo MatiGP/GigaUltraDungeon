@@ -11,7 +11,7 @@ public class Inventory : MonoBehaviour
     public GameObject weaponHolder;
     public Item_SO[] items = new Item_SO[5];
 
-    public Relic_SO[] relics = new Relic_SO[9];
+    public Relic[] relics = new Relic[9];
     
     
 
@@ -40,7 +40,7 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
-    public bool addItem(Relic_SO relic)
+    public bool addItem(Relic relic)
     {
         for (int i = 0; i < 9; i++)
         {

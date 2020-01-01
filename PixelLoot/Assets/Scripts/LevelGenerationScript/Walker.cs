@@ -414,6 +414,7 @@ public class Walker : MonoBehaviour
 
         return maxX;
     }
+
     float ReturnMinX()
     {
         float mixX = visitedPos[0].x;
@@ -428,6 +429,7 @@ public class Walker : MonoBehaviour
 
         return mixX;
     }
+
     float ReturnMaxY()
     {
         float maxY = visitedPos[0].y;
@@ -442,6 +444,7 @@ public class Walker : MonoBehaviour
 
         return maxY;
     }
+
     float ReturnMinY()
     {
         float minY = visitedPos[0].y;
