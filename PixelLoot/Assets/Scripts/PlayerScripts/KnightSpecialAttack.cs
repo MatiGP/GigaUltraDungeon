@@ -11,13 +11,13 @@ public class KnightSpecialAttack : MonoBehaviour
     public Image skillno2;
     private float currentSpecialAttackCooldown;
     private ShootProjectile shootProjectile;
-    [SerializeField]
     private PlayerController controller;
     // Update is called once per frame
 
     private void Start()
     {
         shootProjectile = GetComponent<ShootProjectile>();
+        controller = GetComponentInParent<PlayerController>();
     }
     void Update()
     {

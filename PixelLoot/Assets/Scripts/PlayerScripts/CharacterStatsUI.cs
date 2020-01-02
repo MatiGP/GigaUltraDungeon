@@ -10,6 +10,7 @@ public class CharacterStatsUI : MonoBehaviour
     public Image characterIcon;
     public Image healthBar;
     public Image manaBar;
+    public TextMeshProUGUI goldCountText;
     public TextMeshProUGUI floorText;
 
     private void Start()
@@ -18,6 +19,7 @@ public class CharacterStatsUI : MonoBehaviour
         manaBar.fillAmount = stats.GetManaPercentage();
         characterIcon.sprite = stats.character.characterIcon;
         SetFloorText(stats.playerSAI.currentLevel);
+        goldCountText.text = Inventory.instance.GetGold().ToString();
     }
 
     public void UpdateBars()
@@ -36,7 +38,11 @@ public class CharacterStatsUI : MonoBehaviour
     }
     public int GetFloorNumber()
     {
-        return PlayerStats.instance.playerSAI.currentLevel;
+        return stats.playerSAI.currentLevel;
     }
 
+    public void UpdateGoldText(int goldAmmount)
+    {
+        goldCountText.text = goldAmmount.ToString();
+    }
 }

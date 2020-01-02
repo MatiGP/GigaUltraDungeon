@@ -7,19 +7,21 @@ public class Inventory : MonoBehaviour
     public static Inventory instance;
     public InventoryUI ui;
     public RelicInventory relicInventory;
+    private CharacterStatsUI statsUI;
 
     public GameObject weaponHolder;
     public Item_SO[] items = new Item_SO[5];
 
     public Relic[] relics = new Relic[9];
-    
-    
+
+    private int collectedGold = 0;
 
 
     private void Awake()
     {       
         instance = this;
         ui = GetComponentInChildren<InventoryUI>();
+        statsUI = GetComponentInChildren<CharacterStatsUI>();
     }
 
     
@@ -65,4 +67,17 @@ public class Inventory : MonoBehaviour
         items[itemIndex] = null;
         ui.UpdateUI();
     }
+
+    public void AddGold(int goldAmmount)
+    {
+        collectedGold += goldAmmount;
+        statsUI.UpdateGoldText(collectedGold);
+    }
+
+    public int GetGold()
+    {
+        return collectedGold;
+    }
+
+    
 }

@@ -166,7 +166,7 @@ public class Enemy : MonoBehaviour
     void DropItem()
     {
         int chance = Random.Range(1, 100);
-        if(chance <=15 && chance >= 1)
+        if(chance <= 15)
         {
             Instantiate(drop[0], transform.position, Quaternion.identity);
         }
@@ -177,6 +177,10 @@ public class Enemy : MonoBehaviour
         if(chance >= 26 && chance <= 35)
         {
             Instantiate(relicDrop[Random.Range(0, relicDrop.Length)], transform.position, Quaternion.identity);
+        }
+        if(chance >= 36)
+        {
+            Instantiate(drop[2], transform.position, Quaternion.identity);
         }
 
         
