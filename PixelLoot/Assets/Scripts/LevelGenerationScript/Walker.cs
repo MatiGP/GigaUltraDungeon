@@ -65,6 +65,25 @@ public class Walker : MonoBehaviour
     public Tilemap playerStarterRoomDownLeftRight;
     public Tilemap playerStarterRoomRightDown;
     public Tilemap playerStarterRoomUpRightDownLeft;
+    [Space(2)]
+    [Header("Shop Settings")]
+    [SerializeField] int shopProbabilty = 10;
+    private bool isShopInLevel = false;
+    public Tilemap shopDown;
+    public Tilemap shopDownLeft;
+    public Tilemap shopDownRight;
+    public Tilemap shopDownUp;
+    public Tilemap shopLeft;
+    public Tilemap shopLeftRight;
+    public Tilemap shopLeftRightDown;
+    public Tilemap shopLeftUp;
+    public Tilemap shopRight;
+    public Tilemap shopUp;
+    public Tilemap shopUpLeftDown;
+    public Tilemap shopUpRight;
+    public Tilemap shopUpRightDown;
+    public Tilemap shopUpRightDownLeft;
+    public Tilemap shopUpRightLeft;
 
 
     private int floorNum;
@@ -155,6 +174,8 @@ public class Walker : MonoBehaviour
 
     void InstantiateRooms()
     {
+        int shopRoll = Random.Range(1, 101);
+
         RaycastHit2D hitRight;
         RaycastHit2D hitLeft;
         RaycastHit2D hitUp;
@@ -164,16 +185,25 @@ public class Walker : MonoBehaviour
 
         for (int i = 1; i < visitedPos.Count; i++)
         {
-            SelectRoom(out hitRight, out hitLeft, out hitUp, out hitDown, i, false);
-
-            if (i == visitedPos.Count - 1)
+            if((shopRoll <= shopProbabilty) && !isShopInLevel)
             {
-                Vector2 doorSpawnPoint = goRoom.GetComponent<SpawnEnemies>().doorSpawnPoint.position;
-                exitRoomPrefab.transform.position = doorSpawnPoint;
-                goRoom.GetComponent<SpawnEnemies>().spawnBoss = true;
-
+                SelectShop(out hitRight, out hitLeft, out hitUp, out hitDown, i);
+                isShopInLevel = true;
             }
-            goRoom.GetComponent<SpawnEnemies>().Spawn();
+            else
+            {
+
+                SelectRoom(out hitRight, out hitLeft, out hitUp, out hitDown, i, false);
+                if (i == visitedPos.Count - 1)
+                {
+                    Vector2 doorSpawnPoint = goRoom.GetComponent<SpawnEnemies>().doorSpawnPoint.position;
+                    exitRoomPrefab.transform.position = doorSpawnPoint;
+                    goRoom.GetComponent<SpawnEnemies>().spawnBoss = true;
+
+                }
+            
+                goRoom.GetComponent<SpawnEnemies>().Spawn();
+            }                    
 
         }
 
@@ -381,6 +411,104 @@ public class Walker : MonoBehaviour
         {
 
             goRoom = Instantiate(playerStarterRoomUpDown, roomPos, Quaternion.identity);
+            goRoom.transform.SetParent(gridHolder.transform);
+        }
+    }
+
+    private void SelectShop(out RaycastHit2D hitRight, out RaycastHit2D hitLeft, out RaycastHit2D hitUp, out RaycastHit2D hitDown, int i)
+    {
+        Vector2 roomPos = visitedPos[i];
+        hitRight = Physics2D.Raycast(new Vector2(visitedPos[i].x + 1, visitedPos[i].y), Vector2.right, 16, nodeLayer);
+        hitLeft = Physics2D.Raycast(new Vector2(visitedPos[i].x - 1, visitedPos[i].y), Vector2.left, 16, nodeLayer);
+        hitUp = Physics2D.Raycast(new Vector2(visitedPos[i].x, visitedPos[i].y + 1), Vector2.up, 16, nodeLayer);
+        hitDown = Physics2D.Raycast(new Vector2(visitedPos[i].x, visitedPos[i].y - 1), Vector2.down, 16, nodeLayer);
+
+        if (hitRight.collider != null && hitLeft.collider != null && hitUp.collider != null && hitDown.collider != null)
+        {
+            goRoom = Instantiate(shopUpRightDownLeft, roomPos, Quaternion.identity);
+            goRoom.transform.SetParent(gridHolder.transform);
+        }
+        if (hitRight.collider != null && hitLeft.collider != null && hitUp.collider != null && hitDown.collider == null)
+        {
+
+            goRoom = Instantiate(shopUpRightLeft, roomPos, Quaternion.identity);
+            goRoom.transform.SetParent(gridHolder.transform);
+        }
+        if (hitRight.collider == null && hitLeft.collider != null && hitUp.collider != null && hitDown.collider != null)
+        {
+
+            goRoom = Instantiate(shopUpLeftDown, roomPos, Quaternion.identity);
+            goRoom.transform.SetParent(gridHolder.transform);
+        }
+        if (hitRight.collider != null && hitLeft.collider != null && hitUp.collider == null && hitDown.collider != null)
+        {
+
+            goRoom = Instantiate(shopLeftRightDown, roomPos, Quaternion.identity);
+            goRoom.transform.SetParent(gridHolder.transform);
+        }
+        if (hitRight.collider != null && hitLeft.collider == null && hitUp.collider != null && hitDown.collider != null)
+        {
+
+            goRoom = Instantiate(shopUpRightDown, roomPos, Quaternion.identity);
+            goRoom.transform.SetParent(gridHolder.transform);
+        }
+        if (hitRight.collider == null && hitLeft.collider != null && hitUp.collider == null && hitDown.collider == null)
+        {
+
+            goRoom = Instantiate(shopLeft, roomPos, Quaternion.identity);
+            goRoom.transform.SetParent(gridHolder.transform);
+        }
+        if (hitRight.collider != null && hitLeft.collider == null && hitUp.collider == null && hitDown.collider == null)
+        {
+
+            goRoom = Instantiate(shopRight, roomPos, Quaternion.identity);
+            goRoom.transform.SetParent(gridHolder.transform);
+        }
+        if (hitRight.collider != null && hitLeft.collider != null && hitUp.collider == null && hitDown.collider == null)
+        {
+
+            goRoom = Instantiate(shopLeftRight, roomPos, Quaternion.identity);
+            goRoom.transform.SetParent(gridHolder.transform);
+        }
+        if (hitRight.collider == null && hitLeft.collider == null && hitUp.collider != null && hitDown.collider == null)
+        {
+
+            goRoom = Instantiate(shopUp, roomPos, Quaternion.identity);
+            goRoom.transform.SetParent(gridHolder.transform);
+        }
+        if (hitRight.collider != null && hitLeft.collider == null && hitUp.collider != null && hitDown.collider == null)
+        {
+
+            goRoom = Instantiate(shopUpRight, roomPos, Quaternion.identity);
+            goRoom.transform.SetParent(gridHolder.transform);
+        }
+        if (hitRight.collider == null && hitLeft.collider != null && hitUp.collider != null && hitDown.collider == null)
+        {
+
+            goRoom = Instantiate(shopLeftUp, roomPos, Quaternion.identity);
+            goRoom.transform.SetParent(gridHolder.transform);
+        }
+        if (hitRight.collider == null && hitLeft.collider == null && hitUp.collider == null && hitDown.collider != null)
+        {
+
+            goRoom = Instantiate(shopDown, roomPos, Quaternion.identity);
+            goRoom.transform.SetParent(gridHolder.transform);
+        }
+        if (hitRight.collider == null && hitLeft.collider != null && hitUp.collider == null && hitDown.collider != null)
+        {
+            goRoom = Instantiate(shopDownLeft, roomPos, Quaternion.identity);
+            goRoom.transform.SetParent(gridHolder.transform);
+        }
+        if (hitRight.collider != null && hitLeft.collider == null && hitUp.collider == null && hitDown.collider != null)
+        {
+
+            goRoom = Instantiate(shopDownRight, roomPos, Quaternion.identity);
+            goRoom.transform.SetParent(gridHolder.transform);
+        }
+        if (hitRight.collider == null && hitLeft.collider == null && hitUp.collider != null && hitDown.collider != null)
+        {
+
+            goRoom = Instantiate(shopDownUp, roomPos, Quaternion.identity);
             goRoom.transform.SetParent(gridHolder.transform);
         }
     }

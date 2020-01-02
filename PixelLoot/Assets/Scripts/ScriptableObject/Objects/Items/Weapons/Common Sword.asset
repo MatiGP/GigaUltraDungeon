@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd50eadbb06d8a43aec6c4a90f0bebb, type: 3}
   m_Name: Common Sword
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 21300000, guid: 18fcf09a141c3a94fbd33dfa4ec66f09, type: 3}
+  itemIcon: {fileID: 21300000, guid: b88a9c29d2d4d3848994438d10e4cc87, type: 3}
   itemName: Common Sword
   weaponMinDamage: 2
   weaponMaxDamage: 4
   timeBetweenAttacks: 1
   weaponType: 0
   scaling: 1
-  projectile: {fileID: 0}
+  projectile: {fileID: 2304334219198701879, guid: ac95c05a518d8f84894fee6a9268af37,
+    type: 3}
