@@ -15,6 +15,10 @@ public class RelicForge : MonoBehaviour
     private int costOfReforging = 5;
     public int costOfReforgingGain = 5;
     public TextMeshProUGUI costValueText;
+    [TextArea(1, 3)]
+    public string[] relicSmithDialogsPositive;
+    [TextArea(1, 3)]
+    public string[] relicSmithDialogsNegative;
 
     private void Awake()
     {
@@ -46,14 +50,24 @@ public class RelicForge : MonoBehaviour
             relicInTheForgeButton.image.sprite = null;
             relicInTheForgeButton.gameObject.SetActive(false);
             reforgeButton.gameObject.SetActive(false);
+            Dialog.instance.SkipDialog();
        }
     }
 
     public void ForgeRelic()
     {
-        relicToReforge.Reroll();
-        costOfReforging += costOfReforgingGain;
-        costValueText.text = costOfReforging.ToString();
+        if (Inventory.instance.SpendGold(costOfReforging))
+        {
+            relicToReforge.Reroll();
+            costOfReforging += costOfReforgingGain;
+            costValueText.text = costOfReforging.ToString();
+            Dialog.instance.OpenDialog("Nor'Zak", relicSmithDialogsPositive[Random.Range(0, relicSmithDialogsPositive.Length)]);
+        }
+        else
+        {
+            Dialog.instance.OpenDialog("Nor'Zak", relicSmithDialogsNegative[Random.Range(0, relicSmithDialogsNegative.Length)]);
+        }
+        
     }
 
     public void PutRelicInTheForge(Relic relic)

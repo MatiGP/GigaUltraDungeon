@@ -79,5 +79,14 @@ public class Inventory : MonoBehaviour
         return collectedGold;
     }
 
-    
+    public bool SpendGold(int ammount)
+    {
+        if (collectedGold >= ammount)
+        {
+            collectedGold -= ammount;
+            statsUI.UpdateGoldText(collectedGold);
+            return true;
+        }
+        return false;
+    }
 }

@@ -97,6 +97,16 @@ MonoBehaviour:
   reforgeButton: {fileID: 5015300570636877490}
   costOfReforgingGain: 5
   costValueText: {fileID: 235168162388661828}
+  relicSmithDialogsPositive:
+  - Ja nie przyjmowac zwrotow.
+  - Nie byc najlepszy magiczny kamyk. Ale wystarczyc. Dawac pieniadze!
+  - Ty placic.
+  - Ty brac kamyk, zostawic w spokoju.
+  relicSmithDialogsNegative:
+  - Nie miec pieniedzy.
+  - Ty nie miec pieniedzy!
+  - Gdzie pieniadz? Dac pieniadz, dostac kamyk.
+  - Ty biedny! Wynocha!
 --- !u!1 &7285338119915920353
 GameObject:
   m_ObjectHideFlags: 0
@@ -2279,81 +2289,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7904138059245297086}
     m_Modifications:
-    - target: {fileID: 4387095630030053824, guid: 02eea10c2717f654bb7e5caded6bc3b5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4387095630030053824, guid: 02eea10c2717f654bb7e5caded6bc3b5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 3171877231703520848}
-    - target: {fileID: 4387095630030053824, guid: 02eea10c2717f654bb7e5caded6bc3b5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ForgeRelic
-      objectReference: {fileID: 0}
-    - target: {fileID: 4387095630030053824, guid: 02eea10c2717f654bb7e5caded6bc3b5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4387095630030053824, guid: 02eea10c2717f654bb7e5caded6bc3b5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4387095630030053824, guid: 02eea10c2717f654bb7e5caded6bc3b5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8806939988566182198, guid: 02eea10c2717f654bb7e5caded6bc3b5,
-        type: 3}
-      propertyPath: m_text
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5458340950419707301, guid: 02eea10c2717f654bb7e5caded6bc3b5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5458340950419707301, guid: 02eea10c2717f654bb7e5caded6bc3b5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 3171877231703520848}
-    - target: {fileID: 5458340950419707301, guid: 02eea10c2717f654bb7e5caded6bc3b5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PutRelicInEQ
-      objectReference: {fileID: 0}
-    - target: {fileID: 5458340950419707301, guid: 02eea10c2717f654bb7e5caded6bc3b5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5458340950419707301, guid: 02eea10c2717f654bb7e5caded6bc3b5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5458340950419707301, guid: 02eea10c2717f654bb7e5caded6bc3b5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6332901385975361215, guid: 02eea10c2717f654bb7e5caded6bc3b5,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 320
-      objectReference: {fileID: 0}
-    - target: {fileID: 6286362780534550768, guid: 02eea10c2717f654bb7e5caded6bc3b5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6210643310151740849, guid: 02eea10c2717f654bb7e5caded6bc3b5,
         type: 3}
       propertyPath: m_Name
@@ -2412,6 +2347,86 @@ PrefabInstance:
     - target: {fileID: 3452362518436794116, guid: 02eea10c2717f654bb7e5caded6bc3b5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6332901385975361215, guid: 02eea10c2717f654bb7e5caded6bc3b5,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 320
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806939988566182198, guid: 02eea10c2717f654bb7e5caded6bc3b5,
+        type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6286362780534550768, guid: 02eea10c2717f654bb7e5caded6bc3b5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5458340950419707301, guid: 02eea10c2717f654bb7e5caded6bc3b5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5458340950419707301, guid: 02eea10c2717f654bb7e5caded6bc3b5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3171877231703520848}
+    - target: {fileID: 5458340950419707301, guid: 02eea10c2717f654bb7e5caded6bc3b5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PutRelicInEQ
+      objectReference: {fileID: 0}
+    - target: {fileID: 5458340950419707301, guid: 02eea10c2717f654bb7e5caded6bc3b5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5458340950419707301, guid: 02eea10c2717f654bb7e5caded6bc3b5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5458340950419707301, guid: 02eea10c2717f654bb7e5caded6bc3b5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387095630030053824, guid: 02eea10c2717f654bb7e5caded6bc3b5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387095630030053824, guid: 02eea10c2717f654bb7e5caded6bc3b5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3171877231703520848}
+    - target: {fileID: 4387095630030053824, guid: 02eea10c2717f654bb7e5caded6bc3b5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ForgeRelic
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387095630030053824, guid: 02eea10c2717f654bb7e5caded6bc3b5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387095630030053824, guid: 02eea10c2717f654bb7e5caded6bc3b5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387095630030053824, guid: 02eea10c2717f654bb7e5caded6bc3b5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707383490514875415, guid: 02eea10c2717f654bb7e5caded6bc3b5,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
