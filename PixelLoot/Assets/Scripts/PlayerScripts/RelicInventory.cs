@@ -133,6 +133,10 @@ public class RelicInventory : MonoBehaviour
 
     public void DisposeRelic(int index)
     {
+        if (Shop.isShopUiOpen)
+        {
+            Shop.instance.SellRelic(inventory.relics[index]);
+        }
         inventory.relics[index] = null;
         DeactivateRelicInfoWindow();
         UpdateUI();

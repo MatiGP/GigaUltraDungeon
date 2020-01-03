@@ -11,7 +11,8 @@ public class Relic
 
     public Relic(Sprite icon, string name)
     {
-        
+        itemIcon = icon;
+        itemName = name;
     }
 
     public Relic(Sprite icon, string name, RelicSlot slot, RelicRarity rarity, AffectedStat[] affectedStats, int[] values)

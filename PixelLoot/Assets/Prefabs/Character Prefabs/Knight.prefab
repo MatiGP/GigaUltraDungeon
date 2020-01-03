@@ -631,6 +631,18 @@ PrefabInstance:
       objectReference: {fileID: 3943996736151601716}
     - target: {fileID: 4444745487640388722, guid: 18c5f4c6844f3af45838a4dad640f597,
         type: 3}
+      propertyPath: disposeRelicSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 87332b36c254f1049b86594a90314b3e,
+        type: 3}
+    - target: {fileID: 4444745487640388722, guid: 18c5f4c6844f3af45838a4dad640f597,
+        type: 3}
+      propertyPath: sellRelicSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d84a9ba3b533bd8448c955820e929123,
+        type: 3}
+    - target: {fileID: 4444745487640388722, guid: 18c5f4c6844f3af45838a4dad640f597,
+        type: 3}
       propertyPath: sellOrDisposeButtons.Array.data[0]
       value: 
       objectReference: {fileID: 2015551355783259452}

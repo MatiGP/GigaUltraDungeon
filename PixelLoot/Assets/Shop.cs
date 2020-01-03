@@ -1,17 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Shop : MonoBehaviour
 {
+    [SerializeField] string shopOwnerName = "";
+    [TextArea(1,3)]
+    public string[] succesfulPurchaseSentence;
+    [TextArea(1,3)]
+    public string[] failedPurchaseSentenceNoMoney;
+    [TextArea(1, 3)]
+    public string[] failedPurchaseSentenceNoSpace;
     public static Shop instance;
     public static bool isShopUiOpen = false;
+    public Button[] shopButtons;
+    public TextMeshProUGUI relicName;
+    public TextMeshProUGUI[] relicInfoStat;
+    public TextMeshProUGUI[] relicInfoStatValue;
+    public TextMeshProUGUI relicPrice;
+    public GameObject relicFromShopInfo;
+    public GameObject relicShopUi;
     [Space(5)]
     [Header("Shop Details")]
-    [SerializeField] int basePriceCommon;
-    [SerializeField] int basePriceMagic;
-    [SerializeField] int basePriceRare;
-    [SerializeField] int basePriceLegendary;
+    //COMMON, MAGIC, RARE, LEGENDARY
+    [SerializeField] int[] prices;
     public Sprite[] relicSprites;
     public int minRelicsInShop;
     public int maxRelicsInShop;
@@ -26,17 +40,100 @@ public class Shop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        shopInventory = new Relic[Random.Range(minRelicsInShop, maxRelicsInShop)];
+        shopInventory = new Relic[Random.Range(minRelicsInShop, maxRelicsInShop+1)];
         for(int i = 0; i < shopInventory.Length; i++)
         {
-            shopInventory[i] = new Relic(relicSprites[Random.Range(0, relicSprites.Length)], "Relic " + (i + 1));
+            shopInventory[i] = new Relic(relicSprites[Random.Range(0, relicSprites.Length)], "Relicw");
             shopInventory[i].Reroll();
+            SetupShopUI(i);
+        }
+
+        
+    }
+
+    void SetupShopUI(int index)
+    {
+        shopButtons[index].image.sprite = shopInventory[index].itemIcon;
+        shopButtons[index].gameObject.SetActive(true);
+    }
+
+    public void BuyRelic(int index)
+    {
+        if (Inventory.instance.addItem(shopInventory[index]))
+        {
+            if (Inventory.instance.SpendGold(prices[(int)shopInventory[index].rarity]))
+            {
+                shopButtons[index].gameObject.SetActive(false);
+                shopInventory[index] = null;
+                Dialog.instance.OpenDialog(shopOwnerName, succesfulPurchaseSentence[Random.Range(0, 3)]);
+            }
+            else
+            {
+                Dialog.instance.OpenDialog(shopOwnerName, failedPurchaseSentenceNoMoney[Random.Range(0, 3)]);
+            }
+        }
+        else
+        {
+            Dialog.instance.OpenDialog(shopOwnerName, failedPurchaseSentenceNoSpace[Random.Range(0, 2)]);
+        }
+
+        
+    }
+
+    public void ShowInformationsAboutRelicInShop(int index)
+    {
+        relicFromShopInfo.SetActive(true);
+
+        relicName.text = shopInventory[index].itemName;
+
+        for (int i = 0; i < shopInventory[index].affectedStats.Length; i++)
+        {
+            relicInfoStat[i].text = shopInventory[index].affectedStats[i].ToString();
+            relicInfoStatValue[i].text = shopInventory[index].values[i].ToString();
+        }
+
+        relicPrice.text = prices[(int)shopInventory[index].rarity].ToString();
+    }
+
+    public void HideInformationsAboutRelicInShop()
+    {
+        relicFromShopInfo.SetActive(false);
+    }
+
+    public void SellRelic(Relic relic)
+    {
+        Inventory.instance.AddGold(prices[(int)relic.rarity]);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Player")
+        {
+            Inventory.instance.relicInventory.SwapSpriteSell();
+            OpenShop();
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        
+        if (collision.tag == "Player")
+        {
+            Inventory.instance.relicInventory.SwapSpriteDispose();
+            CloseShop();
+        }
     }
+
+    void OpenShop()
+    {
+        relicShopUi.SetActive(true);
+        isShopUiOpen = true;
+    }
+
+    void CloseShop()
+    {
+        relicShopUi.SetActive(false);
+        relicFromShopInfo.SetActive(false);
+        isShopUiOpen = false;
+    }
+
 }
