@@ -27,6 +27,8 @@ public class Dialog : MonoBehaviour
             yield return new WaitForSeconds(typingSpeed);
         }
 
+        yield return new WaitForSeconds(2f);
+        SkipDialog();
     }   
 
     public void SkipDialog()

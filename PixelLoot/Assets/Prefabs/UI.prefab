@@ -3278,6 +3278,7 @@ MonoBehaviour:
   characterIcon: {fileID: 3943522583997419794}
   healthBar: {fileID: 3943522582181113188}
   manaBar: {fileID: 3943522583227673530}
+  goldCountText: {fileID: 0}
   floorText: {fileID: 1981344932451485248}
 --- !u!1 &3943522582181113190
 GameObject:

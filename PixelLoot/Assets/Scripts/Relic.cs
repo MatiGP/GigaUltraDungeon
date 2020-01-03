@@ -9,6 +9,11 @@ public class Relic
     public AffectedStat[] affectedStats;
     public int[] values;
 
+    public Relic(Sprite icon, string name)
+    {
+        
+    }
+
     public Relic(Sprite icon, string name, RelicSlot slot, RelicRarity rarity, AffectedStat[] affectedStats, int[] values)
     {
         itemIcon = icon;

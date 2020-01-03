@@ -9,8 +9,10 @@ public class RelicInventory : MonoBehaviour
 {
     public Inventory inventory;
     public EquiptedRelics equiptedRelics;
-
+    public Sprite disposeRelicSprite;
+    public Sprite sellRelicSprite;
     public Button[] relicButttons;
+    public Button[] sellOrDisposeButtons;
     [Space(4)]
     public GameObject relicInfoPanel;
     public TextMeshProUGUI relicName;
@@ -136,5 +138,20 @@ public class RelicInventory : MonoBehaviour
         UpdateUI();
     }
 
+    public void SwapSpriteSell()
+    {
+        foreach(Button b in sellOrDisposeButtons)
+        {
+            b.image.sprite = sellRelicSprite;
+        }
+    }
+
+    public void SwapSpriteDispose()
+    {
+        foreach (Button b in sellOrDisposeButtons)
+        {
+            b.image.sprite = disposeRelicSprite;
+        }
+    }
 
 }

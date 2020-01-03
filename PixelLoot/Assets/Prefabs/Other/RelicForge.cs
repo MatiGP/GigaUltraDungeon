@@ -15,6 +15,7 @@ public class RelicForge : MonoBehaviour
     private int costOfReforging = 5;
     public int costOfReforgingGain = 5;
     public TextMeshProUGUI costValueText;
+    public string relicSmithName = "Nor'Zak";
     [TextArea(1, 3)]
     public string[] relicSmithDialogsPositive;
     [TextArea(1, 3)]
@@ -61,11 +62,11 @@ public class RelicForge : MonoBehaviour
             relicToReforge.Reroll();
             costOfReforging += costOfReforgingGain;
             costValueText.text = costOfReforging.ToString();
-            Dialog.instance.OpenDialog("Nor'Zak", relicSmithDialogsPositive[Random.Range(0, relicSmithDialogsPositive.Length)]);
+            Dialog.instance.OpenDialog(relicSmithName, relicSmithDialogsPositive[Random.Range(0, relicSmithDialogsPositive.Length)]);
         }
         else
         {
-            Dialog.instance.OpenDialog("Nor'Zak", relicSmithDialogsNegative[Random.Range(0, relicSmithDialogsNegative.Length)]);
+            Dialog.instance.OpenDialog(relicSmithName, relicSmithDialogsNegative[Random.Range(0, relicSmithDialogsNegative.Length)]);
         }
         
     }
