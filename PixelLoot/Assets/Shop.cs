@@ -15,6 +15,7 @@ public class Shop : MonoBehaviour
     public string[] failedPurchaseSentenceNoSpace;
     public static Shop instance;
     public static bool isShopUiOpen = false;
+    public AudioClip purchaseSound;
     public Button[] shopButtons;
     public TextMeshProUGUI relicName;
     public TextMeshProUGUI[] relicInfoStat;
@@ -65,6 +66,7 @@ public class Shop : MonoBehaviour
             {
                 shopButtons[index].gameObject.SetActive(false);
                 shopInventory[index] = null;
+                SoundManager.instance.PlayNpcSoudEffect(purchaseSound);
                 Dialog.instance.OpenDialog(shopOwnerName, succesfulPurchaseSentence[Random.Range(0, 3)]);
             }
             else

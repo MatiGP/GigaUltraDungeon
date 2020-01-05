@@ -556,6 +556,7 @@ MonoBehaviour:
   failedPurchaseSentenceNoSpace:
   - Gdzie ty to pomiescisz?
   - Chyba za duzo masz ze soba relikwi. Moge je przygarnac jesli chcesz!
+  purchaseSound: {fileID: 8300000, guid: 1f7a897be5b3eb347ad47fce5732769c, type: 3}
   shopButtons:
   - {fileID: 4467998728256245762}
   - {fileID: 4467998727748917468}
