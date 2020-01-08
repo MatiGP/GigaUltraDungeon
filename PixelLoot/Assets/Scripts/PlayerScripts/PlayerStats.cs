@@ -9,8 +9,7 @@ public class PlayerStats : MonoBehaviour
     public CharacterStatsUI charactersUI;
     public static PlayerStats instance;
     public GameObject deathPanel;
-    public AudioSource hit;
-    public AudioSource death;
+    public AudioSource audioSource;
 
     private int characterCurrentHealth;
     private int characterMaxHealth;
@@ -32,8 +31,6 @@ public class PlayerStats : MonoBehaviour
     {                 
         instance = this;
         characterStats = character.baseStats;
-        hit.clip = character.painSound;
-        death.clip = character.deathSound;
         DeathMenuScript.isPlayerDead = false;
         characterMaxHealth = character.characterBaseHealth + characterStats[3];
         characterCurrentHealth = characterMaxHealth;
@@ -74,10 +71,14 @@ public class PlayerStats : MonoBehaviour
         {
             DeathMenuScript.isPlayerDead = true;
             controller.vcam.enabled = isPlayerAlive;
-            death.Play();
+            AudioSource.PlayClipAtPoint(character.deathSound, transform.position, 1f);
             Destroy(gameObject);
         }
-        hit.Play();
+        else
+        {
+            audioSource.PlayOneShot(character.painSound);
+        }
+        
 
         charactersUI.UpdateBars();
         StartCoroutine(changeColorWhite());

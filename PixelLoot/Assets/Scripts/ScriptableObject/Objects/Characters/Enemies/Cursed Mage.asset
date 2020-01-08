@@ -17,6 +17,6 @@ MonoBehaviour:
   enemySpeed: 8
   tauntSound: {fileID: 8300000, guid: d370793cea4392042b74b3dc3fc9ddf8, type: 3}
   painSound: {fileID: 8300000, guid: c8903d050b71f4e47b4b9b517edb5844, type: 3}
-  deathSound: {fileID: 8300000, guid: d260d845da0e6614b8de507d0760210a, type: 3}
+  deathSound: {fileID: 8300000, guid: a43215bac3d8f4645a6ee23e38d83eb9, type: 3}
   projectileOrSummon: {fileID: 4365496328731632561, guid: 45be16f2611362942907780bb936e3ad,
     type: 3}

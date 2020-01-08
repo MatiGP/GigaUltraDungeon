@@ -11,9 +11,7 @@ public class Enemy : MonoBehaviour
     public float tauntRange = 8f;
     public float attackRange = 4f;
     public ParticleSystem deathParticle;
-    public AudioSource taunt;
-    public AudioSource hit;
-    public AudioSource death;
+    public AudioSource audioSource;
 
     public GameObject[] drop;
     public GameObject[] relicDrop;
@@ -43,9 +41,7 @@ public class Enemy : MonoBehaviour
         enemyCurrentHealth = enemyMaxHealth;
         seeker = GetComponent<Seeker>();
         animator = GetComponent<Animator>();
-        taunt.clip = enemyTemplate.tauntSound;
-        hit.clip = enemyTemplate.painSound;
-        death.clip = enemyTemplate.deathSound;
+        
 
     }
 
@@ -63,7 +59,7 @@ public class Enemy : MonoBehaviour
                 if (!Physics2D.Linecast(transform.position, playerPos.position, obstacleLayer))
                 {
                     isTaunted = true;
-                    taunt.Play();
+                    audioSource.PlayOneShot(enemyTemplate.tauntSound);
                     InvokeRepeating("UpdatePath", 0f, 0.5f);
                     animator.SetBool("isRunning", true);
                 }
@@ -161,9 +157,9 @@ public class Enemy : MonoBehaviour
             enemyCurrentHealth -= damage;
             enemyHealthBar.fillAmount = (float)enemyCurrentHealth / enemyMaxHealth;
             isTaunted = true;
-            if (enemyCurrentHealth <= 1)
+            if (enemyCurrentHealth <= 0)
             {
-                death.Play();
+                AudioSource.PlayClipAtPoint(enemyTemplate.deathSound, transform.position, 1f);
                 Instantiate(deathParticle, transform.position, Quaternion.identity);
                 DropItem();
                 Destroy(gameObject);
@@ -171,7 +167,7 @@ public class Enemy : MonoBehaviour
             }
             else
             {
-                hit.Play();
+                audioSource.PlayOneShot(enemyTemplate.painSound);
             }
 
             
@@ -180,6 +176,7 @@ public class Enemy : MonoBehaviour
 
     void DropItem()
     {
+        
         int chance = Random.Range(1, 100);
         if(chance <= 15)
         {
