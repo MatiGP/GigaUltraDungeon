@@ -15,5 +15,8 @@ MonoBehaviour:
   enemyName: Demonic Warlock
   enemyHealth: 5
   enemySpeed: 6
+  tauntSound: {fileID: 8300000, guid: d4e2c6fb14bf1484b91b8d7f204a2013, type: 3}
+  painSound: {fileID: 8300000, guid: ca82f24d3ce085e47819153592e5e919, type: 3}
+  deathSound: {fileID: 8300000, guid: 3372166bc5404834d89bbc932800b3fd, type: 3}
   projectileOrSummon: {fileID: 7842425648813054596, guid: 24d016c06e16c064aac338e69943aa92,
     type: 3}

@@ -15,5 +15,8 @@ MonoBehaviour:
   enemyName: Green Ghost
   enemyHealth: 3
   enemySpeed: 12
+  tauntSound: {fileID: 8300000, guid: d370793cea4392042b74b3dc3fc9ddf8, type: 3}
+  painSound: {fileID: 8300000, guid: ca82f24d3ce085e47819153592e5e919, type: 3}
+  deathSound: {fileID: 8300000, guid: 3372166bc5404834d89bbc932800b3fd, type: 3}
   projectileOrSummon: {fileID: 7323917092426653639, guid: 709f90d91736be5468e02883ce7a0e75,
     type: 3}

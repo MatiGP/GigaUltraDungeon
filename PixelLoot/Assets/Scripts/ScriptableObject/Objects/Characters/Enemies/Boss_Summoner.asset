@@ -15,5 +15,8 @@ MonoBehaviour:
   enemyName: Dark Summoner
   enemyHealth: 200
   enemySpeed: 8
+  tauntSound: {fileID: 8300000, guid: d4e2c6fb14bf1484b91b8d7f204a2013, type: 3}
+  painSound: {fileID: 8300000, guid: 053e2edf4b010e046b67a2209c529996, type: 3}
+  deathSound: {fileID: 8300000, guid: f9a7819b7aedc3a409a2f59fc123118a, type: 3}
   projectileOrSummon: {fileID: 4365496328731632561, guid: 45be16f2611362942907780bb936e3ad,
     type: 3}

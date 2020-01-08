@@ -9,18 +9,19 @@ public class PlayerStats : MonoBehaviour
     public CharacterStatsUI charactersUI;
     public static PlayerStats instance;
     public GameObject deathPanel;
+    public AudioSource hit;
+    public AudioSource death;
 
-
-    public int characterCurrentHealth;
-    public int characterMaxHealth;
-    public int characterCurrentMana;
+    private int characterCurrentHealth;
+    private int characterMaxHealth;
+    private int characterCurrentMana;
     public PlayerStatsAndItems playerSAI;
 
     
 
     public int[] characterStats = new int[4];
 
-    public int characterMaxMana;
+    private int characterMaxMana;
     private int armor;
     private SpriteRenderer spriteRenderer;
     private PlayerController controller;
@@ -30,8 +31,9 @@ public class PlayerStats : MonoBehaviour
     void Awake()
     {                 
         instance = this;
-        characterStats = character.baseStats;        
-
+        characterStats = character.baseStats;
+        hit.clip = character.painSound;
+        death.clip = character.deathSound;
         DeathMenuScript.isPlayerDead = false;
         characterMaxHealth = character.characterBaseHealth + characterStats[3];
         characterCurrentHealth = characterMaxHealth;
@@ -66,16 +68,18 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(int damageTaken)
     {
         characterCurrentHealth -= (damageTaken - armor);
-        charactersUI.UpdateBars();
-
+        
         changeColorRed();
         if (characterCurrentHealth <= 0)
         {
             DeathMenuScript.isPlayerDead = true;
             controller.vcam.enabled = isPlayerAlive;
-
+            death.Play();
             Destroy(gameObject);
         }
+        hit.Play();
+
+        charactersUI.UpdateBars();
         StartCoroutine(changeColorWhite());
     }
 
@@ -225,6 +229,9 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-
+    public int GetCurrentMana()
+    {
+        return characterCurrentMana;
+    }
 
 }

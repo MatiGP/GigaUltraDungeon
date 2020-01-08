@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public AudioSource projectileSoundEffect;
-    public AudioSource onHitSoundEffect;
-    public AudioSource tauntSoundEffect;
-    public AudioSource deathSoundEffect;
-    public AudioSource npcSoundEffects;
-    public AudioSource uiSoundEffects;
+    public AudioSource music;
+    public AudioSource soundFX;
+    
+
+    public AudioClip coinDrop;
 
     public static SoundManager instance = null;
 
@@ -26,41 +25,22 @@ public class SoundManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void PlayProjectileSoundFX(AudioClip clip)
+    public void PlayMusic(AudioClip clip)
     {
-        projectileSoundEffect.clip = clip;
-        projectileSoundEffect.Play();
+        music.clip = clip;
+        music.Play();
     }
 
-    public void PlayOnHitSoundEffect(AudioClip clip)
+    public void PlaySoundEffect(AudioClip clip)
     {
-        onHitSoundEffect.clip = clip;
-        onHitSoundEffect.Play();
+        soundFX.clip = clip;
+        soundFX.Play();
     }
 
-    public void PlayTauntSoundEffect(AudioClip clip)
+    public void PlayCoinDropSound()
     {
-        tauntSoundEffect.clip = clip;
-        tauntSoundEffect.Play();
+        soundFX.clip = coinDrop;
+        soundFX.Play();
     }
-
-    public void PlayDeathSoundEffect(AudioClip clip)
-    {
-        deathSoundEffect.clip = clip;
-        deathSoundEffect.Play();
-    }
-
-    public void PlayNpcSoudEffect(AudioClip clip)
-    {
-        npcSoundEffects.clip = clip;
-        npcSoundEffects.Play();
-    }
-
-    public void PlayUiSoundEffect(AudioClip clip)
-    {
-        uiSoundEffects.clip = clip;
-        uiSoundEffects.Play();
-    }
-
-
+    
 }

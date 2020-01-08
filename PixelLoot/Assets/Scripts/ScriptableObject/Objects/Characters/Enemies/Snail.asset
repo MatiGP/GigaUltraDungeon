@@ -15,6 +15,8 @@ MonoBehaviour:
   enemyName: Snail
   enemyHealth: 6
   enemySpeed: 16
-  enemyDamage: 6
+  tauntSound: {fileID: 8300000, guid: d370793cea4392042b74b3dc3fc9ddf8, type: 3}
+  painSound: {fileID: 8300000, guid: a43215bac3d8f4645a6ee23e38d83eb9, type: 3}
+  deathSound: {fileID: 8300000, guid: d260d845da0e6614b8de507d0760210a, type: 3}
   projectileOrSummon: {fileID: 770735279989949606, guid: 6e84db64993af5f4bb1b06b0b0d33b36,
     type: 3}

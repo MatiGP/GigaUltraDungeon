@@ -21,7 +21,7 @@ public class KnightSpecialAttack : MonoBehaviour
     }
     void Update()
     {
-        if (currentSpecialAttackCooldown <= 0 && PlayerStats.instance.characterCurrentMana >= manaCost)
+        if (currentSpecialAttackCooldown <= 0 && PlayerStats.instance.GetCurrentMana() >= manaCost)
         {
             skillno2.fillAmount = 1;
             if (Input.GetKeyDown(KeyCode.Mouse1) && controller.canCastSpells)

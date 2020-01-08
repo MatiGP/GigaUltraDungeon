@@ -7,6 +7,8 @@ public class PlayableChar_SO : ScriptableObject
     public string characterName;
     public Sprite characterSprite;
     public Sprite characterIcon;
+    public AudioClip painSound;
+    public AudioClip deathSound;
 
 
     public int characterBaseHealth;

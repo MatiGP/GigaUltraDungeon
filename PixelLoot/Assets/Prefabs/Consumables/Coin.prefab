@@ -112,3 +112,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minCoin: 1
   maxCoin: 4
+  coinPickupSound: {fileID: 8300000, guid: ac12c4484e725c04abd9ffd46067d862, type: 3}

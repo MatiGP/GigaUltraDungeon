@@ -7,6 +7,7 @@ public class Potion_SO : Item_SO
 {
     public int restoreAmount;
     public PotionType whatToRestore;
+    public AudioClip drinkSFX;
 
     public override void Use()
     {
@@ -19,6 +20,8 @@ public class Potion_SO : Item_SO
                 PlayerStats.instance.RestoreMana(restoreAmount);
                 break;
         }
+
+        SoundManager.instance.PlaySoundEffect(drinkSFX);
     }
 }
 

@@ -60,14 +60,17 @@ public class Shop : MonoBehaviour
 
     public void BuyRelic(int index)
     {
-        if (Inventory.instance.addItem(shopInventory[index]))
+        if (Inventory.instance.HasRelicSpace())
         {
             if (Inventory.instance.SpendGold(prices[(int)shopInventory[index].rarity]))
             {
-                shopButtons[index].gameObject.SetActive(false);
-                shopInventory[index] = null;
-                SoundManager.instance.PlayNpcSoudEffect(purchaseSound);
+
+                SoundManager.instance.PlaySoundEffect(purchaseSound);
+                Inventory.instance.addItem(shopInventory[index]);
                 Dialog.instance.OpenDialog(shopOwnerName, succesfulPurchaseSentence[Random.Range(0, 3)]);
+
+                shopButtons[index].gameObject.SetActive(false);
+                shopInventory[index] = null;              
             }
             else
             {

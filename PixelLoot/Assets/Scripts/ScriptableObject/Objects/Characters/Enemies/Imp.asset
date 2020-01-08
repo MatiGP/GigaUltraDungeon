@@ -15,5 +15,8 @@ MonoBehaviour:
   enemyName: Imp
   enemyHealth: 4
   enemySpeed: 12
+  tauntSound: {fileID: 8300000, guid: d4e2c6fb14bf1484b91b8d7f204a2013, type: 3}
+  painSound: {fileID: 8300000, guid: ca82f24d3ce085e47819153592e5e919, type: 3}
+  deathSound: {fileID: 8300000, guid: 8c0855423c4c2574f9aaff0d7d534e02, type: 3}
   projectileOrSummon: {fileID: 3225043356944627822, guid: fc236048f351a9f4a8cd211980c3f281,
     type: 3}

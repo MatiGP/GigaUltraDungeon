@@ -15,5 +15,8 @@ MonoBehaviour:
   enemyName: Ripper
   enemyHealth: 12
   enemySpeed: 9
+  tauntSound: {fileID: 8300000, guid: d80ced4693b8fab4292c08035e899183, type: 3}
+  painSound: {fileID: 8300000, guid: c8903d050b71f4e47b4b9b517edb5844, type: 3}
+  deathSound: {fileID: 8300000, guid: 59f91e519f0063549bfc6469ad41db71, type: 3}
   projectileOrSummon: {fileID: 2695324145697602942, guid: 627a2d34011337347862d69fe1fb6ae3,
     type: 3}

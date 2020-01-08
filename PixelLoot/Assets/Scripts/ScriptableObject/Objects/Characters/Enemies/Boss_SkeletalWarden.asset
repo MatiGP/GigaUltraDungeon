@@ -15,5 +15,8 @@ MonoBehaviour:
   enemyName: Skeletal Warden
   enemyHealth: 100
   enemySpeed: 8
+  tauntSound: {fileID: 8300000, guid: f2c6bbd103b81e14a8255e4776a6677b, type: 3}
+  painSound: {fileID: 8300000, guid: 053e2edf4b010e046b67a2209c529996, type: 3}
+  deathSound: {fileID: 8300000, guid: 8c0855423c4c2574f9aaff0d7d534e02, type: 3}
   projectileOrSummon: {fileID: 4365496328731632561, guid: 45be16f2611362942907780bb936e3ad,
     type: 3}

@@ -15,5 +15,8 @@ MonoBehaviour:
   enemyName: Architect
   enemyHealth: 700
   enemySpeed: 6
+  tauntSound: {fileID: 8300000, guid: 40f2fc241dcfe06498ba104312ea0c7f, type: 3}
+  painSound: {fileID: 8300000, guid: 40f2fc241dcfe06498ba104312ea0c7f, type: 3}
+  deathSound: {fileID: 8300000, guid: 40f2fc241dcfe06498ba104312ea0c7f, type: 3}
   projectileOrSummon: {fileID: 5933771689679961097, guid: b2fc229b4099f76489c6eb93bc1034f4,
     type: 3}

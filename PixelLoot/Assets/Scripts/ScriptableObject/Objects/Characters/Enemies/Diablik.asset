@@ -15,6 +15,8 @@ MonoBehaviour:
   enemyName: Diablik
   enemyHealth: 4
   enemySpeed: 7
-  enemyDamage: 2
+  tauntSound: {fileID: 8300000, guid: d370793cea4392042b74b3dc3fc9ddf8, type: 3}
+  painSound: {fileID: 8300000, guid: ca82f24d3ce085e47819153592e5e919, type: 3}
+  deathSound: {fileID: 8300000, guid: d260d845da0e6614b8de507d0760210a, type: 3}
   projectileOrSummon: {fileID: 6895879617677654444, guid: 5d862a275f860bb4f96f0c748dd874fc,
     type: 3}

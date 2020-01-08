@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: Lesser Healing Potion
   restoreAmount: 4
   whatToRestore: 0
+  drinkSFX: {fileID: 8300000, guid: 40fd3cfabdb0df84dbfdaa510a934077, type: 3}

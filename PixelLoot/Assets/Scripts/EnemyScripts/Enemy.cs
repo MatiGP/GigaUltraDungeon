@@ -11,6 +11,9 @@ public class Enemy : MonoBehaviour
     public float tauntRange = 8f;
     public float attackRange = 4f;
     public ParticleSystem deathParticle;
+    public AudioSource taunt;
+    public AudioSource hit;
+    public AudioSource death;
 
     public GameObject[] drop;
     public GameObject[] relicDrop;
@@ -40,6 +43,9 @@ public class Enemy : MonoBehaviour
         enemyCurrentHealth = enemyMaxHealth;
         seeker = GetComponent<Seeker>();
         animator = GetComponent<Animator>();
+        taunt.clip = enemyTemplate.tauntSound;
+        hit.clip = enemyTemplate.painSound;
+        death.clip = enemyTemplate.deathSound;
 
     }
 
@@ -57,7 +63,7 @@ public class Enemy : MonoBehaviour
                 if (!Physics2D.Linecast(transform.position, playerPos.position, obstacleLayer))
                 {
                     isTaunted = true;
-
+                    taunt.Play();
                     InvokeRepeating("UpdatePath", 0f, 0.5f);
                     animator.SetBool("isRunning", true);
                 }
@@ -151,15 +157,24 @@ public class Enemy : MonoBehaviour
     {
         if (canBeDamaged)
         {
+            
             enemyCurrentHealth -= damage;
             enemyHealthBar.fillAmount = (float)enemyCurrentHealth / enemyMaxHealth;
             isTaunted = true;
-            if (enemyCurrentHealth <= 0)
+            if (enemyCurrentHealth <= 1)
             {
+                death.Play();
                 Instantiate(deathParticle, transform.position, Quaternion.identity);
                 DropItem();
                 Destroy(gameObject);
+                
             }
+            else
+            {
+                hit.Play();
+            }
+
+            
         }
     }
 
@@ -180,6 +195,7 @@ public class Enemy : MonoBehaviour
         }
         if(chance >= 36)
         {
+            SoundManager.instance.PlayCoinDropSound();
             Instantiate(drop[2], transform.position, Quaternion.identity);
         }
 

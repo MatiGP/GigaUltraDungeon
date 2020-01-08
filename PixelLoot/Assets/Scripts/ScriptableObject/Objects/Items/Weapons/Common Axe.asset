@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd50eadbb06d8a43aec6c4a90f0bebb, type: 3}
   m_Name: Common Axe
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 21300000, guid: 947b3cd2b7cdd2d4aafca52e80bfbfd3, type: 3}
+  itemIcon: {fileID: 21300000, guid: e343ee6f64373fd46853fa4fcf67902a, type: 3}
   itemName: Common Axe
   weaponMinDamage: 4
   weaponMaxDamage: 8
   timeBetweenAttacks: 1
+  weaponSoundFX: {fileID: 8300000, guid: 6650cdd74eb69d44aa4e4ab292e077ee, type: 3}
   weaponType: 0
   scaling: 1
   projectile: {fileID: 3908731808860097810, guid: d84f39c41ddaf1c4dbc56800359aafe7,

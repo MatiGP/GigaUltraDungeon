@@ -16,6 +16,8 @@ MonoBehaviour:
   characterSprite: {fileID: -6621362230890156339, guid: 237a1ea17676e3c49a494a7cb2260e74,
     type: 3}
   characterIcon: {fileID: 21300000, guid: 9307ceee62f132f41a475fe43b6e2504, type: 3}
+  painSound: {fileID: 8300000, guid: 7856375c02851ee4793a1cb829abe330, type: 3}
+  deathSound: {fileID: 8300000, guid: 8de23d43dec242a4da7e73fa245b1508, type: 3}
   characterBaseHealth: 10
   characterBaseMana: 10
   baseStats: 09000000030000000300000004000000

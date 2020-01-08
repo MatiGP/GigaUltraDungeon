@@ -15,5 +15,8 @@ MonoBehaviour:
   enemyName: Architect Minion
   enemyHealth: 25
   enemySpeed: 9
+  tauntSound: {fileID: 8300000, guid: d370793cea4392042b74b3dc3fc9ddf8, type: 3}
+  painSound: {fileID: 8300000, guid: a43215bac3d8f4645a6ee23e38d83eb9, type: 3}
+  deathSound: {fileID: 8300000, guid: 59f91e519f0063549bfc6469ad41db71, type: 3}
   projectileOrSummon: {fileID: 2771807331570675960, guid: c9b3d8112bed0aa4db38ee5c8b05e4da,
     type: 3}

@@ -89,4 +89,18 @@ public class Inventory : MonoBehaviour
         }
         return false;
     }
+
+    public bool HasRelicSpace()
+    {
+        for(int i = 0; i < 9; i++)
+        {
+            if (relics[i] == null)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+   
 }

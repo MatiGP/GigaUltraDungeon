@@ -15,6 +15,8 @@ MonoBehaviour:
   enemyName: Golem
   enemyHealth: 12
   enemySpeed: 5
-  enemyDamage: 5
+  tauntSound: {fileID: 8300000, guid: d370793cea4392042b74b3dc3fc9ddf8, type: 3}
+  painSound: {fileID: 8300000, guid: a7d34150e0612c940a7c3e19ffe36a32, type: 3}
+  deathSound: {fileID: 8300000, guid: 3372166bc5404834d89bbc932800b3fd, type: 3}
   projectileOrSummon: {fileID: 8395937462827641416, guid: 60bbbd5473a9d98478c651ed5540d458,
     type: 3}

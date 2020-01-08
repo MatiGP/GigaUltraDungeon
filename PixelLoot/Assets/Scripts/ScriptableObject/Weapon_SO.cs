@@ -7,6 +7,7 @@ public class Weapon_SO : Item_SO
     public int weaponMinDamage;
     public int weaponMaxDamage;
     public float timeBetweenAttacks;
+    public AudioClip weaponSoundFX;
     public weaponType weaponType;
     public statScaling scaling;
 

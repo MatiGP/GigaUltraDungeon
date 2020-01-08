@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: Mana Potion
   restoreAmount: 5
   whatToRestore: 1
+  drinkSFX: {fileID: 8300000, guid: 40fd3cfabdb0df84dbfdaa510a934077, type: 3}

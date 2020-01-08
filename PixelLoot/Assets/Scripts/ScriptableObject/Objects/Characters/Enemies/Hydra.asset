@@ -15,6 +15,8 @@ MonoBehaviour:
   enemyName: Hydra
   enemyHealth: 8
   enemySpeed: 5
-  enemyDamage: 6
+  tauntSound: {fileID: 8300000, guid: f2c6bbd103b81e14a8255e4776a6677b, type: 3}
+  painSound: {fileID: 8300000, guid: 053e2edf4b010e046b67a2209c529996, type: 3}
+  deathSound: {fileID: 8300000, guid: f9a7819b7aedc3a409a2f59fc123118a, type: 3}
   projectileOrSummon: {fileID: 1727483951536876739, guid: 620afb3649b3d694fba54fe616cce081,
     type: 3}

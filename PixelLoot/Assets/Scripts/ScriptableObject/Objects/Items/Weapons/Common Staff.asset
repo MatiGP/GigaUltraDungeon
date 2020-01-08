@@ -18,6 +18,7 @@ MonoBehaviour:
   weaponMinDamage: 5
   weaponMaxDamage: 9
   timeBetweenAttacks: 0.6
+  weaponSoundFX: {fileID: 8300000, guid: 51bc42578d9c2654eadddb3b11e98e72, type: 3}
   weaponType: 1
   scaling: 0
   projectile: {fileID: 2304334219198701879, guid: ac95c05a518d8f84894fee6a9268af37,
