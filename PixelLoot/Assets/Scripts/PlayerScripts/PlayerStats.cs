@@ -143,6 +143,7 @@ public class PlayerStats : MonoBehaviour
         playerSAI.maxMana = characterMaxMana;
         playerSAI.strength = characterStats[1];
         playerSAI.vitality = characterStats[3];
+        playerSAI.gold = Inventory.instance.GetGold();
     }
 
     public void LoadState()
@@ -162,6 +163,7 @@ public class PlayerStats : MonoBehaviour
         characterMaxMana = playerSAI.maxMana;
         characterStats[1] = playerSAI.strength;
         characterStats[3] = playerSAI.vitality;
+        Inventory.instance.AddGold(playerSAI.gold);
     }
 
     private void RecalculateHealth()

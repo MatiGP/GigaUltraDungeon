@@ -17,5 +17,6 @@ public class PlayerStatsAndItems : ScriptableObject
     public Relic[] relicsInEQ = new Relic[9];
     public Relic[] wornEQ = new Relic[4];
     public int speed;
+    public int gold;
 
 }

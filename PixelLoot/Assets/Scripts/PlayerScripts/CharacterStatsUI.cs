@@ -18,7 +18,7 @@ public class CharacterStatsUI : MonoBehaviour
         healthBar.fillAmount = stats.GetHealthPercentage();
         manaBar.fillAmount = stats.GetManaPercentage();
         characterIcon.sprite = stats.character.characterIcon;
-        SetFloorText(stats.playerSAI.currentLevel);
+        
         goldCountText.text = Inventory.instance.GetGold().ToString();
     }
 

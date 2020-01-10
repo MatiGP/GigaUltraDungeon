@@ -14,7 +14,7 @@ public class ExitLevel : MonoBehaviour
             PlayerStats.instance.SaveState();
             
             PlayerStats.instance.GetComponentInChildren<CharacterStatsUI>().SetFloorText(PlayerStats.instance.playerSAI.currentLevel++);
-            if(PlayerStats.instance.playerSAI.currentLevel == 10)
+            if(PlayerStats.instance.playerSAI.currentLevel == 2)
             {
                 fader.FadeOut(4);
                 PlayerStats.instance.GetComponentInChildren<CharacterStatsUI>().SetFloorText("BOSS");

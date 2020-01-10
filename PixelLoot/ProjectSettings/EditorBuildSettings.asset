@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FinalBossRoom.unity
     guid: e9eb17efaae0cee4ea1f91dd4fd48fdc
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 67c3d6f287e17b646a5c8b0a276c039c
   m_configObjects: {}
