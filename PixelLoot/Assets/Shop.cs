@@ -90,6 +90,7 @@ public class Shop : MonoBehaviour
         relicFromShopInfo.SetActive(true);
 
         relicName.text = shopInventory[index].itemName;
+        SwapColor(shopInventory[index]);
 
         for (int i = 0; i < shopInventory[index].affectedStats.Length; i++)
         {
@@ -103,6 +104,11 @@ public class Shop : MonoBehaviour
     public void HideInformationsAboutRelicInShop()
     {
         relicFromShopInfo.SetActive(false);
+        for (int i = 0; i < 4; i++)
+        {
+            relicInfoStat[i].text = "";
+            relicInfoStatValue[i].text = "";
+        }
     }
 
     public void SellRelic(Relic relic)
@@ -141,4 +147,22 @@ public class Shop : MonoBehaviour
         isShopUiOpen = false;
     }
 
+    void SwapColor(Relic relic)
+    {
+        switch (relic.rarity)
+        {
+            case RelicRarity.COMMON:
+                relicName.color = Color.white;
+                break;
+            case RelicRarity.LEGENDARY:
+                relicName.color = new Color32(255, 102, 0, 255);
+                break;
+            case RelicRarity.MAGIC:
+                relicName.color = new Color32(92, 214, 92, 255);
+                break;
+            case RelicRarity.RARE:
+                relicName.color = Color.yellow;
+                break;
+        }
+    }
 }

@@ -167,8 +167,7 @@ MonoBehaviour:
   charactersUI: {fileID: 4888901208696814134}
   deathPanel: {fileID: 3493018078869123425, guid: d062adb98d60ef74e9f4cfb688b847b8,
     type: 3}
-  audioSource: {fileID: -5803505795970390968, guid: 0029f882590babf479d09f2f75814e60,
-    type: 3}
+  audioSource: {fileID: 1091499455286185428}
   playerSAI: {fileID: 11400000, guid: e09e617ca21f0984fafc3f6346f3a978, type: 2}
   characterStats: 00000000000000000000000000000000
 --- !u!114 &4216117577932197734
