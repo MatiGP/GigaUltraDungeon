@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: -90
-  startTimeBtwShots: 1.5
+  startTimeBtwShots: 1.25
   projectiles:
   - {fileID: 2695324145697602942, guid: 627a2d34011337347862d69fe1fb6ae3, type: 3}
   - {fileID: 4365496328731632561, guid: 45be16f2611362942907780bb936e3ad, type: 3}
@@ -272,10 +272,13 @@ MonoBehaviour:
   - ripperProjectile
   - cursedMageProjectile
   startTimeBtwSummons: 4
-  summonMaxDistanceX: 3
+  summonMaxDistanceX: 1
   summonMaxDistanceY: 3
   summonMinDistanceX: 1
-  summonMinDistanceY: 1
+  summonMinDistanceY: 3
+  mask:
+    serializedVersion: 2
+    m_Bits: 512
   pets:
   - {fileID: 7842425648813054596, guid: 24d016c06e16c064aac338e69943aa92, type: 3}
   - {fileID: 8323505784883486728, guid: 7be636e2b67ea5e4684feab5b8727c34, type: 3}

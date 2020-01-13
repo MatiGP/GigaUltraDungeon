@@ -5,13 +5,13 @@ using UnityEngine;
 public class SummonPets : StateMachineBehaviour
 {
 
-    public float startTimeBtwSummons;
-    public float summonMaxDistanceX;
-    public float summonMaxDistanceY;
-    public float summonMinDistanceX;
-    public float summonMinDistanceY;
-
+    [SerializeField] float startTimeBtwSummons;
+    [SerializeField] float summonMaxDistanceX;
+    [SerializeField] float summonMaxDistanceY;
+    [SerializeField] float summonMinDistanceX;
+    [SerializeField] float summonMinDistanceY;
     private GameObject pet;
+    [SerializeField] LayerMask mask;
     private float timeBtwSummons;    
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -27,7 +27,17 @@ public class SummonPets : StateMachineBehaviour
             float x = Random.Range(animator.transform.position.x + summonMinDistanceX, animator.transform.position.x + summonMaxDistanceX);
             float y = Random.Range(animator.transform.position.y + summonMinDistanceY, animator.transform.position.y + summonMaxDistanceY);
 
-            Instantiate(pet, new Vector3(x, y, 0), Quaternion.identity);
+            RaycastHit2D hit = Physics2D.Linecast(animator.transform.position, new Vector2(x, y), mask);
+            Debug.Log(hit.point);
+            if(hit)
+            {
+                Instantiate(pet, new Vector2(hit.point.x, hit.point.y), Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(pet, new Vector2(x,y), Quaternion.identity);
+            }
+           
             timeBtwSummons = startTimeBtwSummons;
         }
         else

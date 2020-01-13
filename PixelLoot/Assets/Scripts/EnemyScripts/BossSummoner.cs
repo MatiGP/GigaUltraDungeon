@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class BossSummoner : StateMachineBehaviour
 {
-    public float offset = -90;
-    public float startTimeBtwShots = 1f;
+    [SerializeField] float offset = -90;
+    [SerializeField] float startTimeBtwShots = 1f;
 
-    public GameObject[] projectiles;
-    public string[] projectileTags;
+    [SerializeField] GameObject[] projectiles;
+    [SerializeField] string[] projectileTags;
     private ObjectPooler pooler;
     private Transform playerPos;
     private float timeBtwShots;
     private float rotz;
 
-    public float startTimeBtwSummons;
-    public float summonMaxDistanceX;
-    public float summonMaxDistanceY;
-    public float summonMinDistanceX;
-    public float summonMinDistanceY;
+    [SerializeField] float startTimeBtwSummons;
+    [SerializeField] float summonMaxDistanceX;
+    [SerializeField] float summonMaxDistanceY;
+    [SerializeField] float summonMinDistanceX;
+    [SerializeField] float summonMinDistanceY;
+    [SerializeField] LayerMask mask;
 
-    public GameObject[] pets;
+    [SerializeField] GameObject[] pets;
     private float timeBtwSummons;
 
     
@@ -79,7 +80,17 @@ public class BossSummoner : StateMachineBehaviour
                 float x = Random.Range(animator.transform.position.x + summonMinDistanceX, animator.transform.position.x + summonMaxDistanceX);
                 float y = Random.Range(animator.transform.position.y + summonMinDistanceY, animator.transform.position.y + summonMaxDistanceY);
 
-                Instantiate(pets[petIndex], new Vector3(x, y, 0), Quaternion.identity);
+                RaycastHit2D hit = Physics2D.Linecast(animator.transform.position, new Vector2(x, y), mask);
+                Debug.Log(hit.point);
+                if (hit)
+                {
+                    Instantiate(pets[petIndex], new Vector2(hit.point.x, hit.point.y), Quaternion.identity);
+                }
+                else
+                {
+                    Instantiate(pets[petIndex], new Vector2(x, y), Quaternion.identity);
+                }
+               
                 timeBtwSummons = startTimeBtwSummons;
             }            
         }
