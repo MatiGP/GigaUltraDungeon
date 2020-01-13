@@ -20,6 +20,7 @@ public class Shop : MonoBehaviour
     public TextMeshProUGUI relicName;
     public TextMeshProUGUI[] relicInfoStat;
     public TextMeshProUGUI[] relicInfoStatValue;
+    public TextMeshProUGUI relicInfoSlot;
     public TextMeshProUGUI relicPrice;
     public GameObject relicFromShopInfo;
     public GameObject relicShopUi;
@@ -70,7 +71,8 @@ public class Shop : MonoBehaviour
                 Dialog.instance.OpenDialog(shopOwnerName, succesfulPurchaseSentence[Random.Range(0, 3)]);
 
                 shopButtons[index].gameObject.SetActive(false);
-                shopInventory[index] = null;              
+                shopInventory[index] = null;
+                HideInformationsAboutRelicInShop();
             }
             else
             {
@@ -97,7 +99,7 @@ public class Shop : MonoBehaviour
             relicInfoStat[i].text = shopInventory[index].affectedStats[i].ToString();
             relicInfoStatValue[i].text = shopInventory[index].values[i].ToString();
         }
-
+        relicInfoSlot.text = shopInventory[index].slot.ToString();
         relicPrice.text = prices[(int)shopInventory[index].rarity].ToString();
     }
 

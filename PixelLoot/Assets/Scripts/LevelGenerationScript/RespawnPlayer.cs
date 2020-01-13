@@ -11,6 +11,7 @@ public class RespawnPlayer : MonoBehaviour
     {
         Instantiate(playerCharacters[PlayerPrefs.GetInt("selectedChar") - 1], new Vector3(0,0,0), Quaternion.identity);
         PlayerStats.instance.LoadState();
+        PlayerStats.instance.GetComponentInChildren<CharacterStatsUI>().SetFloorText("BOSS");
     }
 
    

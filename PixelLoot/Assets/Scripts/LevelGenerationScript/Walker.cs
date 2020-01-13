@@ -524,7 +524,7 @@ public class Walker : MonoBehaviour
         {
             PlayerStats.instance.LoadState();
         }
-
+        PlayerStats.instance.GetComponentInChildren<CharacterStatsUI>().SetFloorText(PlayerStats.instance.playerSAI.currentLevel);
 
     }
 

@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 6885963636581141492}
   - component: {fileID: 1927781337234560138}
   - component: {fileID: 3714134782213299913}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: ItemIcon3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -764,7 +764,7 @@ GameObject:
   - component: {fileID: 3102638629330784327}
   - component: {fileID: 8620779642345194072}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: DisposeSellButton2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -816,8 +816,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 87332b36c254f1049b86594a90314b3e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -964,7 +964,7 @@ GameObject:
   - component: {fileID: 573165886997238138}
   - component: {fileID: 2341619397359526396}
   - component: {fileID: 6866928443834969563}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Slot1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1063,7 +1063,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -35.97}
+  m_AnchoredPosition: {x: 100, y: -35.47}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &697818281109136868
@@ -1557,7 +1557,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 34.160004, y: -155.03}
+  m_AnchoredPosition: {x: 34.160004, y: -154.53}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4950820500746371486
@@ -1781,7 +1781,7 @@ GameObject:
   - component: {fileID: 5925596210009028660}
   - component: {fileID: 4814482176064338658}
   - component: {fileID: 7234791645771308171}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Slot2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1921,7 +1921,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: X
+  m_Text: 
 --- !u!1 &2525030283239149878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1957,7 +1957,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 165.84, y: -35.97}
+  m_AnchoredPosition: {x: 165.84, y: -35.47}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7749838891898016335
@@ -2072,7 +2072,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: X
+  m_Text: 
 --- !u!1 &2929640357649145009
 GameObject:
   m_ObjectHideFlags: 0
@@ -2086,7 +2086,7 @@ GameObject:
   - component: {fileID: 1400024506159395081}
   - component: {fileID: 7902690948220414060}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: DisposeSellButton6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2138,8 +2138,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 87332b36c254f1049b86594a90314b3e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2384,7 +2384,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 34.160004, y: -35.97}
+  m_AnchoredPosition: {x: 34.160004, y: -35.47}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2556075748360338253
@@ -2510,7 +2510,7 @@ GameObject:
   - component: {fileID: 6754763255989676865}
   - component: {fileID: 2214138688895252979}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: DisposeSellButton4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2562,8 +2562,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 87332b36c254f1049b86594a90314b3e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2795,7 +2795,7 @@ GameObject:
   - component: {fileID: 6153366658051395985}
   - component: {fileID: 7451528724309797265}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: DisposeSellButton7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2847,8 +2847,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 87332b36c254f1049b86594a90314b3e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2987,7 +2987,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: X
+  m_Text: 
 --- !u!1 &3604449919497916010
 GameObject:
   m_ObjectHideFlags: 0
@@ -3074,7 +3074,7 @@ GameObject:
   - component: {fileID: 6250052578990097918}
   - component: {fileID: 3167253704653534687}
   - component: {fileID: 999909270231010061}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: SideInventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3195,7 +3195,7 @@ GameObject:
   - component: {fileID: 3943522582089970865}
   - component: {fileID: 3943522582089970866}
   - component: {fileID: 3277168817667775531}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: CharacterInfoBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3225,8 +3225,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 135, y: 57.5}
-  m_SizeDelta: {x: 235, y: 98.53}
+  m_AnchoredPosition: {x: 141.46, y: 57.5}
+  m_SizeDelta: {x: 247.75, y: 98.53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3943522582089970865
 CanvasRenderer:
@@ -3293,7 +3293,7 @@ GameObject:
   - component: {fileID: 3943522582181113189}
   - component: {fileID: 3943522582181113187}
   - component: {fileID: 3943522582181113188}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3368,7 +3368,7 @@ GameObject:
   - component: {fileID: 3943522582270200750}
   - component: {fileID: 3943522582270200751}
   - component: {fileID: 3943522582270200736}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3470,7 +3470,7 @@ GameObject:
   - component: {fileID: 3943522582968610877}
   - component: {fileID: 3943522582968610875}
   - component: {fileID: 3943522582968610876}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: ManaFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3545,7 +3545,7 @@ GameObject:
   - component: {fileID: 3943522583227673531}
   - component: {fileID: 3943522583227673529}
   - component: {fileID: 3943522583227673530}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: ManaBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3619,7 +3619,7 @@ GameObject:
   - component: {fileID: 3943522583594281029}
   - component: {fileID: 3943522583594281027}
   - component: {fileID: 3943522583594281028}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: HealthFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3694,7 +3694,7 @@ GameObject:
   - component: {fileID: 3943522583997419795}
   - component: {fileID: 3943522583997419793}
   - component: {fileID: 3943522583997419794}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: CharacterImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4583,7 +4583,7 @@ GameObject:
   - component: {fileID: 6011204384472213002}
   - component: {fileID: 4626428952106426568}
   - component: {fileID: 1119550790136498830}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Slot5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5463,7 +5463,7 @@ GameObject:
   - component: {fileID: 1447189267123972324}
   - component: {fileID: 6656438447042506301}
   - component: {fileID: 3352257368658606316}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Slot3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5852,7 +5852,7 @@ GameObject:
   - component: {fileID: 8017939487812996161}
   - component: {fileID: 414378638790576879}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: DisposeSellButton8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5904,8 +5904,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 87332b36c254f1049b86594a90314b3e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5981,7 +5981,7 @@ GameObject:
   - component: {fileID: 5942284389227974279}
   - component: {fileID: 1268587716229919203}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: DisposeSellButton3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6033,8 +6033,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 87332b36c254f1049b86594a90314b3e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6132,7 +6132,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -155.03}
+  m_AnchoredPosition: {x: 100, y: -154.53}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2314036129316238335
@@ -6331,7 +6331,7 @@ GameObject:
   - component: {fileID: 462124189667147370}
   - component: {fileID: 3980796348653125671}
   m_Layer: 5
-  m_Name: Button
+  m_Name: DisposeSellButton1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6383,8 +6383,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 87332b36c254f1049b86594a90314b3e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6597,7 +6597,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: X
+  m_Text: 
 --- !u!1 &6137441267442639990
 GameObject:
   m_ObjectHideFlags: 0
@@ -6674,7 +6674,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: X
+  m_Text: 
 --- !u!1 &6252270246389348175
 GameObject:
   m_ObjectHideFlags: 0
@@ -6842,7 +6842,7 @@ GameObject:
   - component: {fileID: 9085820968160478341}
   - component: {fileID: 3862360713006948255}
   - component: {fileID: 1294661900976900852}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: ItemIcon2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7012,7 +7012,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 165.84, y: -95.5}
+  m_AnchoredPosition: {x: 165.84, y: -95}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4416260223459842332
@@ -7062,7 +7062,7 @@ GameObject:
   - component: {fileID: 2853124895611553060}
   - component: {fileID: 6440904724992597416}
   - component: {fileID: 3495687655884384119}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: ItemIcon1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7333,7 +7333,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 34.160004, y: -95.5}
+  m_AnchoredPosition: {x: 34.160004, y: -95}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5828340064997729401
@@ -7710,7 +7710,7 @@ GameObject:
   - component: {fileID: 8023257614189239744}
   - component: {fileID: 773112352474792214}
   - component: {fileID: 683977379956566463}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: ItemSlot4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7807,7 +7807,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -95.5}
+  m_AnchoredPosition: {x: 100, y: -95}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1907557803484281284
@@ -8258,7 +8258,7 @@ GameObject:
   - component: {fileID: 6981610776908245377}
   - component: {fileID: 2339203967360566400}
   - component: {fileID: 2808001301735233713}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Slot4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8398,7 +8398,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: X
+  m_Text: 
 --- !u!1 &7715745383233050511
 GameObject:
   m_ObjectHideFlags: 0
@@ -8540,7 +8540,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: X
+  m_Text: 
 --- !u!1 &7760568185364104226
 GameObject:
   m_ObjectHideFlags: 0
@@ -8617,7 +8617,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: X
+  m_Text: 
 --- !u!1 &7951109451309205392
 GameObject:
   m_ObjectHideFlags: 0
@@ -8694,7 +8694,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: X
+  m_Text: 
 --- !u!1 &8163804308668998274
 GameObject:
   m_ObjectHideFlags: 0
@@ -8706,7 +8706,7 @@ GameObject:
   - component: {fileID: 2181313594851569684}
   - component: {fileID: 6987903254832605843}
   - component: {fileID: 3407466578684644897}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: ItemSlot5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8803,7 +8803,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 165.84, y: -155.03}
+  m_AnchoredPosition: {x: 165.84, y: -154.53}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4597990828929460077
@@ -9027,7 +9027,7 @@ GameObject:
   - component: {fileID: 6203477964000437761}
   - component: {fileID: 201901760293625946}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: DisposeSellButton5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9079,8 +9079,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 87332b36c254f1049b86594a90314b3e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -9661,8 +9661,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
   equiptedRelics: {fileID: 508971042528750452}
-  disposeRelicSprite: {fileID: 0}
-  sellRelicSprite: {fileID: 0}
+  disposeRelicSprite: {fileID: 21300000, guid: 87332b36c254f1049b86594a90314b3e, type: 3}
+  sellRelicSprite: {fileID: 21300000, guid: d84a9ba3b533bd8448c955820e929123, type: 3}
   relicButttons:
   - {fileID: 4614662547942599886}
   - {fileID: 1081208717277230031}
@@ -9673,7 +9673,16 @@ MonoBehaviour:
   - {fileID: 5309330140390563868}
   - {fileID: 6308242270761223345}
   - {fileID: 2020187295962583094}
-  sellOrDisposeButtons: []
+  sellOrDisposeButtons:
+  - {fileID: 3980796348653125671}
+  - {fileID: 8620779642345194072}
+  - {fileID: 1268587716229919203}
+  - {fileID: 2214138688895252979}
+  - {fileID: 201901760293625946}
+  - {fileID: 7902690948220414060}
+  - {fileID: 7451528724309797265}
+  - {fileID: 414378638790576879}
+  - {fileID: 1293442917416215553}
   relicInfoPanel: {fileID: 8792354966754310928}
   relicName: {fileID: 288300269713221241}
   relicStats:
@@ -9700,7 +9709,7 @@ GameObject:
   - component: {fileID: 8866034128971343620}
   - component: {fileID: 1293442917416215553}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: DisposeSellButton9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9752,8 +9761,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 87332b36c254f1049b86594a90314b3e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

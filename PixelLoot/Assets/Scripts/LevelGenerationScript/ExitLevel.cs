@@ -12,16 +12,16 @@ public class ExitLevel : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             PlayerStats.instance.SaveState();
-            
-            PlayerStats.instance.GetComponentInChildren<CharacterStatsUI>().SetFloorText(PlayerStats.instance.playerSAI.currentLevel++);
-            if(PlayerStats.instance.playerSAI.currentLevel == 2)
+          
+            if(PlayerStats.instance.playerSAI.currentLevel == 10)
             {
                 fader.FadeOut(4);
-                PlayerStats.instance.GetComponentInChildren<CharacterStatsUI>().SetFloorText("BOSS");
             }
             else
             {
+                PlayerStats.instance.playerSAI.currentLevel++;
                 fader.FadeOut(3);
+                
             }
             
             

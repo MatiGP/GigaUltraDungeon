@@ -41,7 +41,7 @@ public class ArchitectDialog : MonoBehaviour
             else if (enemy.GetHealthPercentage() <= 0.25 && thirdPhase)
             {
                 thirdPhase = false;
-                Dialog.instance.OpenDialog("Architekt", sentences[3], 1f);
+                Dialog.instance.OpenDialog("Architekt", sentences[2], 1f);
                 GetComponent<ArchitectSpecialAttacks>().PhaseThree();
             }
         }
